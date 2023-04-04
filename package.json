@@ -1,0 +1,19 @@
+{
+  "name": "library-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "run": "nodemon server.js"
+  },
+  "keywords": [
+    "api",
+    "library",
+    "rest"
+  ],
+  "author": "Dawid Kacza",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
