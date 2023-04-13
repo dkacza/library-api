@@ -36,7 +36,7 @@ const bookSchema = new mongoose.Schema({
     },
     coverPath: {
         type: String,
-        default: '/photos/defaultCover.jpg',
+        default: './photos/defaultCover.jpg',
     },
     currentStatus: {
         type: String,
