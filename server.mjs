@@ -8,7 +8,7 @@ import morgan from 'morgan';
 import bookRouter from './routes/bookRouter.mjs';
 import userRouter from './routes/userRouter.mjs';
 import authorRouter from './routes/authorRouter.mjs';
-import {errorController} from './controllers/errorController.mjs';
+import { errorController } from './controllers/errorController.mjs';
 
 process.on('uncaughtException', (err) => {
     console.log('Unhandled Exception\nExiting...');
@@ -16,7 +16,7 @@ process.on('uncaughtException', (err) => {
     process.exit(1);
 })
 
-dotenv.config({path: './config.env'});
+dotenv.config({ path: './config.env' });
 
 // Establishing DB connection:
 mongoose.connect(process.env.DB, {})

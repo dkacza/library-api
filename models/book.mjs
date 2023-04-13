@@ -50,6 +50,14 @@ const bookSchema = new mongoose.Schema({
 
 bookSchema.plugin(referrenceValidator);
 
+bookSchema.pre(/^find/, function(next) {
+    this.populate({
+        path: 'authors',
+        select: 'name'
+    });
+    next();
+})
+
 
 const Book = mongoose.model('Book', bookSchema);
 export default Book;
