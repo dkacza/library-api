@@ -31,6 +31,8 @@ const app = express();
 // Middleware stack
 // Logging Requests to the console
 app.use(morgan('tiny'));
+// Reading parameters from request body
+app.use(express.json())
 
 // Monting routers
 app.use('/api/v1/books', bookRouter);
