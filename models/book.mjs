@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+import referrenceValidator from 'mongoose-referrence-validator';
+import Author from './author.mjs';
 
 const bookSchema = new mongoose.Schema({
     title: {
@@ -7,7 +9,16 @@ const bookSchema = new mongoose.Schema({
         maxLength: [50, 'Title must be shorter than 50 characters'],
     },
     authors: {
-        // ARRAY OF REFERENCES TO THE AUTHORS
+        required: [true, 'Book must have at least one author'],
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'Author',
+        validate: {
+            validator: (val) => {
+                if (!Array.isArray(val)) return false;
+                if (val.length < 1) return false; 
+            },
+            message: 'Book must have at least one author'
+        }
     },
     publicationDate: {
         type: Date,
@@ -36,6 +47,9 @@ const bookSchema = new mongoose.Schema({
         // ARRAY OF REFERENCES TO THE USERS WHO BORROWED THE BOOK.
     },
 });
+
+bookSchema.plugin(referrenceValidator);
+
 
 const Book = mongoose.model('Book', bookSchema);
 export default Book;

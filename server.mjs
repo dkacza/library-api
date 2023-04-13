@@ -11,7 +11,7 @@ import authorRouter from './routes/authorRouter.mjs';
 import {errorController} from './controllers/errorController.mjs';
 
 process.on('uncaughtException', (err) => {
-    console.log('Unhandled Exception.\nExiting...');
+    console.log('Unhandled Exception\nExiting...');
     console.log(err);
     process.exit(1);
 })
@@ -20,9 +20,9 @@ dotenv.config({path: './config.env'});
 
 // Establishing DB connection:
 mongoose.connect(process.env.DB, {})
-    .then(() => console.log('Database connection established.'))
+    .then(() => console.log('Database connection established'))
     .catch(() => {
-        console.log('Could not establish database connection.\nExiting...');
+        console.log('Could not establish database connection\nExiting...');
         process.exit(1);
     });
 
@@ -45,11 +45,11 @@ app.use(errorController);
 
 const port = Number(process.env.PORT);
 app.listen(port, () => {
-    console.log(`Server is running at port ${port}.`);
+    console.log(`Server is running at port ${port}`);
 });
 
 process.on('unhandledRejection', (err) => {
-    console.log('Unhandled Rejection.\nExiting...');
+    console.log('Unhandled Rejection\nExiting...');
     console.log(err);
     process.exit(1);
 })

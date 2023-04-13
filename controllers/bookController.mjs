@@ -1,34 +1,72 @@
+import mongoose from 'mongoose';
+
+import Book from './../models/book.mjs';
+import { catchAsync } from './../utils/catchAsync.mjs';
+import { AppError } from './../utils/appError.mjs';
+
 const bookController = {};
 
-bookController.getAllBooks = function(req, res, next) {
+bookController.getAllBooks = catchAsync(async function (req, res, next) {
+    const books = await Book.find();
+
     res.status(200).json({
         status: 'success',
-        message: 'GET ALL BOOKS'
+        data: {
+            books
+        }
     })
-}
-bookController.getSingleBook = function(req, res, next) {
+});
+
+bookController.getSingleBook = catchAsync(async function (req, res, next) {
+    const id = req.params.id;
+    const book = await Book.findById(id);
+    if (!book) return next(new AppError('Book with specified ID not found', 404));
+
     res.status(200).json({
         status: 'success',
-        message: 'GET SINGLE BOOK'
+        data: {
+            book
+        }
     })
-}
-bookController.createBook = function(req, res, next) {
+});
+
+bookController.createBook = catchAsync(async function (req, res, next) {
+    const book = await Book.create(req.body);
+
+    res.status(201).json({
+        status: 'success',
+        data: {
+            book
+        }
+    })
+});
+
+
+bookController.updateBook = catchAsync(async function (req, res, next) {
+    const id = req.params.id;
+    const book = await Book.findByIdAndUpdate(id, req.body, {
+        runValidators: true,
+        new: true
+    })
+    if(!book) return next(new AppError('Book with specified ID not found', 404));
+
     res.status(200).json({
         status: 'success',
-        message: 'CREATE BOOK'
+        data: {
+            book
+        }
     })
-}
-bookController.updateBook = function(req, res, next) {
-    res.status(200).json({
+});
+
+bookController.deleteBook = catchAsync(async function (req, res, next) {
+    const id = req.params.id;
+    const book = await Book.findByIdAndDelete(id);
+    if (!book) return next(new AppError('Book with specified ID not found', 404));
+
+    res.status(204).json({
         status: 'success',
-        message: 'UPDATE BOOK'
+        data: null,
     })
-}
-bookController.deleteBook = function(req, res, next) {
-    res.status(200).json({
-        status: 'success',
-        message: 'DELETE BOOK'
-    })
-}
+});
 
 export default bookController;
