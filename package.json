@@ -4,7 +4,8 @@
   "description": "Simple REST API for book library.",
   "main": "server.mjs",
   "scripts": {
-    "start": "nodemon server.mjs"
+    "start": "nodemon server.mjs",
+    "debug": "ndb server.mjs"
   },
   "keywords": [
     "api",
@@ -17,6 +18,7 @@
     "eslint": "^8.37.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
+    "ndb": "^1.1.5",
     "nodemon": "^2.0.22"
   },
   "dependencies": {

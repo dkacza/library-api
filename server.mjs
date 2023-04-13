@@ -8,6 +8,7 @@ import morgan from 'morgan';
 import bookRouter from './routes/bookRouter.mjs';
 import userRouter from './routes/userRouter.mjs';
 import authorRouter from './routes/authorRouter.mjs';
+import {errorController} from './controllers/errorController.mjs';
 
 process.on('uncaughtException', (err) => {
     console.log('Unhandled Exception.\nExiting...');
@@ -38,6 +39,9 @@ app.use(express.json())
 app.use('/api/v1/books', bookRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/authors', authorRouter);
+
+// Global error handling
+app.use(errorController);
 
 const port = Number(process.env.PORT);
 app.listen(port, () => {
