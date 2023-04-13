@@ -10,7 +10,7 @@ import userRouter from './routes/userRouter.mjs';
 import authorRouter from './routes/authorRouter.mjs';
 
 process.on('uncaughtException', (err) => {
-    console.log('Unhandled Exception. Exiting...');
+    console.log('Unhandled Exception.\nExiting...');
     console.log(err);
     process.exit(1);
 })
@@ -18,14 +18,18 @@ process.on('uncaughtException', (err) => {
 dotenv.config({path: './config.env'});
 
 // Establishing DB connection:
-console.log(process.env.DB);
 mongoose.connect(process.env.DB, {})
-    .then(() => console.log('DB connection established.'));
+    .then(() => console.log('Database connection established.'))
+    .catch(() => {
+        console.log('Could not establish database connection.\nExiting...');
+        process.exit(1);
+    });
 
 
 const app = express();
 
 // Middleware stack
+// Logging Requests to the console
 app.use(morgan('tiny'));
 
 // Monting routers
@@ -39,7 +43,7 @@ app.listen(port, () => {
 });
 
 process.on('unhandledRejection', (err) => {
-    console.log('Unhandled Rejection. Exiting...');
+    console.log('Unhandled Rejection.\nExiting...');
     console.log(err);
     process.exit(1);
 })
