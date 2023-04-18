@@ -1,6 +1,7 @@
 import User from '../models/user.mjs';
-import { catchAsync } from '../utils/catchAsync.mjs'
-import { AppError } from '../utils/appError.mjs';
+import {catchAsync} from '../utils/catchAsync.mjs';
+import {AppError} from '../utils/appError.mjs';
+import {excludeProperties} from '../utils/filterObject.mjs';
 
 const userController = {};
 
@@ -10,59 +11,86 @@ userController.getAllUsers = catchAsync(async function (req, res, next) {
     res.status(200).json({
         status: 'success',
         data: {
-            users
-        }
-    })
+            users,
+        },
+    });
 });
 
 userController.getUser = catchAsync(async function (req, res, next) {
     const id = req.params.id;
     const user = await User.findById(id);
-    if (!user) return next(new AppError('User with specified ID not found', 404));
+    if (!user)
+        return next(new AppError('User with specified ID not found', 404));
 
     res.status(200).json({
         status: 'success',
         data: {
-            user
-        }
-    })
+            user,
+        },
+    });
 });
 
 userController.createUser = catchAsync(async function (req, res, next) {
-    const user = await User.create(req.body);
+    const filteredBody = excludeProperties(
+        req.body,
+        'role',
+        'registrationDate',
+        'eligible',
+        'rentals'
+    );
+    const user = await User.create(filteredBody);
 
     res.status(201).json({
         status: 'success',
         data: {
-            user
-        }
-    })
+            user,
+        },
+    });
 });
 
 userController.updateUser = catchAsync(async function (req, res, next) {
+    if (req.body.password)
+        return next(
+            new AppError('This is not a route for changing the password', 400)
+        );
+    const filteredBody = excludeProperties(
+        req.body,
+        'role',
+        'registrationDate',
+        'eligible',
+        'rentals'
+    );
     const id = req.params.id;
-    const user = await User.findByIdAndUpdate(id, req.body, { new: true, runValidators: true });
-    if (!user) return next(new AppError('User with specified ID not found', 404));
+    const user = await User.findByIdAndUpdate(id, filteredBody, {
+        new: true,
+        runValidators: true,
+    });
+    if (!user)
+        return next(new AppError('User with specified ID not found', 404));
 
     res.status(200).json({
         status: 'success',
         data: {
-            user
-        }
-    })
+            user,
+        },
+    });
 });
 
 userController.deleteUser = catchAsync(async function (req, res, next) {
     const id = req.params.id;
-    const user = await User.findByIdAndDelete(id, req.body, { new: true, runValidators: true });
-    if (!user) return next(new AppError('User with specified ID not found', 404));
+    const user = await User.findByIdAndDelete(id, req.body, {
+        new: true,
+        runValidators: true,
+    });
+    if (!user)
+        return next(new AppError('User with specified ID not found', 404));
 
     res.status(204).json({
         status: 'success',
         data: {
-            user
-        }
-    })
-})
+            user,
+        },
+    });
+});
 
 export default userController;
