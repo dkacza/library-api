@@ -51,13 +51,24 @@ const userSchema = new mongoose.Schema({
     rentals: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: 'Rental'
+    },
+    eligible: {
+        // If user holds a book for too long or has more than 3 books he is not eligible
+        type: Boolean,
+        default: true
     }
 });
 
-// HASHING THE PASSWORD
+// Hashing the password
 userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) return next();
     this.password = await bcrypt.hash(this.password, 12);
+    next();
+});
+
+// Eligibility check
+userSchema.pre('save', function(next) {
+    if (this.rentals.length > 2) this.eligible = false;
     next();
 })
 

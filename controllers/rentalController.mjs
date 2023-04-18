@@ -35,19 +35,20 @@ rentalController.getRental = catchAsync(async function (req, res, next) {
 
 rentalController.createRental = catchAsync(async function (req, res, next) {
     const filteredBody = filterObject(req.body, 'user', 'book');
+
     // Check if the book is available
     const bookId = filteredBody.book;
     const book = await Book.findById(bookId);
     if (book.currentStatus !== 'available')
         return next(new AppError('Book is not available', 406));
 
-    // Check the user rental array
+    // Check if the user is eligible
     const userId = filteredBody.user;
     const user = await User.findById(userId);
-    if (user.rentals.length >= 3)
+    if (!user.eligible)
         return next(
             new AppError(
-                'User cannot have more than 3 books borrowed at the same time',
+                'User is not eligible to borrow any more books. Return borrowed ones first',
                 406
             )
         );
@@ -55,6 +56,7 @@ rentalController.createRental = catchAsync(async function (req, res, next) {
     // Create rental, append refference to user, mark book as borrowed
     const rental = await Rental.create(filteredBody);
     const rentalId = rental._id;
+
     user.rentals.push(rentalId);
     user.save();
     book.currentStatus = 'borrowed';
@@ -69,8 +71,8 @@ rentalController.createRental = catchAsync(async function (req, res, next) {
 });
 
 rentalController.updateRental = catchAsync(async function (req, res, next) {
-    // Filter the request body
     const filteredBody = filterObject(req.body, 'currentStatus');
+
     if (filteredBody.currentStatus !== 'returned')
         return next(
             new AppError(
@@ -79,7 +81,7 @@ rentalController.updateRental = catchAsync(async function (req, res, next) {
             )
         );
 
-    // Mark the book with the correct status
+    // Mark the rental with the correct status
     const {id} = req.params;
     const rental = await Rental.findById(id);
     if (!rental)
@@ -87,21 +89,21 @@ rentalController.updateRental = catchAsync(async function (req, res, next) {
     if (rental.currentStatus === 'returned')
         return next(new AppError('This book has been already returned', 405));
     rental.currentStatus = filteredBody.currentStatus;
+    rental.returnDate = Date.now();
     rental.save();
-    
+
+    // Mark the book with the correct status
+    const bookId = rental.book;
+    const book = await Book.findById(bookId);
+    book.currentStatus = 'available';
+    book.save();
+
     // Remove reference from user rental array
     const userId = rental.user;
     const user = await User.findById(userId);
-
-    let find = user.rentals.includes(rental._id);
-    console.log(find);
-    console.log(user.rentals);
-
     const result = user.rentals;
     const index = result.indexOf(rental._id);
     result.splice(index, 1);
-    console.log(result);
-
     user.rentals = result;
     await user.save();
 

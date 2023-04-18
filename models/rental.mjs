@@ -21,11 +21,12 @@ const rentalSchema = new mongoose.Schema({
     },
     expirationDate: {
         type: Date,
+        default: Date.now() + 1000 * 60 * 60 * 24 * 50, // 50 days from now
     },
     currentStatus: {
         type: String,
-        enum: ['returned', 'lost', 'borrowed'],
-        default: 'borrowed',
+        enum: ['returned', 'lost', 'active'],
+        default: 'active',
     },
 });
 
