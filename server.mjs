@@ -8,6 +8,7 @@ import morgan from 'morgan';
 import bookRouter from './routes/bookRouter.mjs';
 import userRouter from './routes/userRouter.mjs';
 import authorRouter from './routes/authorRouter.mjs';
+import rentalRouter from './routes/rentalRouter.mjs';
 import { errorController } from './controllers/errorController.mjs';
 
 process.on('uncaughtException', (err) => {
@@ -39,6 +40,7 @@ app.use(express.json())
 app.use('/api/v1/books', bookRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/authors', authorRouter);
+app.use('/api/v1/rentals', rentalRouter);
 
 // Global error handling
 app.use(errorController);

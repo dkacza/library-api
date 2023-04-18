@@ -1,4 +1,8 @@
 import mongoose from 'mongoose';
+import referrenceValidator from 'mongoose-referrence-validator';
+
+import Book from './book.mjs';
+import User from './user.mjs';
 
 const rentalSchema = new mongoose.Schema({
     book: {
@@ -20,14 +24,27 @@ const rentalSchema = new mongoose.Schema({
     },
     expirationDate: {
         type: Date,
-        default: this.startDate + 20,
     },
     currentStatus: {
         type: String,
         enum: ['returned', 'lost', 'borrowed'],
-        default: ['borrowed'],
+        default: 'borrowed',
     },
 });
+
+rentalSchema.plugin(referrenceValidator);
+
+rentalSchema.pre(/^find/, function(next) {
+    this.populate({
+        path: 'user',
+        select: 'firstName lastName'
+    });
+    this.populate({
+        path: 'book',
+        select: 'title',
+    })
+    next();
+})
 
 const Rental = mongoose.model('Rental', rentalSchema);
 export default Rental;

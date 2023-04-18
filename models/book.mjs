@@ -53,7 +53,7 @@ bookSchema.plugin(referrenceValidator);
 bookSchema.pre(/^find/, function(next) {
     this.populate({
         path: 'authors',
-        select: 'name'
+        //select: 'name'
     });
     next();
 })
