@@ -49,7 +49,8 @@ const userSchema = new mongoose.Schema({
         default: './photos/defaultPhoto.jpg'
     },
     rentals: {
-        // ARRAY OF REFERENCES TO RENTALS
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'Rental'
     }
 });
 

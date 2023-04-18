@@ -21,9 +21,6 @@ const authorSchema = new mongoose.Schema({
         },
         default: 'photos/defaultAuthor.jpg',
     },
-    books: [{
-        // ARRAY OF REFERENCES TO AUTHOR'S BOOKS
-    }]
 });
 
 const Author = mongoose.model('Author', authorSchema);
