@@ -1,9 +1,6 @@
 import mongoose from 'mongoose';
 import referrenceValidator from 'mongoose-referrence-validator';
 
-import Book from './book.mjs';
-import User from './user.mjs';
-
 const rentalSchema = new mongoose.Schema({
     book: {
         type: mongoose.Schema.Types.ObjectId,
