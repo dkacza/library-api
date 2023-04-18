@@ -8,24 +8,24 @@ import morgan from 'morgan';
 import bookRouter from './routes/bookRouter.mjs';
 import userRouter from './routes/userRouter.mjs';
 import rentalRouter from './routes/rentalRouter.mjs';
-import { errorController } from './controllers/errorController.mjs';
+import {errorController} from './controllers/errorController.mjs';
 
-process.on('uncaughtException', (err) => {
+process.on('uncaughtException', err => {
     console.log('Unhandled Exception\nExiting...');
     console.log(err);
     process.exit(1);
-})
+});
 
-dotenv.config({ path: './config.env' });
+dotenv.config({path: './config.env'});
 
 // Establishing DB connection:
-mongoose.connect(process.env.DB, {})
+mongoose
+    .connect(process.env.DB, {})
     .then(() => console.log('Database connection established'))
     .catch(() => {
         console.log('Could not establish database connection\nExiting...');
         process.exit(1);
     });
-
 
 const app = express();
 
@@ -33,7 +33,7 @@ const app = express();
 // Logging Requests to the console
 app.use(morgan('tiny'));
 // Reading parameters from request body
-app.use(express.json())
+app.use(express.json());
 
 // Monting routers
 app.use('/api/v1/books', bookRouter);
@@ -48,8 +48,8 @@ app.listen(port, () => {
     console.log(`Server is running at port ${port}`);
 });
 
-process.on('unhandledRejection', (err) => {
+process.on('unhandledRejection', err => {
     console.log('Unhandled Rejection\nExiting...');
     console.log(err);
     process.exit(1);
-})
+});

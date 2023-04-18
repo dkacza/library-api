@@ -38,8 +38,8 @@ const bookSchema = new mongoose.Schema({
     },
     currentStatus: {
         type: String,
-        enum: ['available', 'borrowed', 'notReturned']
-
+        enum: ['available', 'borrowed', 'notReturned'],
+        default: 'available'
     },
 });
 
