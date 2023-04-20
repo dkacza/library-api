@@ -95,12 +95,16 @@ rentalController.updateRental = catchAsync(async function (req, res, next) {
     // Mark the book with the correct status
     const bookId = rental.book;
     const book = await Book.findById(bookId);
+
+    const userId = rental.user;
+    const user = await User.findById(userId);
+    
+    if (book.currentStatus == 'lost') user.eligible('true'); 
+
     book.currentStatus = 'available';
     book.save();
 
     // Remove reference from user rental array
-    const userId = rental.user;
-    const user = await User.findById(userId);
     const result = user.rentals;
     const index = result.indexOf(rental._id);
     result.splice(index, 1);

@@ -8,16 +8,16 @@ const bookSchema = new mongoose.Schema({
         maxLength: [50, 'Title must be shorter than 50 characters'],
     },
     authors: {
-            type: [Author.schema],
-            required: [true, 'Book must have at least one author'],
-            validate: {
-                validator: (val) => {
-                    if (!Array.isArray(val)) return false;
-                    if (val.length < 1) return false;
-                },
-                message: 'Book must have at least one author',
-            }
+        type: [Author.schema],
+        required: [true, 'Book must have at least one author'],
+        validate: {
+            validator: val => {
+                if (!Array.isArray(val)) return false;
+                if (val.length < 1) return false;
+            },
+            message: 'Book must have at least one author',
         },
+    },
     publicationDate: {
         type: Date,
         validate: {
@@ -39,10 +39,9 @@ const bookSchema = new mongoose.Schema({
     currentStatus: {
         type: String,
         enum: ['available', 'borrowed', 'lost'],
-        default: 'available'
+        default: 'available',
     },
 });
-
 
 const Book = mongoose.model('Book', bookSchema);
 export default Book;

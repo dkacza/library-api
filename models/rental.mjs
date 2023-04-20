@@ -10,7 +10,7 @@ const rentalSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: [true, 'User ID is required in rental object']
+        required: [true, 'User ID is required in rental object'],
     },
     startDate: {
         type: Date,
@@ -32,17 +32,17 @@ const rentalSchema = new mongoose.Schema({
 
 rentalSchema.plugin(referrenceValidator);
 
-rentalSchema.pre(/^find/, function(next) {
+rentalSchema.pre(/^find/, function (next) {
     this.populate({
         path: 'user',
-        select: 'firstName lastName'
+        select: 'firstName lastName',
     });
     this.populate({
         path: 'book',
         select: 'title',
-    })
+    });
     next();
-})
+});
 
 const Rental = mongoose.model('Rental', rentalSchema);
 export default Rental;

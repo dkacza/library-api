@@ -1,4 +1,4 @@
-export const errorController = function(err, req, res, next) {
+export const errorController = function (err, req, res, next) {
     err.statusCode = err.statusCode || 500;
     err.status = err.status || 'error';
 
@@ -6,7 +6,6 @@ export const errorController = function(err, req, res, next) {
         status: err.status,
         message: err.message,
         stack: err.stack,
-        error: err
-    })
-}
-
+        error: err,
+    });
+};

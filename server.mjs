@@ -52,7 +52,6 @@ app.listen(port, () => {
     console.log(`Server is running at port ${port}`);
 });
 
-
 setInterval(refreshStatuses, 60000);
 
 process.on('unhandledRejection', err => {

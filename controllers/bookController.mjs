@@ -1,8 +1,6 @@
-import mongoose from 'mongoose';
-
 import Book from './../models/book.mjs';
-import { catchAsync } from './../utils/catchAsync.mjs';
-import { AppError } from './../utils/appError.mjs';
+import {catchAsync} from './../utils/catchAsync.mjs';
+import {AppError} from './../utils/appError.mjs';
 
 const bookController = {};
 
@@ -12,22 +10,23 @@ bookController.getAllBooks = catchAsync(async function (req, res, next) {
     res.status(200).json({
         status: 'success',
         data: {
-            books
-        }
-    })
+            books,
+        },
+    });
 });
 
 bookController.getSingleBook = catchAsync(async function (req, res, next) {
     const id = req.params.id;
     const book = await Book.findById(id);
-    if (!book) return next(new AppError('Book with specified ID not found', 404));
+    if (!book)
+        return next(new AppError('Book with specified ID not found', 404));
 
     res.status(200).json({
         status: 'success',
         data: {
-            book
-        }
-    })
+            book,
+        },
+    });
 });
 
 bookController.createBook = catchAsync(async function (req, res, next) {
@@ -36,37 +35,38 @@ bookController.createBook = catchAsync(async function (req, res, next) {
     res.status(201).json({
         status: 'success',
         data: {
-            book
-        }
-    })
+            book,
+        },
+    });
 });
-
 
 bookController.updateBook = catchAsync(async function (req, res, next) {
     const id = req.params.id;
     const book = await Book.findByIdAndUpdate(id, req.body, {
         runValidators: true,
-        new: true
-    })
-    if(!book) return next(new AppError('Book with specified ID not found', 404));
+        new: true,
+    });
+    if (!book)
+        return next(new AppError('Book with specified ID not found', 404));
 
     res.status(200).json({
         status: 'success',
         data: {
-            book
-        }
-    })
+            book,
+        },
+    });
 });
 
 bookController.deleteBook = catchAsync(async function (req, res, next) {
     const id = req.params.id;
     const book = await Book.findByIdAndDelete(id);
-    if (!book) return next(new AppError('Book with specified ID not found', 404));
+    if (!book)
+        return next(new AppError('Book with specified ID not found', 404));
 
     res.status(204).json({
         status: 'success',
         data: null,
-    })
+    });
 });
 
 export default bookController;
