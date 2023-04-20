@@ -1,8 +1,14 @@
 import express from 'express';
 
-import userController from '../controllers/userController.mjs';
+import userController from './../controllers/userController.mjs';
+import authController from '../controllers/authController.mjs';
 
 const router = express.Router();
+
+router
+    .post('/signup', authController.signUp)
+    .post('/login', authController.login);
+
 router
     .route('/')
     .get(userController.getAllUsers)

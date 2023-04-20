@@ -98,8 +98,7 @@ rentalController.updateRental = catchAsync(async function (req, res, next) {
 
     const userId = rental.user;
     const user = await User.findById(userId);
-    
-    if (book.currentStatus == 'lost') user.eligible('true'); 
+    if (book.currentStatus == 'lost') user.eligible('true');
 
     book.currentStatus = 'available';
     book.save();

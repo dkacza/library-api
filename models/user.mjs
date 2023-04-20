@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
             validator: val => validator.isEmail(val),
             message: 'Email is incorrect',
         },
+        unique: true,
     },
     phoneNumber: {
         type: String,
@@ -68,9 +69,16 @@ userSchema.pre('save', async function (next) {
 
 // Eligibility check
 userSchema.pre('save', function (next) {
-    this.eligible = (this.rentals.length < 3);
+    this.eligible = this.rentals.length < 3;
     next();
 });
+
+userSchema.methods.correctPassword = async function (
+    candidatePassword,
+    userPassword
+) {
+    return await bcrypt.compare(candidatePassword, userPassword);
+};
 
 const User = mongoose.model('User', userSchema);
 export default User;
