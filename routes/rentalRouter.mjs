@@ -6,6 +6,7 @@ import authController from './../controllers/authController.mjs';
 const router = express.Router();
 
 router.use(authController.checkToken);
+router.use(authController.restrictTo('librarian', 'admin'));
 
 router
     .route('/')
@@ -16,6 +17,6 @@ router
     .route('/:id')
     .get(rentalController.getRental)
     .patch(rentalController.updateRental)
-    .delete(rentalController.deleteRental);
+    .delete(authController.restrictTo('admin'), rentalController.deleteRental);
 
 export default router;

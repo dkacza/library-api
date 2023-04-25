@@ -14,15 +14,16 @@ router
 // Protected
 router.use(authController.checkToken);
 
-// Admin-only
+// Librarian
+router.use(authController.restrictTo('librarian', 'admin'));
 router
     .route('/')
     .get(userController.getAllUsers)
-    .post(userController.createUser);
+    .post(authController.restrictTo('admin'), userController.createUser);
 router
     .route('/:id')
     .get(userController.getUser)
-    .patch(userController.updateUser)
-    .delete(userController.deleteUser);
+    .patch(authController.restrictTo('admin'), userController.updateUser)
+    .delete(authController.restrictTo('admin'), userController.deleteUser);
 
 export default router;

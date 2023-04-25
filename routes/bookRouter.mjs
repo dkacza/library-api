@@ -10,11 +10,20 @@ router.use(authController.checkToken);
 router
     .route('/')
     .get(bookController.getAllBooks)
-    .post(bookController.createBook);
+    .post(
+        authController.restrictTo('librarian', 'admin'),
+        bookController.createBook
+    );
 router
     .route('/:id')
     .get(bookController.getSingleBook)
-    .patch(bookController.updateBook)
-    .delete(bookController.deleteBook);
+    .patch(
+        authController.restrictTo('librarian', 'admin'),
+        bookController.updateBook
+    )
+    .delete(
+        authController.restrictTo('librarian', 'admin'),
+        bookController.deleteBook
+    );
 
 export default router;
