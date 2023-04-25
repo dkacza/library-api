@@ -5,10 +5,16 @@ import authController from '../controllers/authController.mjs';
 
 const router = express.Router();
 
+// Unprotected
 router
     .post('/signup', authController.signUp)
-    .post('/login', authController.login);
+    .post('/login', authController.login)
+    .get('/logout', authController.logout);
 
+// Protected
+router.use(authController.checkToken);
+
+// Admin-only
 router
     .route('/')
     .get(userController.getAllUsers)

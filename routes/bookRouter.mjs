@@ -1,8 +1,12 @@
 import express from 'express';
 
 import bookController from '../controllers/bookController.mjs';
+import authController from './../controllers/authController.mjs';
 
 const router = express.Router();
+
+router.use(authController.checkToken);
+
 router
     .route('/')
     .get(bookController.getAllBooks)

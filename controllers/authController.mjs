@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
+import {promisify} from 'util';
 
 import User from './../models/user.mjs';
-
 import {catchAsync} from '../utils/catchAsync.mjs';
 import {AppError} from '../utils/appError.mjs';
 import {filterObject} from '../utils/filterObject.mjs';
@@ -39,6 +39,14 @@ authController.login = catchAsync(async function (req, res, next) {
     createAndSignToken(user, 200, res);
 });
 
+authController.logout = function (req, res, next) {
+    res.cookie('jwt', 'LOGGED_OUT', {
+        expires: new Date(Date.now() + 1 * 1000), // 1 second from now the JWT will be inactive
+        httpOnly: true,
+    });
+    res.status(200).json({status: 'success'});
+};
+
 const createAndSignToken = function (user, statusCode, res) {
     const token = signToken(user._id);
     const cookieOptions = {
@@ -60,4 +68,48 @@ const signToken = function (id) {
     });
 };
 
+authController.checkToken = catchAsync(async function (req, res, next) {
+    // 1. Check if the token exists in the request, req.cookies is added by the npm middleware
+    const token = req.cookies.jwt;
+    if (!token)
+        return next(
+            new AppError(
+                'You must be looged in to get access to that route',
+                401
+            )
+        );
+    const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+    console.log(decoded);
+
+    // 2. Check if the user is correct
+    const user = await User.findById(decoded.id);
+    if (!user)
+        return next(
+            new AppError(
+                'User, to which this token belongs, does not exist',
+                401
+            )
+        );
+
+    // 3. Check if the token have not expired
+    // Multiplying by 1000 is nescessary in order to get correct Date object timestamp
+    const issuedAt = new Date(decoded.iat * 1000);
+    const expirationDate = new Date(decoded.exp * 1000);
+
+    if (expirationDate < Date.now())
+        return next(new AppError('Token has expired', 401));
+
+    // 4. Check if the user have not changed a password after his token was issued
+    if (user.checkPasswordChange(issuedAt))
+        return next(
+            new AppError(
+                'User changed his password after JWT was issued. Log in again',
+                401
+            )
+        );
+
+    // 5. Put the user data on the request
+    req.user = user;
+    next();
+});
 export default authController;

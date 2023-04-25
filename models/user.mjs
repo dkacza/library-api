@@ -36,6 +36,11 @@ const userSchema = new mongoose.Schema({
         minlength: 8,
         select: false,
     },
+    passwordChangedAt: {
+        type: Date,
+        default: Date.now(),
+        select: false,
+    },
     role: {
         type: String,
         enum: ['user', 'librarian', 'admin'],
@@ -78,6 +83,10 @@ userSchema.methods.correctPassword = async function (
     userPassword
 ) {
     return await bcrypt.compare(candidatePassword, userPassword);
+};
+
+userSchema.methods.checkPasswordChange = function (JWTDate) {
+    return JWTDate < this.passwordChangedAt;
 };
 
 const User = mongoose.model('User', userSchema);

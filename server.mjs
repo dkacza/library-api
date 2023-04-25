@@ -3,6 +3,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
+import cookieParser from 'cookie-parser';
 
 // Modules
 import bookRouter from './routes/bookRouter.mjs';
@@ -38,6 +39,8 @@ const app = express();
 app.use(morgan('tiny'));
 // Reading parameters from request body
 app.use(express.json());
+// Parsing cookies into request object
+app.use(cookieParser());
 
 // Monting routers
 app.use('/api/v1/books', bookRouter);
