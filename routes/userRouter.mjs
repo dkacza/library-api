@@ -14,6 +14,8 @@ router
 // Protected
 router.use(authController.checkToken);
 
+router.patch('/changePassword', authController.changePassword);
+
 // Librarian
 router.use(authController.restrictTo('librarian', 'admin'));
 router

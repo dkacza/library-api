@@ -47,6 +47,26 @@ authController.logout = function (req, res, next) {
     res.status(200).json({status: 'success'});
 };
 
+authController.changePassword = catchAsync(async function(req, res, next) {
+    const currentPassword = req.body.currentPassword;
+    const newPassword = req.body.newPassword;
+
+    // Check if the user provides correct current password
+    const userId = req.user._id;
+    const currentUser = await User.findById(userId).select('+password');
+
+    const checkPassword = await currentUser.correctPassword(currentPassword, currentUser.password)
+    if(!checkPassword) return next(new AppError('Current password is wrong', 400));
+
+    currentUser.password = newPassword;
+    currentUser.save({runValidators: true});
+
+    createAndSignToken(currentUser, 200, res);
+})
+    
+
+
+// Helper functions
 const createAndSignToken = function (user, statusCode, res) {
     const token = signToken(user._id);
     const cookieOptions = {
@@ -79,8 +99,7 @@ authController.checkToken = catchAsync(async function (req, res, next) {
             )
         );
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-    console.log(decoded);
-
+    
     // 2. Check if the user is correct
     const user = await User.findById(decoded.id);
     if (!user)
