@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import validator from 'validator';
+import crypto from 'crypto';
 
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -40,6 +41,12 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now(),
         select: false,
+    },
+    passwordResetToken: {
+        type: String,
+    },
+    passwordResetExpires: {
+        type: Date,
     },
     role: {
         type: String,
@@ -88,6 +95,16 @@ userSchema.methods.correctPassword = async function (
 
 userSchema.methods.checkPasswordChange = function (JWTDate) {
     return JWTDate < this.passwordChangedAt;
+};
+
+userSchema.methods.createPasswordResetToken = function () {
+    const resetToken = crypto.randomBytes(32).toString('hex');
+    this.passwordResetToken = crypto
+        .createHash('sha256')
+        .update(resetToken)
+        .digest('hex');
+    this.passwordResetExpires = Date.now() + 10 * 60 * 1000; // 10 minutes from now
+    return resetToken;
 };
 
 const User = mongoose.model('User', userSchema);

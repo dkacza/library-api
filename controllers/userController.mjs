@@ -51,7 +51,10 @@ userController.createUser = catchAsync(async function (req, res, next) {
 userController.updateUser = catchAsync(async function (req, res, next) {
     if (req.body.password)
         return next(
-            new AppError('This is not a route for changing the password', 400)
+            new AppError(
+                'This is not a route for changing the password. Use /changePassword instead',
+                400
+            )
         );
     const filteredBody = excludeProperties(
         req.body,

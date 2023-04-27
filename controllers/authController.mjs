@@ -1,10 +1,12 @@
 import jwt from 'jsonwebtoken';
 import {promisify} from 'util';
+import crypto from 'crypto';
 
 import User from './../models/user.mjs';
 import {catchAsync} from '../utils/catchAsync.mjs';
 import {AppError} from '../utils/appError.mjs';
 import {filterObject} from '../utils/filterObject.mjs';
+import {sendEmail} from './../utils/email.mjs';
 
 const authController = {};
 
@@ -47,7 +49,7 @@ authController.logout = function (req, res, next) {
     res.status(200).json({status: 'success'});
 };
 
-authController.changePassword = catchAsync(async function(req, res, next) {
+authController.changePassword = catchAsync(async function (req, res, next) {
     const currentPassword = req.body.currentPassword;
     const newPassword = req.body.newPassword;
 
@@ -55,16 +57,69 @@ authController.changePassword = catchAsync(async function(req, res, next) {
     const userId = req.user._id;
     const currentUser = await User.findById(userId).select('+password');
 
-    const checkPassword = await currentUser.correctPassword(currentPassword, currentUser.password)
-    if(!checkPassword) return next(new AppError('Current password is wrong', 400));
+    const checkPassword = await currentUser.correctPassword(
+        currentPassword,
+        currentUser.password
+    );
+    if (!checkPassword)
+        return next(new AppError('Current password is wrong', 400));
 
     currentUser.password = newPassword;
     currentUser.save({runValidators: true});
 
     createAndSignToken(currentUser, 200, res);
-})
-    
+});
 
+authController.forgotPassword = catchAsync(async function (req, res, next) {
+    // 1. Get the user based on email
+    const userEmail = req.body.email;
+    const currentUser = await User.findOne({email: userEmail});
+    if (!currentUser)
+        return next(new AppError('User with specified email not found', 400));
+
+    // 2. Create a reset token
+    const token = currentUser.createPasswordResetToken();
+    currentUser.save();
+    const resetURL = `${req.protocol}://${req.get(
+        'host'
+    )}/api/v1/users/resetPassword/${token}`;
+
+    const emailBody = {
+        subject: 'Library Password Reset Token (valid for 10 minutes)',
+        receiver: userEmail,
+        text: `Submit PATCH request with a new password to the URL: ${resetURL}`,
+    };
+    sendEmail(emailBody);
+    res.status(200).json({
+        status: 'success',
+        message: 'Email with a link to reset your password has been sent.',
+    });
+});
+
+authController.resetPassword = catchAsync(async function (req, res, next) {
+    // 1. Encrypt the token and compare it with the user one
+    const hashedToken = crypto
+        .createHash('sha256')
+        .update(req.params.token)
+        .digest('hex');
+
+    const currentUser = await User.findOne({
+        passwordResetToken: hashedToken,
+        passwordResetExpires: {$gt: Date.now()},
+    });
+    if (!currentUser)
+        return next(new AppError('Token is wrong or it has expired', 400));
+
+    // 2. Set the new password and password properties
+    currentUser.password = req.body.password;
+    currentUser.passwordChangedAt = Date.now();
+    currentUser.passwordResetToken = undefined;
+    currentUser.passwordResetExpires = undefined;
+    await currentUser.save();
+
+    // 3. Create and send new JWT
+    createAndSignToken(currentUser, 200, res);
+});
 
 // Helper functions
 const createAndSignToken = function (user, statusCode, res) {
@@ -99,7 +154,7 @@ authController.checkToken = catchAsync(async function (req, res, next) {
             )
         );
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-    
+
     // 2. Check if the user is correct
     const user = await User.findById(decoded.id);
     if (!user)

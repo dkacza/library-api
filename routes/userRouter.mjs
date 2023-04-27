@@ -9,14 +9,15 @@ const router = express.Router();
 router
     .post('/signup', authController.signUp)
     .post('/login', authController.login)
-    .get('/logout', authController.logout);
+    .get('/logout', authController.logout)
+    .post('/forgotPassword', authController.forgotPassword)
+    .post('/resetPassword/:token', authController.resetPassword);
 
 // Protected
 router.use(authController.checkToken);
 
 router.patch('/changePassword', authController.changePassword);
 
-// Librarian
 router.use(authController.restrictTo('librarian', 'admin'));
 router
     .route('/')
