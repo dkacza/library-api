@@ -29,4 +29,10 @@ router
     .patch(authController.restrictTo('admin'), userController.updateUser)
     .delete(authController.restrictTo('admin'), userController.deleteUser);
 
+router.patch(
+    '/promote/:id',
+    authController.restrictTo('admin'),
+    authController.promoteUser
+);
+
 export default router;

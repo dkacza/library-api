@@ -199,4 +199,22 @@ authController.restrictTo = function (...roles) {
         next();
     };
 };
+
+authController.promoteUser = catchAsync(async function (req, res, next) {
+    const userId = req.params.id;
+    const currentUser = await User.findById(userId);
+    if (!currentUser)
+        return next(new AppError('User with specified Id does not exist', 400));
+
+    const newRole = req.body.role;
+    if (!newRole)
+        return next(new AppError('User must have a role specified', 400));
+    currentUser.role = newRole;
+    currentUser.save();
+
+    res.status(200).json({
+        status: 'success',
+        user: currentUser,
+    });
+});
 export default authController;
