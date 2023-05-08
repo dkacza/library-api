@@ -1,11 +1,15 @@
 import Book from './../models/book.mjs';
 import {catchAsync} from './../utils/catchAsync.mjs';
 import {AppError} from './../utils/appError.mjs';
+import QueryFeatures from '../utils/queryFeatuers.mjs';
 
 const bookController = {};
 
 bookController.getAllBooks = catchAsync(async function (req, res, next) {
-    const books = await Book.find();
+    const features = new QueryFeatures(Book.find(), req.query);
+    features.filter().sort().limitFields().paginate();
+
+    const books = await features.query;
 
     res.status(200).json({
         status: 'success',

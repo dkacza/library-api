@@ -5,11 +5,14 @@ import {filterObject} from './../utils/filterObject.mjs';
 import Rental from './../models/rental.mjs';
 import User from './../models/user.mjs';
 import Book from './../models/book.mjs';
+import QueryFeatures from '../utils/queryFeatuers.mjs';
 
 const rentalController = {};
 
 rentalController.getAllRentals = catchAsync(async function (req, res, next) {
-    const rentals = await Rental.find();
+    const features = new QueryFeatures(Rental.find(), req.query);
+    features.filter().sort().limitFields().paginate();
+    const rentals = await features.query;
 
     res.status(200).json({
         status: 'success',

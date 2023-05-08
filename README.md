@@ -19,7 +19,7 @@ for getting and updating data about the books and the people who lend them.
  - Log in to his account
  - Reset his password through email in case he forgets it
 2. Logged in user can:
- - Browse all books (with filtering for certain properties and sorting)
+ - Browse all books 
  - Change his password
  - View his profile with history of rentals
  - Change his profile details
@@ -36,6 +36,9 @@ for getting and updating data about the books and the people who lend them.
 Book can not be lend to user, if:
  - He has already borrowed 3 books.
  - He has not returned a book, which he borrowed more than 50 days ago.
+
+Users can sort and filter the results when they are getting all the documents from the collection.
+Field limiting and pagination is also implemented for GET requests.
 
 #### Endpoint documentation
 App is separeted into 3 main data models (users, books and rentals), which can be accessed through separate endpoints.

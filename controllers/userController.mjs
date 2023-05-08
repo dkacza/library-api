@@ -2,11 +2,14 @@ import User from '../models/user.mjs';
 import {catchAsync} from '../utils/catchAsync.mjs';
 import {AppError} from '../utils/appError.mjs';
 import {excludeProperties} from '../utils/filterObject.mjs';
+import QueryFeatures from '../utils/queryFeatuers.mjs';
 
 const userController = {};
 
 userController.getAllUsers = catchAsync(async function (req, res, next) {
-    const users = await User.find();
+    const features = new QueryFeatures(User.find(), req.query);
+    features.filter().sort().limitFields().paginate();
+    const users = await features.query;
 
     res.status(200).json({
         status: 'success',
