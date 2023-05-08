@@ -53,7 +53,7 @@ Keep in mind that you need a MongoDB server running locally on your computer or 
    Some of the variables are allready prefilled, but I encourage you to adjust them for your needs.
 4. Run `npm importData` to import some premade JSON data to your database. 
    This step is not neccessary, but again, I reccomend you to do that for better experience.
-5. Hit `npm run start:prod` or `npm run start:dev` to launch the app!
+5. Hit `npm run start` or to launch the app!
 
 Now when the app is running, you can use the premade Postman setup, which I have included in the project.
 Use the logging in endpoint with `testAdmin@test.com` and `pass1234` for email and password to get access to all the endpoints in the API.

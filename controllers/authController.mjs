@@ -149,7 +149,7 @@ authController.checkToken = catchAsync(async function (req, res, next) {
     if (!token)
         return next(
             new AppError(
-                'You must be looged in to get access to that route',
+                'You must be logged in to get access to that route',
                 401
             )
         );
