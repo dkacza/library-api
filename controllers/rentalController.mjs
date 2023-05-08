@@ -39,6 +39,10 @@ rentalController.createRental = catchAsync(async function (req, res, next) {
     // Check if the book is available
     const bookId = filteredBody.book;
     const book = await Book.findById(bookId);
+    if (!book) {
+        return next(new AppError('Book with specified ID not found', 404));
+    }
+
     if (book.currentStatus !== 'available')
         return next(new AppError('Book is not available', 406));
 
@@ -128,5 +132,25 @@ rentalController.deleteRental = catchAsync(async function (req, res, next) {
         data: null,
     });
 });
+
+rentalController.getBookHistory = catchAsync(async function(req, res, next) {
+    const bookId = req.params.id;
+    const rentals = await Rental.find({book: bookId});
+
+    res.status(200).json({
+        status: 'success',
+        data: rentals
+    })
+});
+
+rentalController.getUserHistory = catchAsync(async function(req, res, next) {
+    const userId = req.params.id;
+    const rentals = await Rental.find({user: userId});
+
+    res.status(200).json({
+        status: 'success',
+        data: rentals
+    })
+})
 
 export default rentalController;

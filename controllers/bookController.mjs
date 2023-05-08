@@ -58,7 +58,7 @@ bookController.updateBook = catchAsync(async function (req, res, next) {
 });
 
 bookController.deleteBook = catchAsync(async function (req, res, next) {
-    const id = req.params.id;
+    const {id} = req.params;
     const book = await Book.findByIdAndDelete(id);
     if (!book)
         return next(new AppError('Book with specified ID not found', 404));

@@ -2,6 +2,7 @@ import express from 'express';
 
 import userController from './../controllers/userController.mjs';
 import authController from '../controllers/authController.mjs';
+import rentalController from '../controllers/rentalController.mjs';
 
 const router = express.Router();
 
@@ -34,5 +35,6 @@ router.patch(
     authController.restrictTo('admin'),
     authController.promoteUser
 );
+router.get('/:id/history', rentalController.getUserHistory);
 
 export default router;
