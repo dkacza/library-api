@@ -4,6 +4,10 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
+import helmet from 'helmet';
+import rateLimiter from 'express-rate-limit';
+import sanitizer from 'express-mongo-sanitize';
+import xss from 'xss-clean';
 
 // Modules
 import bookRouter from './routes/bookRouter.mjs';
@@ -32,13 +36,28 @@ mongoose
         process.exit(1);
     });
 
+// Rate limiter
+const limiter = rateLimiter({
+    max: 100,
+    windowMs: 60 * 60 * 1000,
+    message: 'Too many requests from this IP address.',
+});
+
 const app = express();
 
 // Middleware stack
+// Setting HTTP security headers
+app.use(helmet());
 // Logging Requests to the console
 app.use(morgan('tiny'));
+// Request limiting for IP adresses
+app.use('/api', limiter);
 // Reading parameters from request body
-app.use(express.json());
+app.use(express.json({limit: '10kb'}));
+// Sanitize input data
+app.use(sanitizer());
+// Prevent XSS
+app.use(xss());
 // Parsing cookies into request object
 app.use(cookieParser());
 
