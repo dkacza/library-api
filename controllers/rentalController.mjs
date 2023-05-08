@@ -136,6 +136,9 @@ rentalController.deleteRental = catchAsync(async function (req, res, next) {
 rentalController.getBookHistory = catchAsync(async function(req, res, next) {
     const bookId = req.params.id;
     const rentals = await Rental.find({book: bookId});
+    if (!rentals) {
+        return next(new AppError('Rentals for book with specified ID not found', 404));
+    }
 
     res.status(200).json({
         status: 'success',
@@ -146,6 +149,9 @@ rentalController.getBookHistory = catchAsync(async function(req, res, next) {
 rentalController.getUserHistory = catchAsync(async function(req, res, next) {
     const userId = req.params.id;
     const rentals = await Rental.find({user: userId});
+    if (!rentals) {
+        return next(new AppError('Rentals for user with specified ID not found', 404));
+    }
 
     res.status(200).json({
         status: 'success',

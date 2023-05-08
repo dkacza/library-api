@@ -66,7 +66,7 @@ const userSchema = new mongoose.Schema({
         ref: 'Rental',
     },
     eligible: {
-        // If user holds a book for too long or has more than 3 books he is not eligible
+        // If the user holds a book for too long or has more than 3 books, he is not eligible
         type: Boolean,
         default: true,
     },
