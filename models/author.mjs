@@ -21,6 +21,10 @@ const authorSchema = new mongoose.Schema({
         },
         default: 'photos/defaultAuthor.jpg',
     },
+    __v: {
+        type: Number,
+        select: false
+    }
 });
 
 const Author = mongoose.model('Author', authorSchema);

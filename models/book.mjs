@@ -41,6 +41,10 @@ const bookSchema = new mongoose.Schema({
         enum: ['available', 'borrowed', 'lost'],
         default: 'available',
     },
+    __v: {
+        type: Number,
+        select: false
+    }
 });
 
 const Book = mongoose.model('Book', bookSchema);

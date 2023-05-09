@@ -28,6 +28,10 @@ const rentalSchema = new mongoose.Schema({
         enum: ['returned', 'lost', 'active'],
         default: 'active',
     },
+    __v: {
+        type: Number,
+        select: false
+    }
 });
 
 rentalSchema.plugin(referrenceValidator);

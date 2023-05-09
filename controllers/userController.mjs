@@ -99,4 +99,41 @@ userController.deleteUser = catchAsync(async function (req, res, next) {
     });
 });
 
+userController.getLoggedInUser = catchAsync(async function(req, res, next) {
+    res.status(200).json({
+        status: 'success',
+        data: {
+            user: req.user
+        }
+    });
+})
+
+userController.updateLoggedInUser = catchAsync(async function(req, res, next) {
+    if (req.body.password)
+        return next(
+            new AppError(
+                'This is not a route for changing the password. Use /changePassword instead',
+                400
+            )
+        );
+    const filteredBody = excludeProperties(
+        req.body,
+        'role',
+        'registrationDate',
+        'eligible',
+        'rentals'
+    );
+    const id = req.user.id;
+    const user = await User.findByIdAndUpdate(id, filteredBody, {
+        new: true,
+        runValidators: true,
+    });
+    res.status(200).json({
+        status: 'success',
+        data: {
+            user,
+        },
+    });
+})
+
 export default userController;
