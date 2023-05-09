@@ -8,7 +8,7 @@ for getting and updating data about the books and the people who lend them.
 - The app was made with Node.js and Express.js framework with MVC pattern in mind.
 - It uses MongoDB to store the data and Mongoose for accessing it in a convinient way.
 - User authentication is implemented via JWT's through dedicated NPM package.
-- Vulnerable data is encrypted through modules and packages like crypto and bcrypt.
+- Vulnerable data is encrypted through modules and packages like `crypto` and `bcrypt`.
 - The app protects itself from XSS attacks and query injections by implementing additional 3rd party middleware packages.
 - The app can be run in 2 modes: production and development. Their difference lies within the way the errors are presented to user.
 - It uses `nodemailer` package to send emails to users.
@@ -56,7 +56,7 @@ I also reccomend using Postman for convienient way of sending requests.
 4. Import the JSON files in dev-data folder to your MongoDB database.
    If you have MongoDB Command Line Tools installed, you can just run the bash or batch script in that folder.
    This step is not neccessary, but again, I reccomend you to do that for better experience.
-5. Load two Postman configuration files found in the directory. 
+5. Load two Postman configuration files found in that directory. 
 5. Hit `npm run start` or to launch the app!
 
 Now when the app is running, you can use the premade Postman setup, which I have included in the project.
