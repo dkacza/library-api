@@ -1,16 +1,16 @@
 [{
   "_id": {
-    "$oid": "6459f8465798b3016f283bc6"
+    "$oid": "6459f89f5798b3016f283bce"
   },
-  "firstName": "Kyle",
-  "lastName": "Adams",
-  "email": "adams@test.com",
-  "phoneNumber": "654776434",
-  "password": "$2b$12$bdnQ9i.ZXrzDh11h21.Xp.LFtIQXoTriFKU3Vs/aEhSuT6CqluVoq",
+  "firstName": "Admin",
+  "lastName": "Test",
+  "email": "admin@test.com",
+  "phoneNumber": "123456789",
+  "password": "$2b$12$diK.RVSDOVLpguTGTOnVOubN6gbzdLKMBlmCt8UiOBbg5mcBblU3S",
   "passwordChangedAt": {
-    "$date": "2023-05-09T07:37:42.103Z"
+    "$date": "2023-05-09T07:39:10.428Z"
   },
-  "role": "user",
+  "role": "admin",
   "registrationDate": {
     "$date": "2023-05-09T07:36:58.440Z"
   },
@@ -40,6 +40,26 @@
   "__v": 0
 },{
   "_id": {
+    "$oid": "6459f8b35798b3016f283bd0"
+  },
+  "firstName": "Librarian",
+  "lastName": "Kowalski",
+  "email": "librarian@test.com",
+  "phoneNumber": "123456789",
+  "password": "$2b$12$xkGYXCVlaWplvOXjNQx/8Opg4EhqHqqAsjeAQzPc59XEEYQSmtkiS",
+  "passwordChangedAt": {
+    "$date": "2023-05-09T07:39:30.901Z"
+  },
+  "role": "librarian",
+  "registrationDate": {
+    "$date": "2023-05-09T07:36:58.440Z"
+  },
+  "photoPath": "./photos/defaultPhoto.jpg",
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},{
+  "_id": {
     "$oid": "6459f88c5798b3016f283bcb"
   },
   "firstName": "Peter",
@@ -55,47 +75,42 @@
     "$date": "2023-05-09T07:36:58.440Z"
   },
   "photoPath": "./photos/defaultPhoto.jpg",
-  "rentals": [],
+  "rentals": [
+    {
+      "$oid": "645a75a441ee0b92bc441862"
+    },
+    {
+      "$oid": "645a75b641ee0b92bc44186c"
+    }
+  ],
   "eligible": true,
-  "__v": 0
+  "__v": 4,
+  "passwordResetExpires": {
+    "$date": "2023-05-09T16:54:56.485Z"
+  },
+  "passwordResetToken": "a9182dc4cd4c24570d6274fe7fa7685ea47dc340320deea5f2d9ee9e59d96b15"
 },{
   "_id": {
-    "$oid": "6459f89f5798b3016f283bce"
+    "$oid": "6459f8465798b3016f283bc6"
   },
-  "firstName": "Admin",
-  "lastName": "Test",
-  "email": "admin@test.com",
-  "phoneNumber": "123456789",
-  "password": "$2b$12$diK.RVSDOVLpguTGTOnVOubN6gbzdLKMBlmCt8UiOBbg5mcBblU3S",
+  "firstName": "Kyle",
+  "lastName": "Adams",
+  "email": "adams@test.com",
+  "phoneNumber": "654776434",
+  "password": "$2b$12$bdnQ9i.ZXrzDh11h21.Xp.LFtIQXoTriFKU3Vs/aEhSuT6CqluVoq",
   "passwordChangedAt": {
-    "$date": "2023-05-09T07:39:10.428Z"
+    "$date": "2023-05-09T07:37:42.103Z"
   },
-  "role": "admin",
+  "role": "user",
   "registrationDate": {
     "$date": "2023-05-09T07:36:58.440Z"
   },
   "photoPath": "./photos/defaultPhoto.jpg",
-  "rentals": [],
+  "rentals": [
+    {
+      "$oid": "645a75f741ee0b92bc441881"
+    }
+  ],
   "eligible": true,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6459f8b35798b3016f283bd0"
-  },
-  "firstName": "Librarian",
-  "lastName": "Test",
-  "email": "librarian@test.com",
-  "phoneNumber": "987654321",
-  "password": "$2b$12$xkGYXCVlaWplvOXjNQx/8Opg4EhqHqqAsjeAQzPc59XEEYQSmtkiS",
-  "passwordChangedAt": {
-    "$date": "2023-05-09T07:39:30.901Z"
-  },
-  "role": "librarian",
-  "registrationDate": {
-    "$date": "2023-05-09T07:36:58.440Z"
-  },
-  "photoPath": "./photos/defaultPhoto.jpg",
-  "rentals": [],
-  "eligible": true,
-  "__v": 0
+  "__v": 1
 }]

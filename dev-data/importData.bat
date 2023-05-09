@@ -12,3 +12,8 @@ set COLLECTION_NAME=books
 set JSON_FILE=books.json
 
 mongoimport --host %MONGO_HOST% --port %MONGO_PORT% --db %DATABASE_NAME% --collection %COLLECTION_NAME% --file %JSON_FILE% --jsonArray
+
+set COLLECTION_NAME=rentals
+set JSON_FILE=rentals.json
+
+mongoimport --host %MONGO_HOST% --port %MONGO_PORT% --db %DATABASE_NAME% --collection %COLLECTION_NAME% --file %JSON_FILE% --jsonArray

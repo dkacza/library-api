@@ -19,7 +19,7 @@ router.use(authController.checkToken);
 
 router.patch('/changePassword', authController.changePassword);
 router.get('/me', userController.getLoggedInUser);
-router.post('/me', userController.updateLoggedInUser);
+router.patch('/me', userController.updateLoggedInUser);
 
 router.use(authController.restrictTo('librarian', 'admin'));
 router

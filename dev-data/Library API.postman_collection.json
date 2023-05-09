@@ -1,7 +1,8 @@
 {
 	"info": {
-		"_postman_id": "f4cffc72-a202-4908-ba88-9882eb5adf49",
+		"_postman_id": "21fdc77b-7717-4537-9acd-c4b680bb120d",
 		"name": "Library API",
+		"description": "This is an REST API for managing books in library and their reader.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "14293687"
 	},
@@ -51,7 +52,51 @@
 									"disabled": true
 								}
 							]
-						}
+						},
+						"description": "Gets all the books in the database. You can apply filters, sorting and page limiting in the request query."
+					},
+					"response": []
+				},
+				{
+					"name": "Get single book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/books/{{bookId}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"{{bookId}}"
+							]
+						},
+						"description": "Gets single book by ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get book's history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/books/{{bookId}}/history",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"{{bookId}}",
+								"history"
+							]
+						},
+						"description": "Gets all rentals of that book, which have been recorded."
 					},
 					"response": []
 				},
@@ -79,7 +124,8 @@
 								"v1",
 								"books"
 							]
-						}
+						},
+						"description": "Creates a new book from the request body."
 					},
 					"response": []
 				},
@@ -108,32 +154,33 @@
 								"books",
 								"{{bookId}}"
 							]
-						}
+						},
+						"description": "Updates the book with the properties from the request body."
 					},
 					"response": []
 				},
 				{
-					"name": "Get book's history",
+					"name": "Delete book",
 					"request": {
-						"method": "GET",
+						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/api/v1/books/{{bookId}}/history",
+							"raw": "{{URL}}/api/v1/{{bookId}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"api",
 								"v1",
-								"books",
-								"{{bookId}}",
-								"history"
+								"{{bookId}}"
 							]
-						}
+						},
+						"description": "Deletes the book specified with ID."
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "All routes related to books"
 		},
 		{
 			"name": "Users",
@@ -183,7 +230,75 @@
 									"disabled": true
 								}
 							]
-						}
+						},
+						"description": "Gets all the users. You can apply filters, sorting and page limiting in the request query."
+					},
+					"response": []
+				},
+				{
+					"name": "Get single user",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/users/{{userId}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"{{userId}}"
+							]
+						},
+						"description": "Gets the single user by his ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get my profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/users/me",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me"
+							]
+						},
+						"description": "Gets currently logged in user's data."
+					},
+					"response": []
+				},
+				{
+					"name": "Get user's history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/users/{{userId}}/history",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"{{userId}}",
+								"history"
+							]
+						},
+						"description": "Gets all the rentals made by the user specified by ID."
 					},
 					"response": []
 				},
@@ -211,30 +326,8 @@
 								"v1",
 								"users"
 							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get single user",
-					"request": {
-						"auth": {
-							"type": "bearer"
 						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/users/{{userId}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"{{userId}}"
-							]
-						}
+						"description": "Creates new user from the request body."
 					},
 					"response": []
 				},
@@ -263,75 +356,15 @@
 								"users",
 								"{{userId}}"
 							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete user",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/users/{{userId}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"{{userId}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get user's history",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/users/{{userId}}/history",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"{{userId}}",
-								"history"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get my profile",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/users/me",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"me"
-							]
-						}
+						},
+						"description": "Updates user."
 					},
 					"response": []
 				},
 				{
 					"name": "Update my profile",
 					"request": {
-						"method": "POST",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -353,11 +386,34 @@
 								"users",
 								"me"
 							]
-						}
+						},
+						"description": "Updates the profile of the currently logged in user."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/users/{{userId}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"{{userId}}"
+							]
+						},
+						"description": "Deletes user specified by ID."
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "All routes related to user data except the authorization."
 		},
 		{
 			"name": "Rentals",
@@ -404,7 +460,8 @@
 									"disabled": true
 								}
 							]
-						}
+						},
+						"description": "Gets all the rentals. You can apply filters, sorting and page limiting in the request query."
 					},
 					"response": []
 				},
@@ -424,7 +481,8 @@
 								"rentals",
 								"{{rentalId}}"
 							]
-						}
+						},
+						"description": "Gets rental by ID."
 					},
 					"response": []
 				},
@@ -452,7 +510,8 @@
 								"v1",
 								"rentals"
 							]
-						}
+						},
+						"description": "Creates new rental from the request body"
 					},
 					"response": []
 				},
@@ -481,15 +540,59 @@
 								"rentals",
 								"{{rentalId}}"
 							]
-						}
+						},
+						"description": "Marks the rental as resolved, and the book as returned."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete rental",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/rentals/{{rentalId}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"rentals",
+								"{{rentalId}}"
+							]
+						},
+						"description": "Deletes the rental."
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "All the routes dedicated for book rentals."
 		},
 		{
 			"name": "Authentication",
 			"item": [
+				{
+					"name": "Log out",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/users/logout",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"logout"
+							]
+						},
+						"description": "Removes the JWT stored in the cookie."
+					},
+					"response": []
+				},
 				{
 					"name": "Sign up",
 					"event": [
@@ -526,7 +629,8 @@
 								"users",
 								"signup"
 							]
-						}
+						},
+						"description": "Creates new user. Unlike POST /users this route is available to everyone."
 					},
 					"response": []
 				},
@@ -566,56 +670,8 @@
 								"users",
 								"login"
 							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Log out",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/users/logout",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"logout"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Change password",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"currentPassword\": \"newPass1234\",\r\n    \"newPassword\": \"pass1234\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
 						},
-						"url": {
-							"raw": "{{URL}}/api/v1/users/changePassword",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"changePassword"
-							]
-						}
+						"description": "Logs in the user."
 					},
 					"response": []
 				},
@@ -644,7 +700,8 @@
 								"users",
 								"forgotPassword"
 							]
-						}
+						},
+						"description": "Sends an email to the user, who forgot his password."
 					},
 					"response": []
 				},
@@ -674,7 +731,38 @@
 								"resetPassword",
 								"{{passwordResetToken}}"
 							]
-						}
+						},
+						"description": "Sets new password for the user who forgot the previous one."
+					},
+					"response": []
+				},
+				{
+					"name": "Change password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\": \"newPass1234\",\r\n    \"newPassword\": \"pass1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/users/changePassword",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"changePassword"
+							]
+						},
+						"description": "Changes the password of the logged in user."
 					},
 					"response": []
 				},
@@ -704,11 +792,13 @@
 								"promote",
 								"{{userId}}"
 							]
-						}
+						},
+						"description": "Gives the special role to the user, which allows him to acces protected routes."
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "All the routes related to user login credentials."
 		}
 	]
 }
