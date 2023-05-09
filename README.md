@@ -42,10 +42,12 @@ Field limiting and pagination is also implemented for GET requests.
 
 #### Endpoint documentation
 App is separeted into 3 main data models (users, books and rentals), which can be accessed through separate endpoints.
-You can find the premade Postman workspace and documentation in `docs` folder.
+You can find the premade Postman workspace in `dev-data` folder.
+Endpoint documentation is also available here: https://documenter.getpostman.com/view/14293687/2s93eZyBZi
 
 #### How to run it:
 Keep in mind that you need a MongoDB server running locally on your computer or MongoDB Atlas in the cloud to run this app.
+I also reccomend using Postman for convienient way of sending requests.
 
 1. Clone the repository and run `npm install` command to get all the necessary NPM packages.
 2. Run `npm createConfig` command to create the `config.env`.
@@ -54,6 +56,7 @@ Keep in mind that you need a MongoDB server running locally on your computer or 
 4. Import the JSON files in dev-data folder to your MongoDB database.
    If you have MongoDB Command Line Tools installed, you can just run the bash or batch script in that folder.
    This step is not neccessary, but again, I reccomend you to do that for better experience.
+5. Load two Postman configuration files found in the directory. 
 5. Hit `npm run start` or to launch the app!
 
 Now when the app is running, you can use the premade Postman setup, which I have included in the project.
