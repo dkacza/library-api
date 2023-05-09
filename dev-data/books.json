@@ -1,0 +1,84 @@
+[{
+  "_id": {
+    "$oid": "645954ef35eb64bf4074bed2"
+  },
+  "title": "Rok 1984",
+  "authors": [
+    {
+      "name": "George Orwell",
+      "bio": "Angielski eseista i powieściopisarz XX wieku",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "6459593935eb64bf4074beee"
+      }
+    }
+  ],
+  "isbn": "9788381884334",
+  "description": "Najsłynniejsza dystopia literatury",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-631155600000"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "645954ef35eb64bf4074bed3"
+  },
+  "title": "Harry Potter i Kamień Filozoficzny",
+  "authors": [
+    {
+      "name": "J.K. Rowling",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "6459592635eb64bf4074beed"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": "2000-01-01T00:00:00.000Z"
+  },
+  "isbn": "9788380082113",
+  "description": "Pierwszy tom przygód chłopca, który przeżył"
+},{
+  "_id": {
+    "$oid": "645954ef35eb64bf4074bed4"
+  },
+  "title": "Zbrodnia i Kara",
+  "authors": [
+    {
+      "name": "Fiodor Dostojewski",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "6459591235eb64bf4074beec"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-3281904000000"
+    }
+  },
+  "isbn": "9788382894806"
+},{
+  "_id": {
+    "$oid": "645954ef35eb64bf4074bed5"
+  },
+  "title": "Pan Tadeusz",
+  "authors": [
+    {
+      "name": "Adam Mickiewicz",
+      "bio": "Wieszcz narodowy epoki romantyzmu",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "6459590035eb64bf4074beeb"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-4291747200000"
+    }
+  },
+  "isbn": "123456789",
+  "description": "Polska epopeja narodowa"
+}]
