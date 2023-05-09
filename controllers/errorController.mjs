@@ -9,12 +9,14 @@ export const errorController = function (err, req, res, next) {
         let error = Object.assign({}, err);
         error.name = err.name; // Somehow Object.assign() doesn't cover these keys
         error.message = err.message;
+
         console.log(err.message);
 
         if (err.name === 'CastError') error = handleCastError(err);
         if (err.code === 11000) error = handleDuplicateDBFields(err);
         if (err.name == 'validationError') error = handleValidationError(err);
         if (err.name == 'JsonWebToken') error = handleJWTError(err);
+        if (error.message == 'invalid signature')  error = handleInvalidSignature(err);
         if (err.name == 'TokenExpiredError')
             error = handleExpiredJWTError(err);
 
@@ -41,6 +43,9 @@ const handleJWTError = () =>
     new AppError('Invalid token. Please log in again.', 401);
 const handleExpiredJWTError = () =>
     new AppError('Token has expired. Please log in again.', 401);
+const handleInvalidSignature = () => {
+    return new AppError('Problem with authorization. Please log in again.', 400);
+}
 
 const sendErrorDev = function (err, res) {
     res.status(err.statusCode).json({

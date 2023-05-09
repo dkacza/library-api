@@ -89,7 +89,7 @@ authController.forgotPassword = catchAsync(async function (req, res, next) {
         receiver: userEmail,
         text: `Submit PATCH request with a new password to the URL: ${resetURL}`,
     };
-    sendEmail(emailBody);
+    sendEmail(emailBody, next);
     res.status(200).json({
         status: 'success',
         message: 'Email with a link to reset your password has been sent.',
