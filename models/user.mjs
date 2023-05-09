@@ -70,6 +70,10 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: true,
     },
+    __v: {
+        type: Number,
+        select: false
+    }
 });
 
 // Hashing the password
