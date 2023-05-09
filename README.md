@@ -51,10 +51,11 @@ Keep in mind that you need a MongoDB server running locally on your computer or 
 2. Run `npm createConfig` command to create the `config.env`.
 3. Fill the `config.env` file with configuration data.
    Some of the variables are allready prefilled, but I encourage you to adjust them for your needs.
-4. Run `npm importData` to import some premade JSON data to your database. 
+4. Import the JSON files in dev-data folder to your MongoDB database.
+   If you have MongoDB Command Line Tools installed, you can just run the bash or batch script in that folder.
    This step is not neccessary, but again, I reccomend you to do that for better experience.
 5. Hit `npm run start` or to launch the app!
 
 Now when the app is running, you can use the premade Postman setup, which I have included in the project.
-Use the logging in endpoint with `testAdmin@test.com` and `pass1234` for email and password to get access to all the endpoints in the API.
+Use the logging in endpoint with `admin@test.com` and `pass1234` for email and password to get access to all the endpoints in the API.
 

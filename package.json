@@ -5,7 +5,8 @@
   "main": "server.mjs",
   "scripts": {
     "start": "nodemon server.mjs",
-    "debug": "ndb server.mjs"
+    "debug": "ndb server.mjs",
+    "createConfig": "node dev-data/createConfig.js"
   },
   "keywords": [
     "api",
