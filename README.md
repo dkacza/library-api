@@ -1,13 +1,13 @@
 ### Library API
 
 #### General description:
-This is a REST API which is meant to be used by book libraries, 
+This is a REST API which is meant to be used by libraries, 
 for getting and updating data about the books and the people who lend them.
 
 #### Technical details
 - The app was made with Node.js and Express.js framework with MVC pattern in mind.
 - It uses MongoDB to store the data and Mongoose for accessing it in a convinient way.
-- User authentication is implemented via JWT's through dedicated NPM package.
+- User authentication is implemented via JWT through dedicated NPM package.
 - Vulnerable data is encrypted through modules and packages like `crypto` and `bcrypt`.
 - The app protects itself from XSS attacks and query injections by implementing additional 3rd party middleware packages.
 - The app can be run in 2 modes: production and development. Their difference lies within the way the errors are presented to user.
@@ -30,7 +30,7 @@ for getting and updating data about the books and the people who lend them.
  - Get data about all the users
  - Get history of rentals for each book and each user
 4. Admins can:
- - Promote users for higher roles.
+ - Promote users for higher roles
  - Do anything else
 
 Book can not be lend to user, if:
@@ -57,7 +57,7 @@ I also reccomend using Postman for convienient way of sending requests.
    If you have MongoDB Command Line Tools installed, you can just run the bash or batch script in that folder.
    This step is not neccessary, but again, I reccomend you to do that for better experience.
 5. Load two Postman configuration files found in that directory. 
-5. Hit `npm run start` or to launch the app!
+5. Hit `npm run start` to launch the app!
 
 Now when the app is running, you can use the premade Postman setup, which I have included in the project.
 Use the logging in endpoint with `admin@test.com` and `pass1234` for email and password to get access to all the endpoints in the API.
