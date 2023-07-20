@@ -8,6 +8,7 @@ import helmet from 'helmet';
 import rateLimiter from 'express-rate-limit';
 import sanitizer from 'express-mongo-sanitize';
 import xss from 'xss-clean';
+import cors from 'cors';
 
 // Modules
 import bookRouter from './routes/bookRouter.mjs';
@@ -45,7 +46,15 @@ const limiter = rateLimiter({
 
 const app = express();
 
+const corsOptions = {
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+
 // Middleware stack
+// CORS
+app.use(cors(corsOptions));
 // Setting HTTP security headers
 app.use(helmet());
 // Logging Requests to the console
