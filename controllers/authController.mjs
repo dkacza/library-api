@@ -34,8 +34,11 @@ authController.login = catchAsync(async function (req, res, next) {
 
     // Check if user password and email are correct
     const user = await User.findOne({email}).select('+password');
+    if (!user) {
+        return next(new AppError('Wrong email or password', 401));
+    }
     const checkPassword = await user.correctPassword(password, user.password);
-    if (!user || !checkPassword)
+    if (!checkPassword)
         return next(new AppError('Wrong email or password', 401));
 
     createAndSignToken(user, 200, res);
