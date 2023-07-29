@@ -32,6 +32,11 @@ const bookSchema = new mongoose.Schema({
     description: {
         type: String,
     },
+    genre: {
+        type: String,
+        enum: ['fiction', 'non-fiction', 'poetry', 'science', 'childrens'],
+        required: [true, 'Book must have a genre (fiction, non-fiction, poetry, science, childrens)']
+    },
     coverPath: {
         type: String,
         default: './photos/defaultCover.jpg',
