@@ -5,7 +5,7 @@ const bookSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        maxLength: [50, 'Title must be shorter than 50 characters'],
+        maxLength: [100, 'Title must be shorter than 50 characters'],
     },
     authors: {
         type: [Author.schema],
@@ -34,7 +34,7 @@ const bookSchema = new mongoose.Schema({
     },
     genre: {
         type: String,
-        enum: ['fiction', 'non-fiction', 'poetry', 'science', 'childrens'],
+        enum: ['fiction', 'non-fiction', 'poetry', 'science', 'children'],
         required: [true, 'Book must have a genre (fiction, non-fiction, poetry, science, childrens)']
     },
     coverPath: {
