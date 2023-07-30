@@ -7,6 +7,18 @@ class QueryFeatures {
         const queryObj = {...this.queryString};
         const excludedFields = ['page', 'sort', 'limit', 'fields'];
         excludedFields.forEach(el => delete queryObj[el]);
+        
+        // Array processing:
+        for (const [key, value] of Object.entries(queryObj)) {
+            if (typeof value === 'string') {
+                if (value?.startsWith('[') && value?.endsWith(']') ) {
+                    const valuesString = value.substring(1, value.length - 1);
+                    const valueArray = valuesString.split(',');
+                    queryObj[key] = valueArray;
+                }
+            }
+        }
+        console.log(queryObj);
 
         // Advanced filtering
         let queryStr = JSON.stringify(queryObj);
@@ -14,6 +26,8 @@ class QueryFeatures {
             /\b(gte|gt|lte|lt)\b/g,
             match => `$${match}`
         );
+
+        // Multiple values filter
 
         this.query = this.query.find(JSON.parse(queryStr));
         return this;

@@ -11,10 +11,35 @@ bookController.getAllBooks = catchAsync(async function (req, res, next) {
 
     const books = await features.query;
 
+    const currentPage = Number(req.query.page);
+    const currentStart = ((Number(req.query.page) - 1) * 10) + 1;
+    const currentEnd = ((Number(req.query.page) - 1) * 10) + books.length;
+    const limit = req.query.limit;
+    const total = await Book.countDocuments();
+    const totalPages = await Math.ceil(total / Number(req.query.limit));
+
+    if (!req.query.page && !req.query.limit) {
+        res.status(200).json({
+            status: 'success',
+            data: {
+                books,
+            },
+        });
+        return
+    }
+
     res.status(200).json({
         status: 'success',
         data: {
             books,
+            pagination: {
+                currentPage,
+                currentStart,
+                currentEnd,
+                limit,
+                total,
+                totalPages,
+            }
         },
     });
 });
