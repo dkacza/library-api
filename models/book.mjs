@@ -34,8 +34,11 @@ const bookSchema = new mongoose.Schema({
     },
     genre: {
         type: String,
-        enum: ['fiction', 'non-fiction', 'poetry', 'science', 'children'],
-        required: [true, 'Book must have a genre (fiction, non-fiction, poetry, science, childrens)']
+        enum: ['fiction', 'nonFiction', 'poetry', 'scientific', 'children'],
+        required: [
+            true,
+            'Book must have a genre (fiction, non-fiction, poetry, science, childrens)',
+        ],
     },
     coverPath: {
         type: String,
@@ -48,8 +51,8 @@ const bookSchema = new mongoose.Schema({
     },
     __v: {
         type: Number,
-        select: false
-    }
+        select: false,
+    },
 });
 
 const Book = mongoose.model('Book', bookSchema);
