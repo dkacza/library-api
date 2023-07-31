@@ -20,6 +20,14 @@ class QueryFeatures {
         }
         console.log(queryObj);
 
+        // Date processing
+        if (queryObj.publicationDate) {
+            for (const [key, value] of Object.entries(queryObj.publicationDate)) {
+                queryObj.publicationDate[key] = new Date().setFullYear(Number(value));
+            }
+        }
+        console.log(queryObj);
+
         // Advanced filtering
         let queryStr = JSON.stringify(queryObj);
         queryStr = queryStr.replace(
