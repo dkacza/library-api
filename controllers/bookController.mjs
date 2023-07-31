@@ -7,15 +7,19 @@ const bookController = {};
 
 bookController.getAllBooks = catchAsync(async function (req, res, next) {
     const features = new QueryFeatures(Book.find(), req.query);
-    features.filter().sort().limitFields().paginate();
+
+    
+    features.filter().sort().limitFields();
+    const total = await Book.countDocuments(features.query);
+    features.paginate();
 
     const books = await features.query;
-
-    const currentPage = Number(req.query.page);
-    const currentStart = ((Number(req.query.page) - 1) * 10) + 1;
-    const currentEnd = ((Number(req.query.page) - 1) * 10) + books.length;
     const limit = req.query.limit;
-    const total = await Book.countDocuments();
+    const currentPage = Number(req.query.page);
+    const currentStart = ((Number(req.query.page) - 1) * limit) + 1;
+    const currentEnd = ((Number(req.query.page) - 1) * limit) + books.length;
+    
+    
     const totalPages = await Math.ceil(total / Number(req.query.limit));
 
     if (!req.query.page && !req.query.limit) {
@@ -27,6 +31,15 @@ bookController.getAllBooks = catchAsync(async function (req, res, next) {
         });
         return
     }
+    const pagination = {
+        currentPage,
+        currentStart,
+        currentEnd,
+        limit,
+        total,
+        totalPages,
+    }
+    console.log(pagination);
 
     res.status(200).json({
         status: 'success',

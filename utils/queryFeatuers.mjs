@@ -8,7 +8,8 @@ class QueryFeatures {
         const excludedFields = ['page', 'sort', 'limit', 'fields'];
         excludedFields.forEach(el => delete queryObj[el]);
         
-        // Array processing:
+        // Array processing: NEEDS REFACTOR !!!
+        // The same file contains better solution to that problem
         for (const [key, value] of Object.entries(queryObj)) {
             if (typeof value === 'string') {
                 if (value?.startsWith('[') && value?.endsWith(']') ) {
@@ -18,7 +19,6 @@ class QueryFeatures {
                 }
             }
         }
-        console.log(queryObj);
 
         // Date processing
         if (queryObj.publicationDate) {
@@ -26,7 +26,6 @@ class QueryFeatures {
                 queryObj.publicationDate[key] = new Date().setFullYear(Number(value));
             }
         }
-        console.log(queryObj);
 
         // Advanced filtering
         let queryStr = JSON.stringify(queryObj);
