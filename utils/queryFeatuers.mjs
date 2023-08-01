@@ -3,8 +3,8 @@ class QueryFeatures {
         this.query = query;
         this.queryString = queryString;
     }
-    filter() {
-        const queryObj = {...this.queryString};
+    filter(searchFields = []) {
+        let queryObj = {...this.queryString};
         const excludedFields = ['page', 'sort', 'limit', 'fields'];
         excludedFields.forEach(el => delete queryObj[el]);
 
@@ -30,8 +30,18 @@ class QueryFeatures {
             /\b(gte|gt|lte|lt)\b/g,
             match => `$${match}`
         );
+        queryObj = JSON.parse(queryStr);
 
-        this.query = this.query.find(JSON.parse(queryStr));
+        // Search applying
+        if (queryObj.search) {
+            const searchFilter = searchFields.map(field => ({
+                [field]: {$regex: new RegExp(queryObj.search, 'i')},
+            }));
+            queryObj.$or = searchFilter;
+            delete queryObj.search;
+        }
+
+        this.query = this.query.find(queryObj);
         return this;
     }
     sort() {

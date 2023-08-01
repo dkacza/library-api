@@ -8,7 +8,7 @@ const userController = {};
 
 userController.getAllUsers = catchAsync(async function (req, res, next) {
     const features = new QueryFeatures(User.find(), req.query);
-    features.filter().sort().limitFields().paginate();
+    features.filter(['firstName', 'lastName', 'email', 'phoneNumber']).sort().limitFields().paginate();
     const users = await features.query;
 
     res.status(200).json({
