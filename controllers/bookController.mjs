@@ -8,7 +8,7 @@ const bookController = {};
 bookController.getAllBooks = catchAsync(async function (req, res, next) {
     const features = new QueryFeatures(Book.find(), req.query);
 
-    features.filter().sort().limitFields();
+    features.filter(['title', 'isbn']).sort().limitFields();
     const total = await Book.countDocuments(features.query);
     features.paginate();
 

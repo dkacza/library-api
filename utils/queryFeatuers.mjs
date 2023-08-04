@@ -40,6 +40,7 @@ class QueryFeatures {
             queryObj.$or = searchFilter;
             delete queryObj.search;
         }
+        console.log(queryObj);
 
         this.query = this.query.find(queryObj);
         return this;

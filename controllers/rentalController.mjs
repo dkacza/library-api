@@ -162,4 +162,17 @@ rentalController.getUserHistory = catchAsync(async function(req, res, next) {
     })
 })
 
+rentalController.getLoggedInUserHistory = catchAsync(async function(req, res, next) {
+    const userId = req.user._id;
+    const rentals = await Rental.find({user: userId});
+    if (!rentals) {
+        return next(new AppError('Rentals for logged in user not found', 404));
+    }
+
+    res.status(200).json({
+        status: 'success',
+        data: rentals
+    })
+})
+
 export default rentalController;

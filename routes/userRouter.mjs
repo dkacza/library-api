@@ -20,6 +20,7 @@ router.use(authController.checkToken);
 router.patch('/changePassword', authController.changePassword);
 router.get('/me', userController.getLoggedInUser);
 router.patch('/me', userController.updateLoggedInUser);
+router.get('/me/history', rentalController.getLoggedInUserHistory);
 
 router.use(authController.restrictTo('librarian', 'admin'));
 router
