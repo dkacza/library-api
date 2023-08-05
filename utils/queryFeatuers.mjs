@@ -3,7 +3,11 @@ class QueryFeatures {
         this.query = query;
         this.queryString = queryString;
     }
+
     filter(searchFields = []) {
+
+
+
         let queryObj = {...this.queryString};
         const excludedFields = ['page', 'sort', 'limit', 'fields'];
         excludedFields.forEach(el => delete queryObj[el]);
@@ -11,6 +15,9 @@ class QueryFeatures {
         // Multiple values processing
         if (queryObj.genre) {
             queryObj.genre = queryObj.genre.split(',');
+        }
+        if (queryObj.currentStatus) {
+            queryObj.currentStatus = queryObj.currentStatus.split(',');
         }
 
         // Date processing
@@ -35,16 +42,18 @@ class QueryFeatures {
         // Search applying
         if (queryObj.search) {
             const searchFilter = searchFields.map(field => ({
-                [field]: {$regex: new RegExp(queryObj.search, 'i')},
+                [field]: {$regex: new RegExp(queryObj.search, 'i')}
             }));
             queryObj.$or = searchFilter;
             delete queryObj.search;
         }
-        console.log(queryObj);
+
+
 
         this.query = this.query.find(queryObj);
         return this;
     }
+
     sort() {
         if (this.queryString.sort) {
             const sortBy = this.queryString.sort.split(',').join(' ');
@@ -52,6 +61,7 @@ class QueryFeatures {
         }
         return this;
     }
+
     limitFields() {
         if (this.queryString.fields) {
             const fields = this.queryString.fields.split(',').join(' ');
@@ -61,7 +71,10 @@ class QueryFeatures {
         }
         return this;
     }
-    paginate() {
+
+    async paginate() {
+        this.total = await this.query.model.countDocuments(this.query);
+
         const page = Number(this.queryString.page) || 1;
         const limit = Number(this.queryString.limit) || 100;
         const toSkip = (page - 1) * limit;
@@ -69,4 +82,5 @@ class QueryFeatures {
         return this;
     }
 }
+
 export default QueryFeatures;

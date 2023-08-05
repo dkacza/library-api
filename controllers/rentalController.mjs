@@ -164,15 +164,49 @@ rentalController.getUserHistory = catchAsync(async function(req, res, next) {
 
 rentalController.getLoggedInUserHistory = catchAsync(async function(req, res, next) {
     const userId = req.user._id;
-    const rentals = await Rental.find({user: userId});
+
+    const features = new QueryFeatures(Rental.find({user: userId}), req.query);
+
+    await features.filter(['book.title']).sort().limitFields().paginate();
+
+    const rentals = await features.query;
+    const total = features.total;
+
+    const limit = req.query.limit;
+    const totalPages = Math.ceil(total / Number(req.query.limit));
+    const currentPage = Number(req.query.page);
+    const currentStart = (Number(req.query.page) - 1) * limit + 1;
+    const currentEnd = (Number(req.query.page) - 1) * limit + rentals.length;
+
     if (!rentals) {
         return next(new AppError('Rentals for logged in user not found', 404));
+    }
+    console.log(rentals);
+
+    if (!req.query.page && !req.query.limit) {
+        res.status(200).json({
+            status: 'success',
+            data: {
+                rentals,
+            },
+        });
+        return;
     }
 
     res.status(200).json({
         status: 'success',
-        data: rentals
-    })
+        data: {
+            rentals,
+            pagination: {
+                currentPage,
+                currentStart,
+                currentEnd,
+                limit,
+                total,
+                totalPages,
+            },
+        },
+    });
 })
 
 export default rentalController;

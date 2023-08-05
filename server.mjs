@@ -41,16 +41,16 @@ mongoose
 const limiter = rateLimiter({
     max: 100,
     windowMs: 60 * 60 * 1000,
-    message: 'Too many requests from this IP address.',
+    message: 'Too many requests from this IP address.'
 });
 
 const app = express();
 
 const corsOptions = {
-    origin:'http://localhost:3000', 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
+    origin: 'http://localhost:3000',
+    credentials: true,            //access-control-allow-credentials:true
+    optionSuccessStatus: 200
+};
 
 // Middleware stack
 // CORS
