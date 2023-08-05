@@ -5,9 +5,6 @@ class QueryFeatures {
     }
 
     filter(searchFields = []) {
-
-
-
         let queryObj = {...this.queryString};
         const excludedFields = ['page', 'sort', 'limit', 'fields'];
         excludedFields.forEach(el => delete queryObj[el]);
@@ -22,21 +19,14 @@ class QueryFeatures {
 
         // Date processing
         if (queryObj.publicationDate) {
-            for (const [key, value] of Object.entries(
-                queryObj.publicationDate
-            )) {
-                queryObj.publicationDate[key] = new Date().setFullYear(
-                    Number(value)
-                );
+            for (const [key, value] of Object.entries(queryObj.publicationDate)) {
+                queryObj.publicationDate[key] = new Date().setFullYear(Number(value));
             }
         }
 
         // Advanced filtering
         let queryStr = JSON.stringify(queryObj);
-        queryStr = queryStr.replace(
-            /\b(gte|gt|lte|lt)\b/g,
-            match => `$${match}`
-        );
+        queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
         queryObj = JSON.parse(queryStr);
 
         // Search applying
@@ -47,8 +37,6 @@ class QueryFeatures {
             queryObj.$or = searchFilter;
             delete queryObj.search;
         }
-
-
 
         this.query = this.query.find(queryObj);
         return this;
