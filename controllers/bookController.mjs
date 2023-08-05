@@ -2,6 +2,7 @@ import Book from './../models/book.mjs';
 import {catchAsync} from './../utils/catchAsync.mjs';
 import {AppError} from './../utils/appError.mjs';
 import QueryFeatures from '../utils/queryFeatuers.mjs';
+import createPaginationObject from '../utils/createPaginationObject.mjs';
 
 const bookController = {};
 
@@ -13,12 +14,6 @@ bookController.getAllBooks = catchAsync(async function (req, res, next) {
     const total = features.total;
     const books = await features.query;
 
-    const limit = req.query.limit;
-    const totalPages = Math.ceil(total / Number(req.query.limit));
-    const currentPage = Number(req.query.page);
-    const currentStart = (Number(req.query.page) - 1) * limit + 1;
-    const currentEnd = (Number(req.query.page) - 1) * limit + books.length;
-
     if (!req.query.page && !req.query.limit) {
         res.status(200).json({
             status: 'success',
@@ -29,18 +24,12 @@ bookController.getAllBooks = catchAsync(async function (req, res, next) {
         return;
     }
 
+    const pagination = createPaginationObject(Number(req.query.page), Number(req.query.limit), total, books.length);
     res.status(200).json({
         status: 'success',
         data: {
             books,
-            pagination: {
-                currentPage,
-                currentStart,
-                currentEnd,
-                limit,
-                total,
-                totalPages,
-            },
+            pagination
         },
     });
 });
