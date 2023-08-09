@@ -68,7 +68,7 @@ authController.changePassword = catchAsync(async function (req, res, next) {
         return next(new AppError('Current password is wrong', 400));
 
     currentUser.password = newPassword;
-    currentUser.save({runValidators: true});
+    await currentUser.save({runValidators: true});
 
     createAndSignToken(currentUser, 200, res);
 });
