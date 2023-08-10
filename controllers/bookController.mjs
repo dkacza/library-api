@@ -4,28 +4,30 @@ import {AppError} from './../utils/appError.mjs';
 import QueryFeatures from '../utils/queryFeatuers.mjs';
 import createPaginationObject from '../utils/createPaginationObject.mjs';
 import multer from 'multer';
+import sharp from 'sharp';
 
-const multerStorage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'public/img/book-covers');
-  },
-  filename: (req, file, cb) => {
-    const extension = file.mimetype.split('/')[1];
-    cb(null, `cover-${req.params.id}.${extension}`);
-  }
-});
+// const multerStorage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, 'public/img/book-covers');
+//   },
+//   filename: (req, file, cb) => {
+//     const extension = file.mimetype.split('/')[1];
+//     cb(null, `cover-${req.params.id}.${extension}`);
+//   }
+// });
+const multerStorage = multer.memoryStorage();
 const multerFilter = multer.filter = (req, file, cb) => {
   if (file.mimetype.startsWith('image')) {
-    cb(null, true)
+    cb(null, true);
   } else {
     cb(new AppError('Only image files are allowed', 400), false);
   }
-}
+};
 
 const upload = multer({
   storage: multerStorage,
   fileFilter: multerFilter
-})
+});
 
 const bookController = {};
 
@@ -82,10 +84,29 @@ bookController.createBook = catchAsync(async function(req, res, next) {
   });
 });
 
-bookController.updateBookCover = upload.single('bookCoverPhoto');
+bookController.uploadBookCover = upload.single('bookCoverPhoto');
+
+bookController.processBookCover = (req, res, next) => {
+  if (!req.file) return next();
+
+  req.file.filename = `cover-${req.params.id}.jpeg`;
+
+  sharp(req.file.buffer)
+    .toFormat('jpeg')
+    .resize(130, 210, {
+      fit: 'cover',
+      position: 'center'
+    })
+    .jpeg({quality: 90})
+    .toFile(`public/img/book-covers/${req.file.filename}`);
+  next();
+};
 
 bookController.updateBook = catchAsync(async function(req, res, next) {
   const id = req.params.id;
+
+  if (req.file) req.body.coverPath = req.file.filename;
+
   const book = await Book.findByIdAndUpdate(id, req.body, {
     runValidators: true,
     new: true

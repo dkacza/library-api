@@ -20,7 +20,8 @@ router
   .get(bookController.getSingleBook)
   .patch(
     authController.restrictTo('librarian', 'admin'),
-    bookController.updateBookCover,
+    bookController.uploadBookCover,
+    bookController.processBookCover,
     bookController.updateBook
   )
   .delete(
