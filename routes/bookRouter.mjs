@@ -9,25 +9,24 @@ const router = express.Router();
 router.use(authController.checkToken);
 
 router
-    .route('/')
-    .get(bookController.getAllBooks)
-    .post(
-        authController.restrictTo('librarian', 'admin'),
-        bookController.createBook
-    );
+  .route('/')
+  .get(bookController.getAllBooks)
+  .post(
+    authController.restrictTo('librarian', 'admin'),
+    bookController.createBook
+  );
 router
-    .route('/:id')
-    .get(bookController.getSingleBook)
-    .patch(
-        authController.restrictTo('librarian', 'admin'),
-        bookController.updateBook
-    )
-    .delete(
-        authController.restrictTo('librarian', 'admin'),
-        bookController.deleteBook
-    );
+  .route('/:id')
+  .get(bookController.getSingleBook)
+  .patch(
+    authController.restrictTo('librarian', 'admin'),
+    bookController.updateBook
+  )
+  .delete(
+    authController.restrictTo('librarian', 'admin'),
+    bookController.deleteBook
+  );
 router.route('/:id/history').get(rentalController.getBookHistory);
-
 
 
 export default router;

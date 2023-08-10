@@ -18,7 +18,7 @@ EMAIL_HOST=
 EMAIL_PORT=
 EMAIL_USER=
 EMAIL_PASSWORD=
-`
+`;
 
 fs.writeFileSync('./config.env', textToSave, {append: false});
 console.log('Config file created');

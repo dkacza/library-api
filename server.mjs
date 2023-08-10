@@ -18,38 +18,38 @@ import {errorController} from './controllers/errorController.mjs';
 import {refreshStatuses} from './utils/refreshStatuses.mjs';
 
 process.on('uncaughtException', err => {
-    console.log('Unhandled Exception\nExiting...');
-    console.log(err);
-    process.exit(1);
+  console.log('Unhandled Exception\nExiting...');
+  console.log(err);
+  process.exit(1);
 });
 
 dotenv.config({path: './config.env'});
 
 // Establishing DB connection:
 mongoose
-    .connect(process.env.DB, {})
-    .then(() => {
-        console.log('Database connection established');
-        refreshStatuses();
-    })
-    .catch(() => {
-        console.log('Could not establish database connection\nExiting...');
-        process.exit(1);
-    });
+  .connect(process.env.DB, {})
+  .then(() => {
+    console.log('Database connection established');
+    refreshStatuses();
+  })
+  .catch(() => {
+    console.log('Could not establish database connection\nExiting...');
+    process.exit(1);
+  });
 
 // Rate limiter
 const limiter = rateLimiter({
-    max: 100,
-    windowMs: 60 * 60 * 1000,
-    message: 'Too many requests from this IP address.'
+  max: 100,
+  windowMs: 60 * 60 * 1000,
+  message: 'Too many requests from this IP address.'
 });
 
 const app = express();
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
-    credentials: true,            //access-control-allow-credentials:true
-    optionSuccessStatus: 200
+  origin: 'http://localhost:3000',
+  credentials: true,            //access-control-allow-credentials:true
+  optionSuccessStatus: 200
 };
 
 // Middleware stack
@@ -60,6 +60,7 @@ app.use(helmet());
 // Logging Requests to the console
 app.use(morgan('tiny'));
 // Request limiting for IP adresses
+// TODO enable when finished working with API
 // app.use('/api', limiter);
 // Reading parameters from request body
 app.use(express.json({limit: '10kb'}));
@@ -80,13 +81,13 @@ app.use(errorController);
 
 const port = Number(process.env.PORT);
 app.listen(port, () => {
-    console.log(`Server is running at port ${port}`);
+  console.log(`Server is running at port ${port}`);
 });
 
 setInterval(refreshStatuses, 60000);
 
 process.on('unhandledRejection', err => {
-    console.log('Unhandled Rejection\nExiting...');
-    console.log(err);
-    process.exit(1);
+  console.log('Unhandled Rejection\nExiting...');
+  console.log(err);
+  process.exit(1);
 });

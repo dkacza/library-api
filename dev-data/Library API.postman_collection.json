@@ -1,804 +1,804 @@
 {
-	"info": {
-		"_postman_id": "21fdc77b-7717-4537-9acd-c4b680bb120d",
-		"name": "Library API",
-		"description": "This is an REST API for managing books in library and their reader.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "14293687"
-	},
-	"item": [
-		{
-			"name": "Books",
-			"item": [
-				{
-					"name": "Get all books",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/books",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"books"
-							],
-							"query": [
-								{
-									"key": "title[gte]",
-									"value": "Balladyna",
-									"disabled": true
-								},
-								{
-									"key": "sort",
-									"value": "-title,isbn",
-									"disabled": true
-								},
-								{
-									"key": "fields",
-									"value": "title",
-									"disabled": true
-								},
-								{
-									"key": "page",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "limit",
-									"value": "2",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Gets all the books in the database. You can apply filters, sorting and page limiting in the request query."
-					},
-					"response": []
-				},
-				{
-					"name": "Get single book",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/books/{{bookId}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"books",
-								"{{bookId}}"
-							]
-						},
-						"description": "Gets single book by ID."
-					},
-					"response": []
-				},
-				{
-					"name": "Get book's history",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/books/{{bookId}}/history",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"books",
-								"{{bookId}}",
-								"history"
-							]
-						},
-						"description": "Gets all rentals of that book, which have been recorded."
-					},
-					"response": []
-				},
-				{
-					"name": "Create book",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Kordian\",\r\n    \"isbn\": \"123456789\",\r\n    \"authors\": [{\"name\": \"Juliusz słowacki\"}],\r\n    \"publicationDate\": \"1839-01-01\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/books",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"books"
-							]
-						},
-						"description": "Creates a new book from the request body."
-					},
-					"response": []
-				},
-				{
-					"name": "Update book",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"Najsłynniejsza dystopia literatury XX wieku.\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/books/{{bookId}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"books",
-								"{{bookId}}"
-							]
-						},
-						"description": "Updates the book with the properties from the request body."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete book",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/{{bookId}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"{{bookId}}"
-							]
-						},
-						"description": "Deletes the book specified with ID."
-					},
-					"response": []
-				}
-			],
-			"description": "All routes related to books"
-		},
-		{
-			"name": "Users",
-			"item": [
-				{
-					"name": "Get all users",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/users",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users"
-							],
-							"query": [
-								{
-									"key": "sort",
-									"value": "firstName",
-									"disabled": true
-								},
-								{
-									"key": "eligible",
-									"value": "true",
-									"disabled": true
-								},
-								{
-									"key": "fields",
-									"value": "firstName,lastName",
-									"disabled": true
-								},
-								{
-									"key": "page",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "limit",
-									"value": "2",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Gets all the users. You can apply filters, sorting and page limiting in the request query."
-					},
-					"response": []
-				},
-				{
-					"name": "Get single user",
-					"request": {
-						"auth": {
-							"type": "bearer"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/users/{{userId}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"{{userId}}"
-							]
-						},
-						"description": "Gets the single user by his ID."
-					},
-					"response": []
-				},
-				{
-					"name": "Get my profile",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/users/me",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"me"
-							]
-						},
-						"description": "Gets currently logged in user's data."
-					},
-					"response": []
-				},
-				{
-					"name": "Get user's history",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/users/{{userId}}/history",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"{{userId}}",
-								"history"
-							]
-						},
-						"description": "Gets all the rentals made by the user specified by ID."
-					},
-					"response": []
-				},
-				{
-					"name": "Create new user",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"Jan\",\r\n    \"lastName\": \"Nowak\",\r\n    \"email\": \"nowak@test.com\",\r\n    \"password\": \"pass1234\",\r\n    \"phoneNumber\": 12313212\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/users",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users"
-							]
-						},
-						"description": "Creates new user from the request body."
-					},
-					"response": []
-				},
-				{
-					"name": "Update user",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"phoneNumber\": 123456789\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/users/{{userId}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"{{userId}}"
-							]
-						},
-						"description": "Updates user."
-					},
-					"response": []
-				},
-				{
-					"name": "Update my profile",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"phoneNumber\": \"123456789\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/users/me",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"me"
-							]
-						},
-						"description": "Updates the profile of the currently logged in user."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete user",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/users/{{userId}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"{{userId}}"
-							]
-						},
-						"description": "Deletes user specified by ID."
-					},
-					"response": []
-				}
-			],
-			"description": "All routes related to user data except the authorization."
-		},
-		{
-			"name": "Rentals",
-			"item": [
-				{
-					"name": "Get all rentals",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/rentals",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"rentals"
-							],
-							"query": [
-								{
-									"key": "sort",
-									"value": "startDate",
-									"disabled": true
-								},
-								{
-									"key": "currentStatus",
-									"value": "active",
-									"disabled": true
-								},
-								{
-									"key": "limit",
-									"value": "2",
-									"disabled": true
-								},
-								{
-									"key": "page",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "fields",
-									"value": "user",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Gets all the rentals. You can apply filters, sorting and page limiting in the request query."
-					},
-					"response": []
-				},
-				{
-					"name": "Get single rental",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/rentals/{{rentalId}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"rentals",
-								"{{rentalId}}"
-							]
-						},
-						"description": "Gets rental by ID."
-					},
-					"response": []
-				},
-				{
-					"name": "Create rental",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"user\": \"{{userId}}\",\r\n    \"book\": \"{{bookId}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/rentals",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"rentals"
-							]
-						},
-						"description": "Creates new rental from the request body"
-					},
-					"response": []
-				},
-				{
-					"name": "Update rental",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"currentStatus\": \"returned\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/rentals/{{rentalId}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"rentals",
-								"{{rentalId}}"
-							]
-						},
-						"description": "Marks the rental as resolved, and the book as returned."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete rental",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/rentals/{{rentalId}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"rentals",
-								"{{rentalId}}"
-							]
-						},
-						"description": "Deletes the rental."
-					},
-					"response": []
-				}
-			],
-			"description": "All the routes dedicated for book rentals."
-		},
-		{
-			"name": "Authentication",
-			"item": [
-				{
-					"name": "Log out",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/api/v1/users/logout",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"logout"
-							]
-						},
-						"description": "Removes the JWT stored in the cookie."
-					},
-					"response": []
-				},
-				{
-					"name": "Sign up",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"Peter\",\r\n    \"lastName\": \"Smith\",\r\n    \"email\": \"smith@test.com\",\r\n    \"password\": \"pass1234\",\r\n    \"phoneNumber\": 664778434\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/users/signup",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"signup"
-							]
-						},
-						"description": "Creates new user. Unlike POST /users this route is available to everyone."
-					},
-					"response": []
-				},
-				{
-					"name": "Login",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"pass1234\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/users/login",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"login"
-							]
-						},
-						"description": "Logs in the user."
-					},
-					"response": []
-				},
-				{
-					"name": "Forgot password",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"smith@test.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/users/forgotPassword",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"forgotPassword"
-							]
-						},
-						"description": "Sends an email to the user, who forgot his password."
-					},
-					"response": []
-				},
-				{
-					"name": "Reset password",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"password\": \"pass1234\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/users/resetPassword/{{passwordResetToken}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"resetPassword",
-								"{{passwordResetToken}}"
-							]
-						},
-						"description": "Sets new password for the user who forgot the previous one."
-					},
-					"response": []
-				},
-				{
-					"name": "Change password",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"currentPassword\": \"newPass1234\",\r\n    \"newPassword\": \"pass1234\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/users/changePassword",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"changePassword"
-							]
-						},
-						"description": "Changes the password of the logged in user."
-					},
-					"response": []
-				},
-				{
-					"name": "Promote user",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"role\": \"librarian\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/v1/users/promote/{{userId}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"promote",
-								"{{userId}}"
-							]
-						},
-						"description": "Gives the special role to the user, which allows him to acces protected routes."
-					},
-					"response": []
-				}
-			],
-			"description": "All the routes related to user login credentials."
-		}
-	]
+  "info": {
+    "_postman_id": "21fdc77b-7717-4537-9acd-c4b680bb120d",
+    "name": "Library API",
+    "description": "This is an REST API for managing books in library and their reader.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14293687"
+  },
+  "item": [
+    {
+      "name": "Books",
+      "item": [
+        {
+          "name": "Get all books",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/books",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "books"
+              ],
+              "query": [
+                {
+                  "key": "title[gte]",
+                  "value": "Balladyna",
+                  "disabled": true
+                },
+                {
+                  "key": "sort",
+                  "value": "-title,isbn",
+                  "disabled": true
+                },
+                {
+                  "key": "fields",
+                  "value": "title",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "2",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Gets all the books in the database. You can apply filters, sorting and page limiting in the request query."
+          },
+          "response": []
+        },
+        {
+          "name": "Get single book",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/books/{{bookId}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "books",
+                "{{bookId}}"
+              ]
+            },
+            "description": "Gets single book by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Get book's history",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/books/{{bookId}}/history",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "books",
+                "{{bookId}}",
+                "history"
+              ]
+            },
+            "description": "Gets all rentals of that book, which have been recorded."
+          },
+          "response": []
+        },
+        {
+          "name": "Create book",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Kordian\",\r\n    \"isbn\": \"123456789\",\r\n    \"authors\": [{\"name\": \"Juliusz słowacki\"}],\r\n    \"publicationDate\": \"1839-01-01\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/books",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "books"
+              ]
+            },
+            "description": "Creates a new book from the request body."
+          },
+          "response": []
+        },
+        {
+          "name": "Update book",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"Najsłynniejsza dystopia literatury XX wieku.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/books/{{bookId}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "books",
+                "{{bookId}}"
+              ]
+            },
+            "description": "Updates the book with the properties from the request body."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete book",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/{{bookId}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "{{bookId}}"
+              ]
+            },
+            "description": "Deletes the book specified with ID."
+          },
+          "response": []
+        }
+      ],
+      "description": "All routes related to books"
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get all users",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/users",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "sort",
+                  "value": "firstName",
+                  "disabled": true
+                },
+                {
+                  "key": "eligible",
+                  "value": "true",
+                  "disabled": true
+                },
+                {
+                  "key": "fields",
+                  "value": "firstName,lastName",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "2",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Gets all the users. You can apply filters, sorting and page limiting in the request query."
+          },
+          "response": []
+        },
+        {
+          "name": "Get single user",
+          "request": {
+            "auth": {
+              "type": "bearer"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/users/{{userId}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "{{userId}}"
+              ]
+            },
+            "description": "Gets the single user by his ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Get my profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/users/me",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "me"
+              ]
+            },
+            "description": "Gets currently logged in user's data."
+          },
+          "response": []
+        },
+        {
+          "name": "Get user's history",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/users/{{userId}}/history",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "{{userId}}",
+                "history"
+              ]
+            },
+            "description": "Gets all the rentals made by the user specified by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Create new user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"Jan\",\r\n    \"lastName\": \"Nowak\",\r\n    \"email\": \"nowak@test.com\",\r\n    \"password\": \"pass1234\",\r\n    \"phoneNumber\": 12313212\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/users",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            },
+            "description": "Creates new user from the request body."
+          },
+          "response": []
+        },
+        {
+          "name": "Update user",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"phoneNumber\": 123456789\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/users/{{userId}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "{{userId}}"
+              ]
+            },
+            "description": "Updates user."
+          },
+          "response": []
+        },
+        {
+          "name": "Update my profile",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"phoneNumber\": \"123456789\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/users/me",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "me"
+              ]
+            },
+            "description": "Updates the profile of the currently logged in user."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete user",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/users/{{userId}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "{{userId}}"
+              ]
+            },
+            "description": "Deletes user specified by ID."
+          },
+          "response": []
+        }
+      ],
+      "description": "All routes related to user data except the authorization."
+    },
+    {
+      "name": "Rentals",
+      "item": [
+        {
+          "name": "Get all rentals",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/rentals",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rentals"
+              ],
+              "query": [
+                {
+                  "key": "sort",
+                  "value": "startDate",
+                  "disabled": true
+                },
+                {
+                  "key": "currentStatus",
+                  "value": "active",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "2",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "fields",
+                  "value": "user",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Gets all the rentals. You can apply filters, sorting and page limiting in the request query."
+          },
+          "response": []
+        },
+        {
+          "name": "Get single rental",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/rentals/{{rentalId}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rentals",
+                "{{rentalId}}"
+              ]
+            },
+            "description": "Gets rental by ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Create rental",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"user\": \"{{userId}}\",\r\n    \"book\": \"{{bookId}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/rentals",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rentals"
+              ]
+            },
+            "description": "Creates new rental from the request body"
+          },
+          "response": []
+        },
+        {
+          "name": "Update rental",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"currentStatus\": \"returned\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/rentals/{{rentalId}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rentals",
+                "{{rentalId}}"
+              ]
+            },
+            "description": "Marks the rental as resolved, and the book as returned."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete rental",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/rentals/{{rentalId}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rentals",
+                "{{rentalId}}"
+              ]
+            },
+            "description": "Deletes the rental."
+          },
+          "response": []
+        }
+      ],
+      "description": "All the routes dedicated for book rentals."
+    },
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Log out",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/api/v1/users/logout",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "logout"
+              ]
+            },
+            "description": "Removes the JWT stored in the cookie."
+          },
+          "response": []
+        },
+        {
+          "name": "Sign up",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"Peter\",\r\n    \"lastName\": \"Smith\",\r\n    \"email\": \"smith@test.com\",\r\n    \"password\": \"pass1234\",\r\n    \"phoneNumber\": 664778434\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/users/signup",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "signup"
+              ]
+            },
+            "description": "Creates new user. Unlike POST /users this route is available to everyone."
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"pass1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/users/login",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "login"
+              ]
+            },
+            "description": "Logs in the user."
+          },
+          "response": []
+        },
+        {
+          "name": "Forgot password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"smith@test.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/users/forgotPassword",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "forgotPassword"
+              ]
+            },
+            "description": "Sends an email to the user, who forgot his password."
+          },
+          "response": []
+        },
+        {
+          "name": "Reset password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"password\": \"pass1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/users/resetPassword/{{passwordResetToken}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "resetPassword",
+                "{{passwordResetToken}}"
+              ]
+            },
+            "description": "Sets new password for the user who forgot the previous one."
+          },
+          "response": []
+        },
+        {
+          "name": "Change password",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"currentPassword\": \"newPass1234\",\r\n    \"newPassword\": \"pass1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/users/changePassword",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "changePassword"
+              ]
+            },
+            "description": "Changes the password of the logged in user."
+          },
+          "response": []
+        },
+        {
+          "name": "Promote user",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"role\": \"librarian\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/api/v1/users/promote/{{userId}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "promote",
+                "{{userId}}"
+              ]
+            },
+            "description": "Gives the special role to the user, which allows him to acces protected routes."
+          },
+          "response": []
+        }
+      ],
+      "description": "All the routes related to user login credentials."
+    }
+  ]
 }

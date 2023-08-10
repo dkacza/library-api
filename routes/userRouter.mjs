@@ -8,11 +8,11 @@ const router = express.Router();
 
 // Unprotected
 router
-    .post('/signup', authController.signUp)
-    .post('/login', authController.login)
-    .get('/logout', authController.logout)
-    .post('/forgotPassword', authController.forgotPassword)
-    .post('/resetPassword/:token', authController.resetPassword);
+  .post('/signup', authController.signUp)
+  .post('/login', authController.login)
+  .get('/logout', authController.logout)
+  .post('/forgotPassword', authController.forgotPassword)
+  .post('/resetPassword/:token', authController.resetPassword);
 
 // Protected
 router.use(authController.checkToken);
@@ -24,19 +24,19 @@ router.get('/me/history', rentalController.getLoggedInUserHistory);
 
 router.use(authController.restrictTo('librarian', 'admin'));
 router
-    .route('/')
-    .get(userController.getAllUsers)
-    .post(authController.restrictTo('admin'), userController.createUser);
+  .route('/')
+  .get(userController.getAllUsers)
+  .post(authController.restrictTo('admin'), userController.createUser);
 router
-    .route('/:id')
-    .get(userController.getUser)
-    .patch(authController.restrictTo('admin'), userController.updateUser)
-    .delete(authController.restrictTo('admin'), userController.deleteUser);
+  .route('/:id')
+  .get(userController.getUser)
+  .patch(authController.restrictTo('admin'), userController.updateUser)
+  .delete(authController.restrictTo('admin'), userController.deleteUser);
 
 router.patch(
-    '/promote/:id',
-    authController.restrictTo('admin'),
-    authController.promoteUser
+  '/promote/:id',
+  authController.restrictTo('admin'),
+  authController.promoteUser
 );
 router.get('/:id/history', rentalController.getUserHistory);
 

@@ -1,6 +1,6 @@
-import { catchAsync } from '../utils/catchAsync.mjs';
-import { AppError } from './../utils/appError.mjs';
-import { filterObject } from './../utils/filterObject.mjs';
+import {catchAsync} from '../utils/catchAsync.mjs';
+import {AppError} from './../utils/appError.mjs';
+import {filterObject} from './../utils/filterObject.mjs';
 
 import Rental from './../models/rental.mjs';
 import User from './../models/user.mjs';
@@ -53,7 +53,7 @@ rentalController.getAllRentals = catchAsync(async function(req, res, next) {
 });
 
 rentalController.getRental = catchAsync(async function(req, res, next) {
-  const { id } = req.params;
+  const {id} = req.params;
   const rental = await Rental.findById(id);
   if (!rental)
     return next(new AppError('Rental with specified ID not found', 404));
@@ -119,7 +119,7 @@ rentalController.updateRental = catchAsync(async function(req, res, next) {
     );
 
   // Mark the rental with the correct status
-  const { id } = req.params;
+  const {id} = req.params;
   const rental = await Rental.findById(id);
   if (!rental)
     return next(new AppError('Rental with specified ID not found', 404));
@@ -155,7 +155,7 @@ rentalController.updateRental = catchAsync(async function(req, res, next) {
   });
 });
 rentalController.deleteRental = catchAsync(async function(req, res, next) {
-  const { id } = req.params;
+  const {id} = req.params;
   const rental = await Rental.findByIdAndDelete(id);
   if (!rental)
     return next(new AppError('Rental with specified ID not found', 404));
@@ -168,7 +168,7 @@ rentalController.deleteRental = catchAsync(async function(req, res, next) {
 
 rentalController.getBookHistory = catchAsync(async function(req, res, next) {
   const bookId = req.params.id;
-  const rentals = await Rental.find({ book: bookId });
+  const rentals = await Rental.find({book: bookId});
   if (!rentals) {
     return next(new AppError('Rentals for book with specified ID not found', 404));
   }
@@ -181,7 +181,7 @@ rentalController.getBookHistory = catchAsync(async function(req, res, next) {
 
 rentalController.getUserHistory = catchAsync(async function(req, res, next) {
   const userId = req.params.id;
-  const rentals = await Rental.find({ user: userId });
+  const rentals = await Rental.find({user: userId});
   if (!rentals) {
     return next(new AppError('Rentals for user with specified ID not found', 404));
   }

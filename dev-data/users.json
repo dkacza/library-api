@@ -1,116 +1,122 @@
-[{
-  "_id": {
-    "$oid": "6459f89f5798b3016f283bce"
-  },
-  "firstName": "Admin",
-  "lastName": "Test",
-  "email": "admin@test.com",
-  "phoneNumber": "123456789",
-  "password": "$2b$12$diK.RVSDOVLpguTGTOnVOubN6gbzdLKMBlmCt8UiOBbg5mcBblU3S",
-  "passwordChangedAt": {
-    "$date": "2023-05-09T07:39:10.428Z"
-  },
-  "role": "admin",
-  "registrationDate": {
-    "$date": "2023-05-09T07:36:58.440Z"
-  },
-  "photoPath": "./photos/defaultPhoto.jpg",
-  "rentals": [],
-  "eligible": true,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6459f85f5798b3016f283bc9"
-  },
-  "firstName": "John",
-  "lastName": "Doe",
-  "email": "doe@test.com",
-  "phoneNumber": "664778434",
-  "password": "$2b$12$vx0SxNvtG6gRC/qnO6Rs3uaiz6SDs9fi7njiV09Tuw6xguGnE5m9e",
-  "passwordChangedAt": {
-    "$date": "2023-05-09T07:38:06.236Z"
-  },
-  "role": "user",
-  "registrationDate": {
-    "$date": "2023-05-09T07:36:58.440Z"
-  },
-  "photoPath": "./photos/defaultPhoto.jpg",
-  "rentals": [],
-  "eligible": true,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6459f8b35798b3016f283bd0"
-  },
-  "firstName": "Librarian",
-  "lastName": "Kowalski",
-  "email": "librarian@test.com",
-  "phoneNumber": "123456789",
-  "password": "$2b$12$xkGYXCVlaWplvOXjNQx/8Opg4EhqHqqAsjeAQzPc59XEEYQSmtkiS",
-  "passwordChangedAt": {
-    "$date": "2023-05-09T07:39:30.901Z"
-  },
-  "role": "librarian",
-  "registrationDate": {
-    "$date": "2023-05-09T07:36:58.440Z"
-  },
-  "photoPath": "./photos/defaultPhoto.jpg",
-  "rentals": [],
-  "eligible": true,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6459f88c5798b3016f283bcb"
-  },
-  "firstName": "Peter",
-  "lastName": "Smith",
-  "email": "smith@test.com",
-  "phoneNumber": "893432990",
-  "password": "$2b$12$e7iDDvUpzOjROQCatx/gdOuXthG.Eii8ljR0EjYB.IzIeiJRCbW0m",
-  "passwordChangedAt": {
-    "$date": "2023-05-09T07:38:51.524Z"
-  },
-  "role": "user",
-  "registrationDate": {
-    "$date": "2023-05-09T07:36:58.440Z"
-  },
-  "photoPath": "./photos/defaultPhoto.jpg",
-  "rentals": [
-    {
-      "$oid": "645a75a441ee0b92bc441862"
+[
+  {
+    "_id": {
+      "$oid": "6459f89f5798b3016f283bce"
     },
-    {
-      "$oid": "645a75b641ee0b92bc44186c"
-    }
-  ],
-  "eligible": true,
-  "__v": 4,
-  "passwordResetExpires": {
-    "$date": "2023-05-09T16:54:56.485Z"
+    "firstName": "Admin",
+    "lastName": "Test",
+    "email": "admin@test.com",
+    "phoneNumber": "123456789",
+    "password": "$2b$12$diK.RVSDOVLpguTGTOnVOubN6gbzdLKMBlmCt8UiOBbg5mcBblU3S",
+    "passwordChangedAt": {
+      "$date": "2023-05-09T07:39:10.428Z"
+    },
+    "role": "admin",
+    "registrationDate": {
+      "$date": "2023-05-09T07:36:58.440Z"
+    },
+    "photoPath": "./photos/defaultPhoto.jpg",
+    "rentals": [],
+    "eligible": true,
+    "__v": 0
   },
-  "passwordResetToken": "a9182dc4cd4c24570d6274fe7fa7685ea47dc340320deea5f2d9ee9e59d96b15"
-},{
-  "_id": {
-    "$oid": "6459f8465798b3016f283bc6"
+  {
+    "_id": {
+      "$oid": "6459f85f5798b3016f283bc9"
+    },
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "doe@test.com",
+    "phoneNumber": "664778434",
+    "password": "$2b$12$vx0SxNvtG6gRC/qnO6Rs3uaiz6SDs9fi7njiV09Tuw6xguGnE5m9e",
+    "passwordChangedAt": {
+      "$date": "2023-05-09T07:38:06.236Z"
+    },
+    "role": "user",
+    "registrationDate": {
+      "$date": "2023-05-09T07:36:58.440Z"
+    },
+    "photoPath": "./photos/defaultPhoto.jpg",
+    "rentals": [],
+    "eligible": true,
+    "__v": 0
   },
-  "firstName": "Kyle",
-  "lastName": "Adams",
-  "email": "adams@test.com",
-  "phoneNumber": "654776434",
-  "password": "$2b$12$bdnQ9i.ZXrzDh11h21.Xp.LFtIQXoTriFKU3Vs/aEhSuT6CqluVoq",
-  "passwordChangedAt": {
-    "$date": "2023-05-09T07:37:42.103Z"
+  {
+    "_id": {
+      "$oid": "6459f8b35798b3016f283bd0"
+    },
+    "firstName": "Librarian",
+    "lastName": "Kowalski",
+    "email": "librarian@test.com",
+    "phoneNumber": "123456789",
+    "password": "$2b$12$xkGYXCVlaWplvOXjNQx/8Opg4EhqHqqAsjeAQzPc59XEEYQSmtkiS",
+    "passwordChangedAt": {
+      "$date": "2023-05-09T07:39:30.901Z"
+    },
+    "role": "librarian",
+    "registrationDate": {
+      "$date": "2023-05-09T07:36:58.440Z"
+    },
+    "photoPath": "./photos/defaultPhoto.jpg",
+    "rentals": [],
+    "eligible": true,
+    "__v": 0
   },
-  "role": "user",
-  "registrationDate": {
-    "$date": "2023-05-09T07:36:58.440Z"
+  {
+    "_id": {
+      "$oid": "6459f88c5798b3016f283bcb"
+    },
+    "firstName": "Peter",
+    "lastName": "Smith",
+    "email": "smith@test.com",
+    "phoneNumber": "893432990",
+    "password": "$2b$12$e7iDDvUpzOjROQCatx/gdOuXthG.Eii8ljR0EjYB.IzIeiJRCbW0m",
+    "passwordChangedAt": {
+      "$date": "2023-05-09T07:38:51.524Z"
+    },
+    "role": "user",
+    "registrationDate": {
+      "$date": "2023-05-09T07:36:58.440Z"
+    },
+    "photoPath": "./photos/defaultPhoto.jpg",
+    "rentals": [
+      {
+        "$oid": "645a75a441ee0b92bc441862"
+      },
+      {
+        "$oid": "645a75b641ee0b92bc44186c"
+      }
+    ],
+    "eligible": true,
+    "__v": 4,
+    "passwordResetExpires": {
+      "$date": "2023-05-09T16:54:56.485Z"
+    },
+    "passwordResetToken": "a9182dc4cd4c24570d6274fe7fa7685ea47dc340320deea5f2d9ee9e59d96b15"
   },
-  "photoPath": "./photos/defaultPhoto.jpg",
-  "rentals": [
-    {
-      "$oid": "645a75f741ee0b92bc441881"
-    }
-  ],
-  "eligible": true,
-  "__v": 1
-}]
+  {
+    "_id": {
+      "$oid": "6459f8465798b3016f283bc6"
+    },
+    "firstName": "Kyle",
+    "lastName": "Adams",
+    "email": "adams@test.com",
+    "phoneNumber": "654776434",
+    "password": "$2b$12$bdnQ9i.ZXrzDh11h21.Xp.LFtIQXoTriFKU3Vs/aEhSuT6CqluVoq",
+    "passwordChangedAt": {
+      "$date": "2023-05-09T07:37:42.103Z"
+    },
+    "role": "user",
+    "registrationDate": {
+      "$date": "2023-05-09T07:36:58.440Z"
+    },
+    "photoPath": "./photos/defaultPhoto.jpg",
+    "rentals": [
+      {
+        "$oid": "645a75f741ee0b92bc441881"
+      }
+    ],
+    "eligible": true,
+    "__v": 1
+  }
+]

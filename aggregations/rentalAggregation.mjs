@@ -10,7 +10,7 @@ const rentalAggregation = function(query, user = undefined) {
   // Joining and projecting
   let userIdStage = {};
   if (user.role === 'user') {
-    userIdStage = { $match: { user: user._id } };
+    userIdStage = {$match: {user: user._id}};
   }
   const joinBooksStage = [
     {
@@ -29,7 +29,7 @@ const rentalAggregation = function(query, user = undefined) {
         as: 'bookData'
       }
     },
-    { $unwind: '$bookData' }
+    {$unwind: '$bookData'}
   ];
 
   const projectBookFieldsStage = [{
@@ -62,7 +62,7 @@ const rentalAggregation = function(query, user = undefined) {
         as: 'userData'
       }
     },
-    { $unwind: '$userData' }
+    {$unwind: '$userData'}
   ];
 
   const projectUsersFieldsStage = [{
@@ -88,7 +88,7 @@ const rentalAggregation = function(query, user = undefined) {
     };
     const statuses = parsedQuery.currentStatus.split(',');
     statuses.forEach(status => {
-      filterByStatusStage.$match.$or.push({ currentStatus: status });
+      filterByStatusStage.$match.$or.push({currentStatus: status});
     });
   }
 
@@ -123,8 +123,8 @@ const rentalAggregation = function(query, user = undefined) {
     searchByBookStage = {
       $match: {
         $or: [
-          { title: { $regex: new RegExp(parsedQuery.bookSearch, 'i') } },
-          { isbn: { $regex: new RegExp(parsedQuery.bookSearch, 'i') } }
+          {title: {$regex: new RegExp(parsedQuery.bookSearch, 'i')}},
+          {isbn: {$regex: new RegExp(parsedQuery.bookSearch, 'i')}}
         ]
       }
     };
@@ -135,10 +135,10 @@ const rentalAggregation = function(query, user = undefined) {
     searchByBookStage = {
       $match: {
         $or: [
-          { firstName: { $regex: new RegExp(parsedQuery.userSearch, 'i') } },
-          { lastName: { $regex: new RegExp(parsedQuery.userSearch, 'i') } },
-          { phoneNumber: { $regex: new RegExp(parsedQuery.userSearch, 'i') } },
-          { email: { $regex: new RegExp(parsedQuery.userSearch, 'i') } }
+          {firstName: {$regex: new RegExp(parsedQuery.userSearch, 'i')}},
+          {lastName: {$regex: new RegExp(parsedQuery.userSearch, 'i')}},
+          {phoneNumber: {$regex: new RegExp(parsedQuery.userSearch, 'i')}},
+          {email: {$regex: new RegExp(parsedQuery.userSearch, 'i')}}
         ]
       }
     };
@@ -152,11 +152,11 @@ const rentalAggregation = function(query, user = undefined) {
     paginationStages.push({
       $facet: {
         paginatedResults: [
-          { $skip: toSkip },
-          { $limit: limit }
+          {$skip: toSkip},
+          {$limit: limit}
         ],
         totalCount: [
-          { $count: 'count' }
+          {$count: 'count'}
         ]
       }
     });
