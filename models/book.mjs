@@ -40,9 +40,9 @@ const bookSchema = new mongoose.Schema({
       'Book must have a genre (fiction, non-fiction, poetry, science, childrens)'
     ]
   },
-  coverPath: {
+  bookCoverPhoto: {
     type: String,
-    default: './photos/defaultCover.jpg'
+    default: 'default.jpeg'
   },
   currentStatus: {
     type: String,

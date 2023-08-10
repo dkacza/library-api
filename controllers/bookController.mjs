@@ -93,7 +93,7 @@ bookController.processBookCover = (req, res, next) => {
 
   sharp(req.file.buffer)
     .toFormat('jpeg')
-    .resize(130, 210, {
+    .resize(195, 315, {
       fit: 'cover',
       position: 'center'
     })
@@ -105,7 +105,7 @@ bookController.processBookCover = (req, res, next) => {
 bookController.updateBook = catchAsync(async function(req, res, next) {
   const id = req.params.id;
 
-  if (req.file) req.body.coverPath = req.file.filename;
+  if (req.file) req.body.bookCoverPhoto = req.file.filename;
 
   const book = await Book.findByIdAndUpdate(id, req.body, {
     runValidators: true,
