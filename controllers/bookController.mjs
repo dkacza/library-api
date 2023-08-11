@@ -74,7 +74,26 @@ bookController.getSingleBook = catchAsync(async function(req, res, next) {
 });
 
 bookController.createBook = catchAsync(async function(req, res, next) {
+  
+  
+
   const book = await Book.create(req.body);
+
+  if (req.file) {
+    const newID = book._id;
+    const fileName = `cover-${book._id}.jpeg`
+    sharp(req.file.buffer)
+      .toFormat('jpeg')
+      .resize(195, 315, {
+        fit: 'cover',
+        position: 'center'
+      })
+      .jpeg({quality: 90})
+      .toFile(`public/img/book-covers/${fileName}`);
+    book.bookCoverPhoto = fileName;
+    await book.save();
+  }
+
 
   res.status(201).json({
     status: 'success',

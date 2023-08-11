@@ -13,6 +13,8 @@ router
   .get(bookController.getAllBooks)
   .post(
     authController.restrictTo('librarian', 'admin'),
+    bookController.uploadBookCover,
+    bookController.processBookCover,
     bookController.createBook
   );
 router

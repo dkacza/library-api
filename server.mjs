@@ -70,6 +70,8 @@ app.use(sanitizer());
 app.use(xss());
 // Parsing cookies into request object
 app.use(cookieParser());
+// Serving static files
+app.use(express.static(`public`));
 
 // Monting routers
 app.use('/api/v1/books', bookRouter);

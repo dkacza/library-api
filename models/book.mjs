@@ -37,7 +37,7 @@ const bookSchema = new mongoose.Schema({
     enum: ['fiction', 'nonFiction', 'poetry', 'scientific', 'children'],
     required: [
       true,
-      'Book must have a genre (fiction, non-fiction, poetry, science, childrens)'
+      'Book must have a genre (fiction, nonFiction, poetry, scientific, children)'
     ]
   },
   bookCoverPhoto: {
