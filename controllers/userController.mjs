@@ -25,6 +25,7 @@ userController.getAllUsers = catchAsync(async function(req, res, next) {
         users
       }
     });
+    return;
   }
   const pagination = createPaginationObject(Number(req.query.page), Number(req.query.limit), total, users.length);
   res.status(200).json({
