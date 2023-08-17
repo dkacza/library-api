@@ -6,15 +6,6 @@ import createPaginationObject from '../utils/createPaginationObject.mjs';
 import multer from 'multer';
 import sharp from 'sharp';
 
-// const multerStorage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, 'public/img/book-covers');
-//   },
-//   filename: (req, file, cb) => {
-//     const extension = file.mimetype.split('/')[1];
-//     cb(null, `cover-${req.params.id}.${extension}`);
-//   }
-// });
 const multerStorage = multer.memoryStorage();
 const multerFilter = multer.filter = (req, file, cb) => {
   if (file.mimetype.startsWith('image')) {
@@ -34,7 +25,7 @@ const bookController = {};
 bookController.getAllBooks = catchAsync(async function(req, res, next) {
   const features = new QueryFeatures(Book.find(), req.query);
 
-  await features.filter(['title', 'isbn']).sort().limitFields().paginate();
+  await features.filter(['title', 'isbn', 'authors.name']).sort().limitFields().paginate();
 
   const total = features.total;
   const books = await features.query;

@@ -23,7 +23,19 @@ class QueryFeatures {
     // Date processing
     if (queryObj.publicationDate) {
       for (const [key, value] of Object.entries(queryObj.publicationDate)) {
-        queryObj.publicationDate[key] = new Date().setFullYear(Number(value));
+
+        
+        // For gte -> set 1.1
+        if (key === 'gte') {
+          const firstDayOfYearDate = new Date(`${value}-01-01`);
+          console.log(firstDayOfYearDate);
+          queryObj.publicationDate[key] = firstDayOfYearDate;
+        }
+        // For lte -> set 31.12
+        if (key === 'lte') {
+          const lastDayOfYearDate = new Date(`${value}-12-31`)
+          queryObj.publicationDate[key] = lastDayOfYearDate;
+        }
       }
     }
     if (queryObj.registrationDate) {
@@ -45,8 +57,6 @@ class QueryFeatures {
       queryObj.$or = searchFilter;
       delete queryObj.search;
     }
-
-    console.log(queryObj);
 
     this.query = this.query.find(queryObj);
     return this;
