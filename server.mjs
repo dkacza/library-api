@@ -57,6 +57,7 @@ const corsOptions = {
 };
 
 // Middleware stack
+app.enable('trust proxy');
 // CORS
 app.use(cors(corsOptions));
 // Setting HTTP security headers
@@ -64,7 +65,7 @@ app.use(helmet());
 // Logging Requests to the console
 app.use(morgan('tiny'));
 // Request limiting for IP addresses
-app.use('/api', limiter);
+// app.use('/api', limiter);
 // Reading parameters from request body
 app.use(express.json({limit: '10kb'}));
 // Sanitize input data
