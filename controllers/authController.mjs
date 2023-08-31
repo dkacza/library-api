@@ -136,7 +136,8 @@ const createAndSignToken = function(user, statusCode, res) {
     expires: new Date(
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ), // Cookie expiration date
-    httpOnly: true // Cookie can only be accessed with HTTP.
+    httpOnly: true, // Cookie can only be accessed with HTTP.
+    sameSite: "None",
   };
   user.password = undefined;
   res.cookie('jwt', token, cookieOptions);
