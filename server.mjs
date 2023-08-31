@@ -57,7 +57,6 @@ const corsOptions = {
 };
 
 // Middleware stack
-app.enable('trust proxy');
 // CORS
 app.use(cors(corsOptions));
 // Setting HTTP security headers
