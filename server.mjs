@@ -45,7 +45,7 @@ const app = express();
 const corsOptions = {
   origin: [process.env.CLIENT_APP_URL, process.env.LOCAL_URL],
   credentials: true,
-  optionSuccessStatus: 200,
+  optionsSuccessStatus: 200,
 };
 
 // Middleware stack
