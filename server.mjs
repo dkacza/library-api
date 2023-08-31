@@ -43,7 +43,7 @@ mongoose
 const app = express();
 
 const corsOptions = {
-  origin: [process.env.CLIENT_APP_URL, process.env.LOCAL_URL],
+  origin: process.env.CLIENT_APP_URL,
   credentials: true,
   optionsSuccessStatus: 200,
 };
