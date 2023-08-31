@@ -26,8 +26,12 @@ process.on('uncaughtException', err => {
 dotenv.config({path: './config.env'});
 
 // Establishing DB connection:
+let dbConnectionString = process.env.DB_CONNECTION_STRING;
+const username = process.env.DB_USERNAME;
+const password = process.env.DB_PASSWORD;
+dbConnectionString = dbConnectionString.replace('<USERNAME>', username).replace('<PASSWORD>', password);
 mongoose
-  .connect(process.env.DB, {})
+  .connect(dbConnectionString, {})
   .then(() => {
     console.log('Database connection established');
     refreshStatuses();
