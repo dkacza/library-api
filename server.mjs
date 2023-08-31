@@ -5,7 +5,6 @@ import mongoose from 'mongoose';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
-import rateLimiter from 'express-rate-limit';
 import sanitizer from 'express-mongo-sanitize';
 import xss from 'xss-clean';
 import cors from 'cors';
@@ -41,18 +40,11 @@ mongoose
     process.exit(1);
   });
 
-// Rate limiter
-const limiter = rateLimiter({
-  max: 100,
-  windowMs: 60 * 60 * 1000,
-  message: 'Too many requests from this IP address.',
-});
-
 const app = express();
 
 const corsOptions = {
-  origin: process.env.CLIENT_APP_URL,
-  credentials: true, //access-control-allow-credentials:true
+  origin: [process.env.CLIENT_APP_URL, process.env.LOCAL_URL],
+  credentials: true,
   optionSuccessStatus: 200,
 };
 
@@ -64,8 +56,6 @@ app.use(cors(corsOptions));
 app.use(helmet());
 // Logging Requests to the console
 app.use(morgan('tiny'));
-// Request limiting for IP addresses
-// app.use('/api', limiter);
 // Reading parameters from request body
 app.use(express.json({limit: '10kb'}));
 // Sanitize input data
