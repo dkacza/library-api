@@ -83,14 +83,19 @@ authController.forgotPassword = catchAsync(async function(req, res, next) {
   // 2. Create a reset token
   const token = currentUser.createPasswordResetToken();
   currentUser.save();
-  const resetURL = `${req.protocol}://${req.get(
-    'host'
-  )}/api/v1/users/resetPassword/${token}`;
+  // const resetURL = `${req.protocol}://${req.get(
+  //   'host'
+  // )}/api/v1/users/resetPassword/${token}`;
+  const resetURL = `${process.env.CLIENT_APP_URL}/reset-password/${token}`
 
   const emailBody = {
     subject: 'Library Password Reset Token (valid for 10 minutes)',
     receiver: userEmail,
-    text: `Submit PATCH request with a new password to the URL: ${resetURL}`
+    //text: `Submit PATCH request with a new password to the URL: ${resetURL}`
+    text: 
+    `There was a request for resetting the password made from your account.
+    We send you the link to the password reset form.
+    ${resetURL}`
   };
   sendEmail(emailBody, next);
   res.status(200).json({

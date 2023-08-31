@@ -4,8 +4,6 @@ import Book from './../models/book.mjs';
 import {catchAsync} from './catchAsync.mjs';
 
 export const refreshStatuses = catchAsync(async function() {
-  console.log('Refreshing statuses');
-
   const rentals = await Rental.find({currentStatus: 'borrowed'});
   for (const rental of rentals) {
     if (Date.now() < rental.expirationDate) continue;

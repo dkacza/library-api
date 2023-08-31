@@ -28,7 +28,6 @@ class QueryFeatures {
         // For gte -> set 1.1
         if (key === 'gte') {
           const firstDayOfYearDate = new Date(`${value}-01-01`);
-          console.log(firstDayOfYearDate);
           queryObj.publicationDate[key] = firstDayOfYearDate;
         }
         // For lte -> set 31.12

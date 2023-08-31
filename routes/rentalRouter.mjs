@@ -1,6 +1,6 @@
 import express from 'express';
 
-import rentalController from './../controllers/rentalController.mjs';
+import rentalController from "./../controllers/rentalController.mjs";
 import authController from './../controllers/authController.mjs';
 
 const router = express.Router();

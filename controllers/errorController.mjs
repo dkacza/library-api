@@ -30,7 +30,7 @@ const handleCastError = err => {
   return new AppError(message, 400);
 };
 const handleDuplicateDBFields = err => {
-  const value = err.keyValue.name;
+  const value = Object.keys(err.keyValue).join(' ,');
   const message = `Duplicate field value: ${value}. Please use another value. `;
   return new AppError(message, 400);
 };

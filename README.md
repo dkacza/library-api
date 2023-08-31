@@ -6,7 +6,7 @@ for getting and updating data about the books and the people who lend them.
 
 #### Technical details
 - The app was made with Node.js and Express.js framework with MVC pattern in mind.
-- It uses MongoDB to store the data and Mongoose for accessing it in a convinient way.
+- It uses MongoDB to store the data and Mongoose for accessing it in a convenient way.
 - User authentication is implemented via JWT through dedicated NPM package.
 - Vulnerable data is encrypted through modules and packages like `crypto` and `bcrypt`.
 - The app protects itself from XSS attacks and query injections by implementing additional 3rd party middleware packages.
@@ -18,7 +18,7 @@ for getting and updating data about the books and the people who lend them.
  - Create library account
  - Log in to his account
  - Reset his password through email in case he forgets it
-2. Logged in user can:
+2. Logged-in user can:
  - Browse all books 
  - Change his password
  - View his profile with history of rentals
@@ -41,21 +41,21 @@ Users can sort and filter the results when they are getting all the documents fr
 Field limiting and pagination is also implemented for GET requests.
 
 #### Endpoint documentation
-App is separeted into 3 main data models (users, books and rentals), which can be accessed through separate endpoints.
+App is separated into 3 main data models (users, books and rentals), which can be accessed through separate endpoints.
 You can find the premade Postman workspace in `dev-data` folder.
 Endpoint documentation is also available here: https://documenter.getpostman.com/view/14293687/2s93eZyBZi
 
 #### How to run it:
 Keep in mind that you need a MongoDB server running locally on your computer or MongoDB Atlas in the cloud to run this app.
-I also reccomend using Postman for convienient way of sending requests.
+I also recommend using Postman for convenient way of sending requests.
 
 1. Clone the repository and run `npm install` command to get all the necessary NPM packages.
 2. Run `npm createConfig` command to create the `config.env`.
 3. Fill the `config.env` file with configuration data.
-   Some of the variables are allready prefilled, but I encourage you to adjust them for your needs.
+   Some of the variables are already prefilled, but I encourage you to adjust them for your needs.
 4. Import the JSON files in dev-data folder to your MongoDB database.
    If you have MongoDB Command Line Tools installed, you can just run the bash or batch script in that folder.
-   This step is not neccessary, but again, I reccomend you to do that for better experience.
+   This step is not necessary, but again, I recommend you to do that for better experience.
 5. Load two Postman configuration files found in that directory. 
 5. Hit `npm run start` to launch the app!
 

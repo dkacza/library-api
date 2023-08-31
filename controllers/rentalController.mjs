@@ -13,7 +13,13 @@ const sendRentalData = async function(req, res, next) {
   const rentalsData = await rentalAggregation(req.query, req.user);
 
   if (!rentalsData || rentalsData.length === 0) {
-    return next(new AppError('Rentals for logged in user with specified filters not found', 404));
+    res.status(200).json({
+      status: 'success',
+      data: {
+        rentals: []
+      }
+    });
+    return;
   }
 
   const rentals = rentalsData[0].paginatedResults;
@@ -47,9 +53,7 @@ const sendRentalData = async function(req, res, next) {
 const rentalController = {};
 
 rentalController.getAllRentals = catchAsync(async function(req, res, next) {
-  // Requires conversion to aggregation
   await sendRentalData(req, res, next);
-
 });
 
 rentalController.getRental = catchAsync(async function(req, res, next) {
@@ -90,7 +94,7 @@ rentalController.createRental = catchAsync(async function(req, res, next) {
       )
     );
 
-  // Create rental, append refference to user, mark book as borrowed
+  // Create rental, append reference to user, mark book as borrowed
   const rental = await Rental.create(filteredBody);
   const rentalId = rental._id;
 
@@ -135,7 +139,7 @@ rentalController.updateRental = catchAsync(async function(req, res, next) {
 
   const userId = rental.user;
   const user = await User.findById(userId);
-  if (book.currentStatus == 'lost') user.eligible('true');
+  if (book.currentStatus === 'lost') user.eligible('true');
 
   book.currentStatus = 'available';
   book.save();
@@ -193,7 +197,6 @@ rentalController.getUserHistory = catchAsync(async function(req, res, next) {
 });
 
 rentalController.getLoggedInUserHistory = catchAsync(async function(req, res, next) {
-  // Requires conversion to aggregation
   await sendRentalData(req, res, next);
 });
 

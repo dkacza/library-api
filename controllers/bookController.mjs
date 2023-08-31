@@ -16,8 +16,8 @@ const multerFilter = multer.filter = (req, file, cb) => {
 };
 
 const upload = multer({
+  fileFilter: multerFilter,
   storage: multerStorage,
-  fileFilter: multerFilter
 });
 
 const bookController = {};
@@ -29,8 +29,7 @@ bookController.getAllBooks = catchAsync(async function(req, res, next) {
 
   const total = features.total;
   const books = await features.query;
-
-  if (!req.query.page && !req.query.limit) {
+  if (!req.query.page || !req.query.limit) {
     res.status(200).json({
       status: 'success',
       data: {
@@ -65,17 +64,14 @@ bookController.getSingleBook = catchAsync(async function(req, res, next) {
 });
 
 bookController.createBook = catchAsync(async function(req, res, next) {
-  
-  
-
-  const book = await Book.create(req.body);
+    const book = await Book.create(req.body);
 
   if (req.file) {
     const newID = book._id;
-    const fileName = `cover-${book._id}.jpeg`
-    sharp(req.file.buffer)
+    const fileName = `cover-${newID}.jpeg`
+    await sharp(req.file.buffer)
       .toFormat('jpeg')
-      .resize(195, 315, {
+      .resize(200, 320, {
         fit: 'cover',
         position: 'center'
       })
@@ -94,13 +90,15 @@ bookController.createBook = catchAsync(async function(req, res, next) {
   });
 });
 
-bookController.uploadBookCover = upload.single('bookCoverPhoto');
+bookController.uploadBookCover = (req, res, next) => {
+  console.log('Uploading photo')
+  upload.single('bookCoverPhoto')(req, res, next);
+}
 
 bookController.processBookCover = (req, res, next) => {
   if (!req.file) return next();
 
   req.file.filename = `cover-${req.params.id}.jpeg`;
-
   sharp(req.file.buffer)
     .toFormat('jpeg')
     .resize(195, 315, {
@@ -114,7 +112,6 @@ bookController.processBookCover = (req, res, next) => {
 
 bookController.updateBook = catchAsync(async function(req, res, next) {
   const id = req.params.id;
-
   if (req.file) req.body.bookCoverPhoto = req.file.filename;
 
   const book = await Book.findByIdAndUpdate(id, req.body, {

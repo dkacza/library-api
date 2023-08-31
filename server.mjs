@@ -41,15 +41,15 @@ mongoose
 const limiter = rateLimiter({
   max: 100,
   windowMs: 60 * 60 * 1000,
-  message: 'Too many requests from this IP address.'
+  message: 'Too many requests from this IP address.',
 });
 
 const app = express();
 
 const corsOptions = {
   origin: 'http://localhost:3000',
-  credentials: true,            //access-control-allow-credentials:true
-  optionSuccessStatus: 200
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
 };
 
 // Middleware stack
@@ -59,9 +59,8 @@ app.use(cors(corsOptions));
 app.use(helmet());
 // Logging Requests to the console
 app.use(morgan('tiny'));
-// Request limiting for IP adresses
-// TODO enable when finished working with API
-// app.use('/api', limiter);
+// Request limiting for IP addresses
+app.use('/api', limiter);
 // Reading parameters from request body
 app.use(express.json({limit: '10kb'}));
 // Sanitize input data
@@ -73,7 +72,7 @@ app.use(cookieParser());
 // Serving static files
 app.use(express.static(`public`));
 
-// Monting routers
+// Mounting routers
 app.use('/api/v1/books', bookRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/rentals', rentalRouter);
@@ -86,7 +85,8 @@ app.listen(port, () => {
   console.log(`Server is running at port ${port}`);
 });
 
-setInterval(refreshStatuses, 60000);
+// Refresh statuses every hour
+setInterval(refreshStatuses, 60 * 60 * 1000);
 
 process.on('unhandledRejection', err => {
   console.log('Unhandled Rejection\nExiting...');

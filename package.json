@@ -20,7 +20,8 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
     "ndb": "^1.1.5",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "prettier": "^3.0.3"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
