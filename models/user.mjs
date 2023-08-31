@@ -56,10 +56,6 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now()
   },
-  photoPath: {
-    type: String,
-    default: './photos/defaultPhoto.jpg'
-  },
   rentals: {
     type: [mongoose.Schema.Types.ObjectId],
     ref: 'Rental'

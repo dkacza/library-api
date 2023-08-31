@@ -19,7 +19,6 @@
     "isbn": "9781234567890",
     "description": "Set in France during World War II, this gripping novel follows the lives of two sisters as they navigate love, loss, and the resistance against the Nazi occupation.",
     "genre": "fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -45,7 +44,6 @@
     "isbn": "9780743273565",
     "description": "Set in the roaring 1920s, this timeless tale explores themes of wealth, love, and the American Dream through the enigmatic millionaire Jay Gatsby.",
     "genre": "fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -71,7 +69,6 @@
     "isbn": "9780451524935",
     "description": "A classic dystopian novel depicting a totalitarian society where Big Brother watches over citizens' every move, and one man's struggle against the oppressive regime.",
     "genre": "fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -97,7 +94,6 @@
     "isbn": "9780061120084",
     "description": "This Pulitzer Prize-winning novel delves into racial injustice and moral growth through the eyes of a young girl in the racially charged southern United States.",
     "genre": "fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -123,7 +119,6 @@
     "isbn": "9780486284736",
     "description": "A classic romance novel that follows the spirited Elizabeth Bennet as she navigates societal expectations and her complicated relationship with Mr. Darcy.",
     "genre": "fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -147,7 +142,6 @@
     "isbn": "9780385490818",
     "description": "In a dystopian society, fertile women are enslaved as 'handmaids' to bear children for the ruling class, exploring themes of gender and power.",
     "genre": "fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -173,7 +167,6 @@
     "isbn": "9780060850524",
     "description": "This thought-provoking novel portrays a futuristic society where pleasure and conformity are valued above all else, challenging the concept of individuality.",
     "genre": "fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -197,7 +190,6 @@
     "isbn": "9781594631931",
     "description": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's turbulent history.",
     "genre": "fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -221,7 +213,6 @@
     "isbn": "9780062316110",
     "description": "A sweeping journey through the history of humankind, exploring the cognitive, agricultural, and scientific revolutions that shaped our species.",
     "genre": "non-fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -245,7 +236,6 @@
     "isbn": "9781524763138",
     "description": "An intimate memoir of the former First Lady of the United States, chronicling her life, her journey, and her commitment to empowering others.",
     "genre": "non-fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -269,7 +259,6 @@
     "isbn": "9780399590504",
     "description": "This memoir recounts the author's escape from a strict, isolated upbringing and her pursuit of education and self-discovery.",
     "genre": "non-fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -293,7 +282,6 @@
     "isbn": "9781524731656",
     "description": "The gripping account of the rise and fall of Theranos, a healthcare startup that promised revolutionary blood-testing technology.",
     "genre": "non-fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -317,7 +305,6 @@
     "isbn": "9781400052172",
     "description": "Investigating the story of Henrietta Lacks, whose cells were unknowingly used for scientific research, changing medicine forever.",
     "genre": "non-fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -341,7 +328,6 @@
     "isbn": "9781476733500",
     "description": "Exploring the history and impact of genetics, this book reveals the complex and captivating story of the human genome.",
     "genre": "non-fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -365,7 +351,6 @@
     "isbn": "9780399588174",
     "description": "Comedian Trevor Noah's memoir explores his experiences growing up in apartheid-era South Africa, offering humor and insight into racial dynamics.",
     "genre": "non-fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -389,7 +374,6 @@
     "isbn": "9780192860927",
     "description": "This influential book presents the gene-centered view of evolution, exploring the role of genes in shaping life's diversity.",
     "genre": "non-fiction",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -413,7 +397,6 @@
     "isbn": "9780553380163",
     "description": "This best-selling book offers a fascinating journey into the mysteries of the universe, discussing cosmology, black holes, and the nature of time.",
     "genre": "science",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -437,7 +420,6 @@
     "isbn": "9780393338102",
     "description": "Exploring the fascinating world of string theory and the quest for a unified theory of everything in the universe.",
     "genre": "science",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -461,7 +443,6 @@
     "isbn": "9780393609394",
     "description": "An engaging and concise introduction to astrophysics, revealing the wonders of the cosmos in an accessible manner.",
     "genre": "science",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -485,7 +466,6 @@
     "isbn": "9780345539434",
     "description": "A journey through space and time, exploring the vastness of the universe and humanity's place within it.",
     "genre": "science",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -509,7 +489,6 @@
     "isbn": "9780192860927",
     "description": "This influential book presents the gene-centered view of evolution, exploring the role of genes in shaping life's diversity.",
     "genre": "science",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -533,7 +512,6 @@
     "isbn": "9780767908184",
     "description": "An entertaining and informative exploration of various scientific disciplines, explaining complex concepts in an engaging manner.",
     "genre": "science",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -557,7 +535,6 @@
     "isbn": "9781400052172",
     "description": "Investigating the story of Henrietta Lacks, whose cells were unknowingly used for scientific research, changing medicine forever.",
     "genre": "science",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -581,7 +558,6 @@
     "isbn": "9780590353403",
     "description": "The enchanting tale of a young wizard, Harry Potter, as he begins his journey at Hogwarts School of Witchcraft and Wizardry.",
     "genre": "children",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -607,7 +583,6 @@
     "isbn": "9780241003008",
     "description": "A beloved picture book following the journey of a hungry caterpillar as it transforms into a beautiful butterfly.",
     "genre": "children",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -633,7 +608,6 @@
     "isbn": "9780060254926",
     "description": "This imaginative story follows Max, a mischievous boy who sails to a mysterious island inhabited by wild creatures.",
     "genre": "children",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -659,7 +633,6 @@
     "isbn": "9780060775858",
     "description": "A soothing bedtime story featuring a young bunny saying goodnight to everything in its room.",
     "genre": "children",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -683,7 +656,6 @@
     "isbn": "9780590353403",
     "description": "The enchanting tale of a young wizard, Harry Potter, as he begins his journey at Hogwarts School of Witchcraft and Wizardry.",
     "genre": "children",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -709,7 +681,6 @@
     "isbn": "9780394800011",
     "description": "An entertaining and whimsical story about a mischievous cat that brings fun and chaos to two children's rainy day.",
     "genre": "children",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -733,7 +704,6 @@
     "isbn": "9780142410370",
     "description": "The magical tale of a brilliant and telekinetic young girl named Matilda who overcomes challenges in her life.",
     "genre": "children",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -759,7 +729,6 @@
     "isbn": "9780061124952",
     "description": "A heartwarming story of friendship between a young girl, a clever spider, and a wise pig named Wilbur.",
     "genre": "children",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -785,7 +754,6 @@
     "isbn": "9780143039273",
     "description": "A groundbreaking collection of poems celebrating the beauty of nature and the human spirit, leaving a lasting impact on American literature.",
     "genre": "poetry",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -811,7 +779,6 @@
     "isbn": "9780156948775",
     "description": "A modernist masterpiece that explores the fragmented and disillusioned post-World War I world through a series of poetic vignettes.",
     "genre": "poetry",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -837,7 +804,6 @@
     "isbn": "9780679724856",
     "description": "A collection of poems showcasing the enigmatic and deeply introspective works of Emily Dickinson, a pioneer of American poetry.",
     "genre": "poetry",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -863,7 +829,6 @@
     "isbn": "9780394404288",
     "description": "A timeless and philosophical poetic work that delves into life's profound questions, offering spiritual insights and wisdom.",
     "genre": "poetry",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -887,7 +852,6 @@
     "isbn": "9781449474256",
     "description": "A powerful and emotional collection of poetry and prose addressing themes of love, loss, healing, and femininity.",
     "genre": "poetry",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -911,7 +875,6 @@
     "isbn": "9781449486792",
     "description": "Continuing the poetic journey of Rupi Kaur, this book explores growth, resilience, and the beauty of blooming amidst adversity.",
     "genre": "poetry",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -935,7 +898,6 @@
     "isbn": "9780679728182",
     "description": "A comprehensive collection of poems from Langston Hughes, a prominent figure of the Harlem Renaissance and a voice for African Americans.",
     "genre": "poetry",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   },
@@ -961,7 +923,6 @@
     "isbn": "9780486270579",
     "description": "A dark and haunting collection of poems, including the iconic narrative poem 'The Raven,' showcasing Edgar Allan Poe's mastery of the macabre.",
     "genre": "poetry",
-    "coverPath": "./photos/defaultCover.jpg",
     "currentStatus": "available",
     "__v": 0
   }

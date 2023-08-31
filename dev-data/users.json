@@ -1,122 +1,580 @@
-[
-  {
-    "_id": {
-      "$oid": "6459f89f5798b3016f283bce"
-    },
-    "firstName": "Admin",
-    "lastName": "Test",
-    "email": "admin@test.com",
-    "phoneNumber": "123456789",
-    "password": "$2b$12$diK.RVSDOVLpguTGTOnVOubN6gbzdLKMBlmCt8UiOBbg5mcBblU3S",
-    "passwordChangedAt": {
-      "$date": "2023-05-09T07:39:10.428Z"
-    },
-    "role": "admin",
-    "registrationDate": {
-      "$date": "2023-05-09T07:36:58.440Z"
-    },
-    "photoPath": "./photos/defaultPhoto.jpg",
-    "rentals": [],
-    "eligible": true,
-    "__v": 0
+[{
+  "_id": {
+    "$oid": "64f098d37cc1b6442904c556"
   },
-  {
-    "_id": {
-      "$oid": "6459f85f5798b3016f283bc9"
-    },
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "doe@test.com",
-    "phoneNumber": "664778434",
-    "password": "$2b$12$vx0SxNvtG6gRC/qnO6Rs3uaiz6SDs9fi7njiV09Tuw6xguGnE5m9e",
-    "passwordChangedAt": {
-      "$date": "2023-05-09T07:38:06.236Z"
-    },
-    "role": "user",
-    "registrationDate": {
-      "$date": "2023-05-09T07:36:58.440Z"
-    },
-    "photoPath": "./photos/defaultPhoto.jpg",
-    "rentals": [],
-    "eligible": true,
-    "__v": 0
+  "firstName": "Kyle",
+  "lastName": "Adams",
+  "email": "adams@test.com",
+  "phoneNumber": "321212231",
+  "password": "$2b$12$0wj/kfCzYswzOcU.fKa6ouwMennL22.4iLAK9ByezFhMJK7izTnCC",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:42:42.331Z"
   },
-  {
-    "_id": {
-      "$oid": "6459f8b35798b3016f283bd0"
-    },
-    "firstName": "Librarian",
-    "lastName": "Kowalski",
-    "email": "librarian@test.com",
-    "phoneNumber": "123456789",
-    "password": "$2b$12$xkGYXCVlaWplvOXjNQx/8Opg4EhqHqqAsjeAQzPc59XEEYQSmtkiS",
-    "passwordChangedAt": {
-      "$date": "2023-05-09T07:39:30.901Z"
-    },
-    "role": "librarian",
-    "registrationDate": {
-      "$date": "2023-05-09T07:36:58.440Z"
-    },
-    "photoPath": "./photos/defaultPhoto.jpg",
-    "rentals": [],
-    "eligible": true,
-    "__v": 0
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
   },
-  {
-    "_id": {
-      "$oid": "6459f88c5798b3016f283bcb"
-    },
-    "firstName": "Peter",
-    "lastName": "Smith",
-    "email": "smith@test.com",
-    "phoneNumber": "893432990",
-    "password": "$2b$12$e7iDDvUpzOjROQCatx/gdOuXthG.Eii8ljR0EjYB.IzIeiJRCbW0m",
-    "passwordChangedAt": {
-      "$date": "2023-05-09T07:38:51.524Z"
-    },
-    "role": "user",
-    "registrationDate": {
-      "$date": "2023-05-09T07:36:58.440Z"
-    },
-    "photoPath": "./photos/defaultPhoto.jpg",
-    "rentals": [
-      {
-        "$oid": "645a75a441ee0b92bc441862"
-      },
-      {
-        "$oid": "645a75b641ee0b92bc44186c"
-      }
-    ],
-    "eligible": true,
-    "__v": 4,
-    "passwordResetExpires": {
-      "$date": "2023-05-09T16:54:56.485Z"
-    },
-    "passwordResetToken": "a9182dc4cd4c24570d6274fe7fa7685ea47dc340320deea5f2d9ee9e59d96b15"
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f098db7cc1b6442904c558"
   },
-  {
-    "_id": {
-      "$oid": "6459f8465798b3016f283bc6"
-    },
-    "firstName": "Kyle",
-    "lastName": "Adams",
-    "email": "adams@test.com",
-    "phoneNumber": "654776434",
-    "password": "$2b$12$bdnQ9i.ZXrzDh11h21.Xp.LFtIQXoTriFKU3Vs/aEhSuT6CqluVoq",
-    "passwordChangedAt": {
-      "$date": "2023-05-09T07:37:42.103Z"
-    },
-    "role": "user",
-    "registrationDate": {
-      "$date": "2023-05-09T07:36:58.440Z"
-    },
-    "photoPath": "./photos/defaultPhoto.jpg",
-    "rentals": [
-      {
-        "$oid": "645a75f741ee0b92bc441881"
-      }
-    ],
-    "eligible": true,
-    "__v": 1
-  }
-]
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "doe@test.com",
+  "phoneNumber": "555123456",
+  "password": "$2b$12$Q//6Z0XoRZiCe9/3d3Cpn.iGYJql2oW2zFSLEpiMAeD.gHrxqjRWi",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:42:50.548Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f098e07cc1b6442904c55a"
+  },
+  "firstName": "Emma",
+  "lastName": "Smith",
+  "email": "smith@test.com",
+  "phoneNumber": "789987654",
+  "password": "$2b$12$uY58Ifo1e191vN6rBVmype6E4/2GVeymo0OdozBaD4C6Lem8SLCyq",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:42:55.902Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f098e57cc1b6442904c55c"
+  },
+  "firstName": "Michael",
+  "lastName": "Johnson",
+  "email": "johnson@test.com",
+  "phoneNumber": "111222333",
+  "password": "$2b$12$8/GbII5k93.93OM57iXrxuxxe4dVb82iFdAVWjLLeg493i8XflE0i",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:00.602Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f098e97cc1b6442904c55e"
+  },
+  "firstName": "Sarah",
+  "lastName": "Brown",
+  "email": "brown@test.com",
+  "phoneNumber": "444555666",
+  "password": "$2b$12$iJbEWXNUX1wA8Az3QimDgOcKQ0baZQCU.LN6vmfC7/AQxPSx6Qd6.",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:04.962Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f098ed7cc1b6442904c560"
+  },
+  "firstName": "David",
+  "lastName": "Williams",
+  "email": "williams@test.com",
+  "phoneNumber": "777888999",
+  "password": "$2b$12$PLOTn79KCXuD1.aUWWRVt.DKznl.rzzcd9ELZ.nhUjHx85BVnNIBa",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:08.928Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f098f27cc1b6442904c562"
+  },
+  "firstName": "Emily",
+  "lastName": "Taylor",
+  "email": "taylor@test.com",
+  "phoneNumber": "121314151",
+  "password": "$2b$12$P7AD8NsHNcEuTDb6xHrkG.MyXbdk6KICtWx0Z2UDVVasJn4N/5WlO",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:13.385Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f098f67cc1b6442904c564"
+  },
+  "firstName": "Christopher",
+  "lastName": "Martinez",
+  "email": "martinez@test.com",
+  "phoneNumber": "1617181920",
+  "password": "$2b$12$F7dnh119Z8/BCY9xYHpwDurLNyEsNbV7trR2RjwsVUkAnyDV1S7Nq",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:17.372Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f098f97cc1b6442904c566"
+  },
+  "firstName": "Olivia",
+  "lastName": "Anderson",
+  "email": "anderson@test.com",
+  "phoneNumber": "2122232425",
+  "password": "$2b$12$cA5ECVGCaHD6tseFdzvrB.i3lslie2AThM227Ld3V10269dHXPk3y",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:20.312Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f098fc7cc1b6442904c568"
+  },
+  "firstName": "Daniel",
+  "lastName": "Thomas",
+  "email": "thomas@test.com",
+  "phoneNumber": "2627282930",
+  "password": "$2b$12$faMQg3xRYEkeUQs5nxLtHegwuCPeWX5IjQSk1i19wcZdurC6ifwBC",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:24.088Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f099007cc1b6442904c56a"
+  },
+  "firstName": "Ava",
+  "lastName": "Hernandez",
+  "email": "hernandez@test.com",
+  "phoneNumber": "3132333435",
+  "password": "$2b$12$fb/VvYBFb2jo87g87Vc5quiijRcdYGt10GC7rj3Zj1bs8vkAhSWFK",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:28.159Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f099047cc1b6442904c56c"
+  },
+  "firstName": "James",
+  "lastName": "Garcia",
+  "email": "garcia@test.com",
+  "phoneNumber": "3637383940",
+  "password": "$2b$12$GnHvJDbNTG6VJJ5OYhfn6eulWTOK8.GGW36M7Ua8mJC2dsILVmCni",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:31.605Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f099087cc1b6442904c56e"
+  },
+  "firstName": "Isabella",
+  "lastName": "Lopez",
+  "email": "lopez@test.com",
+  "phoneNumber": "4142434445",
+  "password": "$2b$12$PdNsRJQyBZDBl3ij/9p0Z.CcJaXu4Z68E6aQ8c37EMOJL7e3jFBY.",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:35.400Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f0990b7cc1b6442904c570"
+  },
+  "firstName": "Alexander",
+  "lastName": "Rodriguez",
+  "email": "rodriguez@test.com",
+  "phoneNumber": "4647484950",
+  "password": "$2b$12$FtFlXhAHWxnvh870PsNCj.J.TfbpZb3M0Tqy1ZuBc8dY.mlb8zdVe",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:39.209Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f0990f7cc1b6442904c572"
+  },
+  "firstName": "Sophia",
+  "lastName": "Lee",
+  "email": "lee@test.com",
+  "phoneNumber": "5152535455",
+  "password": "$2b$12$xLZPxtMZk6I2vPtx7KFQVe6QLVuwiEStsckmLfEOgnPz9D.Q0Twa.",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:43.031Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f0991b7cc1b6442904c574"
+  },
+  "firstName": "Grace",
+  "lastName": "Miller",
+  "email": "miller@test.com",
+  "phoneNumber": "5657585960",
+  "password": "$2b$12$kTo7WAxcs4tGc4QuG8WweOtQAq/7TekB1LNqAtyabBqSPBXp3WYty",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:54.726Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f0991e7cc1b6442904c576"
+  },
+  "firstName": "Logan",
+  "lastName": "Clark",
+  "email": "clark@test.com",
+  "phoneNumber": "6162636465",
+  "password": "$2b$12$47GbGmK75HSsMQGu6Q108uCoRtb/oSSekI0Z.8GjLmdIl/yQZ0aWy",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:43:58.077Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f099227cc1b6442904c578"
+  },
+  "firstName": "Chloe",
+  "lastName": "Scott",
+  "email": "scott@test.com",
+  "phoneNumber": "6667686970",
+  "password": "$2b$12$ObLX/9ty8t7hDlXPZqS3WuGcAEFNVH6SxZf4zo/Z2V8oupnJ51kVy",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:44:01.315Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f099257cc1b6442904c57a"
+  },
+  "firstName": "Mason",
+  "lastName": "Baker",
+  "email": "baker@test.com",
+  "phoneNumber": "7172737475",
+  "password": "$2b$12$v/qh9shqn42m9fzZ7qqEf.HSl7Snij3n/pkFUkhe4tiywo2tNVVba",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:44:04.413Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f099287cc1b6442904c57c"
+  },
+  "firstName": "Ella",
+  "lastName": "Green",
+  "email": "green@test.com",
+  "phoneNumber": "7677787980",
+  "password": "$2b$12$D8XnBymHXQpcFN9Q66XWnOuuosjf/sC4K3NFKVnJc/ds68IzDDA2q",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:44:08.118Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f0992c7cc1b6442904c57e"
+  },
+  "firstName": "Carter",
+  "lastName": "Cruz",
+  "email": "cruz@test.com",
+  "phoneNumber": "8182838485",
+  "password": "$2b$12$zV8dd7vTrpiutyb0bU4.AOoeAVRiOex3CVmROfdj9Sgm138CdePoy",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:44:11.982Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f099317cc1b6442904c580"
+  },
+  "firstName": "Avery",
+  "lastName": "Ward",
+  "email": "ward@test.com",
+  "phoneNumber": "8687888990",
+  "password": "$2b$12$5zsk2hjwyRiUTSJG0JqKqOOOG51cTCAmJsZbu4hI0pawp92doUbCu",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:44:16.257Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f099347cc1b6442904c582"
+  },
+  "firstName": "Jackson",
+  "lastName": "Bailey",
+  "email": "bailey@test.com",
+  "phoneNumber": "9192939495",
+  "password": "$2b$12$AArIovDNDKSdjDxtPk/lneZZQaTwEr7oZprC1z22AYgPrlwYDdX4K",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:44:19.940Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f099387cc1b6442904c584"
+  },
+  "firstName": "Lily",
+  "lastName": "Cooper",
+  "email": "cooper@test.com",
+  "phoneNumber": "9697989990",
+  "password": "$2b$12$jwLDRiS2q/NZFIudAmsKSe3cmcW10TbZFKP5Q1RJF7jSNsj.6lDjW",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:44:23.549Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f0993a7cc1b6442904c586"
+  },
+  "firstName": "Lucas",
+  "lastName": "Reed",
+  "email": "reed@test.com",
+  "phoneNumber": "101102103",
+  "password": "$2b$12$vil/KAqzqBpm3wMe5XGYE.P9pPCU2DDyouYmpq0fH9WcQbbOiraM.",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:44:26.222Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f0993e7cc1b6442904c588"
+  },
+  "firstName": "Layla",
+  "lastName": "Gray",
+  "email": "gray@test.com",
+  "phoneNumber": "104105106",
+  "password": "$2b$12$fq5gvAu9z.LhjNqZBgpzA.mAybAHyMQ.0Su6.e./keHVeisESls8e",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:44:30.125Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f099437cc1b6442904c58a"
+  },
+  "firstName": "Benjamin",
+  "lastName": "Bell",
+  "email": "bell@test.com",
+  "phoneNumber": "107108109",
+  "password": "$2b$12$tOH4hDRM0jEhM1TlqGMa7e0xVqYcb2KX1qAGwuHO2aTwF1ThoxCcy",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:44:34.368Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f099467cc1b6442904c58c"
+  },
+  "firstName": "Mia",
+  "lastName": "Turner",
+  "email": "turner@test.com",
+  "phoneNumber": "110111112",
+  "password": "$2b$12$a6YwdCxrHA/rOcJI9eAAXeXUeKWNbl.AYzZxQg24EorPOGN54EB6G",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:44:38.041Z"
+  },
+  "role": "user",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f099a97cc1b6442904c58e"
+  },
+  "firstName": "John",
+  "lastName": "Admin",
+  "email": "admin@test.com",
+  "phoneNumber": "110111112",
+  "password": "$2b$12$qSQCupqEZ40Z5v6EjXric.WT1/fBN0/5S6LGSQWpRsfuyUDWNgE/y",
+  "passwordChangedAt": {
+    "$date": "2023-08-31T13:46:16.577Z"
+  },
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2023-08-31T13:42:20.976Z"
+  },
+  "rentals": [],
+  "eligible": true,
+  "__v": 0
+}]

@@ -31,7 +31,7 @@ const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
 dbConnectionString = dbConnectionString.replace('<USERNAME>', username).replace('<PASSWORD>', password);
 mongoose
-  .connect(dbConnectionString, {})
+  .connect(dbConnectionString, {dbName: 'library-db'})
   .then(() => {
     console.log('Database connection established');
     refreshStatuses();
