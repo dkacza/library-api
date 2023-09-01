@@ -1,929 +1,942 @@
-[
-  {
-    "_id": {
-      "$oid": "64c5253578c967fa3124d5ad"
-    },
-    "title": "The Nightingale",
-    "authors": [
-      {
-        "name": "Kristin Hannah",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5253578c967fa3124d5ae"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": "2015-02-03T00:00:00.000Z"
-    },
-    "isbn": "9781234567890",
-    "description": "Set in France during World War II, this gripping novel follows the lives of two sisters as they navigate love, loss, and the resistance against the Nazi occupation.",
-    "genre": "fiction",
-    "currentStatus": "available",
-    "__v": 0
+[{
+  "_id": {
+    "$oid": "64c5254478c967fa3124d5cc"
   },
-  {
-    "_id": {
-      "$oid": "64c5253578c967fa3124d5b1"
-    },
-    "title": "The Great Gatsby",
-    "authors": [
-      {
-        "name": "F. Scott Fitzgerald",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5253578c967fa3124d5b2"
-        }
+  "title": "Bad Blood: Secrets and Lies in a Silicon Valley Startup",
+  "authors": [
+    {
+      "name": "John Carreyrou",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5254478c967fa3124d5cd"
       }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-1411516800000"
-      }
-    },
-    "isbn": "9780743273565",
-    "description": "Set in the roaring 1920s, this timeless tale explores themes of wealth, love, and the American Dream through the enigmatic millionaire Jay Gatsby.",
-    "genre": "fiction",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "2018-05-21T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c5253578c967fa3124d5af"
-    },
-    "title": "1984",
-    "authors": [
-      {
-        "name": "George Orwell",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5253578c967fa3124d5b0"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-649036800000"
-      }
-    },
-    "isbn": "9780451524935",
-    "description": "A classic dystopian novel depicting a totalitarian society where Big Brother watches over citizens' every move, and one man's struggle against the oppressive regime.",
-    "genre": "fiction",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9781524731656",
+  "description": "The gripping account of the rise and fall of Theranos, a healthcare startup that promised revolutionary blood-testing technology.",
+  "genre": "nonFiction",
+  "currentStatus": "available",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c5255478c967fa3124d5e2"
   },
-  {
-    "_id": {
-      "$oid": "64c5253578c967fa3124d5b3"
-    },
-    "title": "To Kill a Mockingbird",
-    "authors": [
-      {
-        "name": "Harper Lee",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5253578c967fa3124d5b4"
-        }
+  "title": "The Elegant Universe",
+  "authors": [
+    {
+      "name": "Brian Greene",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5255478c967fa3124d5e3"
       }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-299030400000"
-      }
-    },
-    "isbn": "9780061120084",
-    "description": "This Pulitzer Prize-winning novel delves into racial injustice and moral growth through the eyes of a young girl in the racially charged southern United States.",
-    "genre": "fiction",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "1999-03-01T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c5253578c967fa3124d5b5"
-    },
-    "title": "Pride and Prejudice",
-    "authors": [
-      {
-        "name": "Jane Austen",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5253578c967fa3124d5b6"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-4952102400000"
-      }
-    },
-    "isbn": "9780486284736",
-    "description": "A classic romance novel that follows the spirited Elizabeth Bennet as she navigates societal expectations and her complicated relationship with Mr. Darcy.",
-    "genre": "fiction",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780393338102",
+  "description": "Exploring the fascinating world of string theory and the quest for a unified theory of everything in the universe.",
+  "genre": "scientific",
+  "currentStatus": "borrowed",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c52578be89949bdccfe915"
   },
-  {
-    "_id": {
-      "$oid": "64c5253578c967fa3124d5b7"
-    },
-    "title": "The Handmaid's Tale",
-    "authors": [
-      {
-        "name": "Margaret Atwood",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5253578c967fa3124d5b8"
-        }
+  "title": "The Very Hungry Caterpillar",
+  "authors": [
+    {
+      "name": "Eric Carle",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52578be89949bdccfe916"
       }
-    ],
-    "publicationDate": {
-      "$date": "1985-02-17T00:00:00.000Z"
-    },
-    "isbn": "9780385490818",
-    "description": "In a dystopian society, fertile women are enslaved as 'handmaids' to bear children for the ruling class, exploring themes of gender and power.",
-    "genre": "fiction",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-18316800000"
+    }
   },
-  {
-    "_id": {
-      "$oid": "64c5253578c967fa3124d5bb"
-    },
-    "title": "Brave New World",
-    "authors": [
-      {
-        "name": "Aldous Huxley",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5253578c967fa3124d5bc"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-1199232000000"
-      }
-    },
-    "isbn": "9780060850524",
-    "description": "This thought-provoking novel portrays a futuristic society where pleasure and conformity are valued above all else, challenging the concept of individuality.",
-    "genre": "fiction",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780241003008",
+  "description": "A beloved picture book following the journey of a hungry caterpillar as it transforms into a beautiful butterfly.",
+  "genre": "children",
+  "currentStatus": "borrowed",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c5254478c967fa3124d5d2"
   },
-  {
-    "_id": {
-      "$oid": "64c5253578c967fa3124d5b9"
-    },
-    "title": "The Kite Runner",
-    "authors": [
-      {
-        "name": "Khaled Hosseini",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5253578c967fa3124d5ba"
-        }
+  "title": "Born a Crime: Stories from a South African Childhood",
+  "authors": [
+    {
+      "name": "Trevor Noah",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5254478c967fa3124d5d3"
       }
-    ],
-    "publicationDate": {
-      "$date": "2003-05-29T00:00:00.000Z"
-    },
-    "isbn": "9781594631931",
-    "description": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's turbulent history.",
-    "genre": "fiction",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "2016-11-15T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c5254478c967fa3124d5c6"
-    },
-    "title": "Sapiens: A Brief History of Humankind",
-    "authors": [
-      {
-        "name": "Yuval Noah Harari",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5254478c967fa3124d5c7"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": "2014-02-10T00:00:00.000Z"
-    },
-    "isbn": "9780062316110",
-    "description": "A sweeping journey through the history of humankind, exploring the cognitive, agricultural, and scientific revolutions that shaped our species.",
-    "genre": "non-fiction",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780399588174",
+  "description": "Comedian Trevor Noah's memoir explores his experiences growing up in apartheid-era South Africa, offering humor and insight into racial dynamics.",
+  "genre": "nonFiction",
+  "currentStatus": "available",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c5253578c967fa3124d5b3"
   },
-  {
-    "_id": {
-      "$oid": "64c5254478c967fa3124d5c8"
-    },
-    "title": "Becoming",
-    "authors": [
-      {
-        "name": "Michelle Obama",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5254478c967fa3124d5c9"
-        }
+  "title": "To Kill a Mockingbird",
+  "authors": [
+    {
+      "name": "Harper Lee",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5253578c967fa3124d5b4"
       }
-    ],
-    "publicationDate": {
-      "$date": "2018-11-13T00:00:00.000Z"
-    },
-    "isbn": "9781524763138",
-    "description": "An intimate memoir of the former First Lady of the United States, chronicling her life, her journey, and her commitment to empowering others.",
-    "genre": "non-fiction",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-299030400000"
+    }
   },
-  {
-    "_id": {
-      "$oid": "64c5254478c967fa3124d5ca"
-    },
-    "title": "Educated",
-    "authors": [
-      {
-        "name": "Tara Westover",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5254478c967fa3124d5cb"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": "2018-02-20T00:00:00.000Z"
-    },
-    "isbn": "9780399590504",
-    "description": "This memoir recounts the author's escape from a strict, isolated upbringing and her pursuit of education and self-discovery.",
-    "genre": "non-fiction",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780061120084",
+  "description": "This Pulitzer Prize-winning novel delves into racial injustice and moral growth through the eyes of a young girl in the racially charged southern United States.",
+  "genre": "fiction",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5255478c967fa3124d5e8"
   },
-  {
-    "_id": {
-      "$oid": "64c5254478c967fa3124d5cc"
-    },
-    "title": "Bad Blood: Secrets and Lies in a Silicon Valley Startup",
-    "authors": [
-      {
-        "name": "John Carreyrou",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5254478c967fa3124d5cd"
-        }
+  "title": "The Selfish Gene",
+  "authors": [
+    {
+      "name": "Richard Dawkins",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5255478c967fa3124d5e9"
       }
-    ],
-    "publicationDate": {
-      "$date": "2018-05-21T00:00:00.000Z"
-    },
-    "isbn": "9781524731656",
-    "description": "The gripping account of the rise and fall of Theranos, a healthcare startup that promised revolutionary blood-testing technology.",
-    "genre": "non-fiction",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "1976-06-02T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c5254478c967fa3124d5ce"
-    },
-    "title": "The Immortal Life of Henrietta Lacks",
-    "authors": [
-      {
-        "name": "Rebecca Skloot",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5254478c967fa3124d5cf"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": "2010-02-02T00:00:00.000Z"
-    },
-    "isbn": "9781400052172",
-    "description": "Investigating the story of Henrietta Lacks, whose cells were unknowingly used for scientific research, changing medicine forever.",
-    "genre": "non-fiction",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780192860927",
+  "description": "This influential book presents the gene-centered view of evolution, exploring the role of genes in shaping life's diversity.",
+  "genre": "scientific",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c52582be89949bdccfe936"
   },
-  {
-    "_id": {
-      "$oid": "64c5254478c967fa3124d5d0"
-    },
-    "title": "The Gene: An Intimate History",
-    "authors": [
-      {
-        "name": "Siddhartha Mukherjee",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5254478c967fa3124d5d1"
-        }
+  "title": "The Sun and Her Flowers",
+  "authors": [
+    {
+      "name": "Rupi Kaur",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52582be89949bdccfe937"
       }
-    ],
-    "publicationDate": {
-      "$date": "2016-05-17T00:00:00.000Z"
-    },
-    "isbn": "9781476733500",
-    "description": "Exploring the history and impact of genetics, this book reveals the complex and captivating story of the human genome.",
-    "genre": "non-fiction",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "2017-10-03T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c5254478c967fa3124d5d2"
-    },
-    "title": "Born a Crime: Stories from a South African Childhood",
-    "authors": [
-      {
-        "name": "Trevor Noah",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5254478c967fa3124d5d3"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": "2016-11-15T00:00:00.000Z"
-    },
-    "isbn": "9780399588174",
-    "description": "Comedian Trevor Noah's memoir explores his experiences growing up in apartheid-era South Africa, offering humor and insight into racial dynamics.",
-    "genre": "non-fiction",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9781449486792",
+  "description": "Continuing the poetic journey of Rupi Kaur, this book explores growth, resilience, and the beauty of blooming amidst adversity.",
+  "genre": "poetry",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c52578be89949bdccfe919"
   },
-  {
-    "_id": {
-      "$oid": "64c5254478c967fa3124d5d4"
-    },
-    "title": "The Selfish Gene",
-    "authors": [
-      {
-        "name": "Richard Dawkins",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5254478c967fa3124d5d5"
-        }
+  "title": "Goodnight Moon",
+  "authors": [
+    {
+      "name": "Margaret Wise Brown",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52578be89949bdccfe91a"
       }
-    ],
-    "publicationDate": {
-      "$date": "1976-06-02T00:00:00.000Z"
-    },
-    "isbn": "9780192860927",
-    "description": "This influential book presents the gene-centered view of evolution, exploring the role of genes in shaping life's diversity.",
-    "genre": "non-fiction",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-704678400000"
+    }
   },
-  {
-    "_id": {
-      "$oid": "64c5255478c967fa3124d5e0"
-    },
-    "title": "A Brief History of Time",
-    "authors": [
-      {
-        "name": "Stephen Hawking",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5255478c967fa3124d5e1"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": "1988-09-01T00:00:00.000Z"
-    },
-    "isbn": "9780553380163",
-    "description": "This best-selling book offers a fascinating journey into the mysteries of the universe, discussing cosmology, black holes, and the nature of time.",
-    "genre": "science",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780060775858",
+  "description": "A soothing bedtime story featuring a young bunny saying goodnight to everything in its room.",
+  "genre": "children",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c52578be89949bdccfe91f"
   },
-  {
-    "_id": {
-      "$oid": "64c5255478c967fa3124d5e2"
-    },
-    "title": "The Elegant Universe",
-    "authors": [
-      {
-        "name": "Brian Greene",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5255478c967fa3124d5e3"
-        }
+  "title": "Harry Potter and the Sorcerer's Stone",
+  "authors": [
+    {
+      "name": "J.K. Rowling",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52578be89949bdccfe920"
       }
-    ],
-    "publicationDate": {
-      "$date": "1999-03-01T00:00:00.000Z"
-    },
-    "isbn": "9780393338102",
-    "description": "Exploring the fascinating world of string theory and the quest for a unified theory of everything in the universe.",
-    "genre": "science",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "1998-09-01T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c5255478c967fa3124d5e4"
-    },
-    "title": "Astrophysics for People in a Hurry",
-    "authors": [
-      {
-        "name": "Neil deGrasse Tyson",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5255478c967fa3124d5e5"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": "2017-05-02T00:00:00.000Z"
-    },
-    "isbn": "9780393609394",
-    "description": "An engaging and concise introduction to astrophysics, revealing the wonders of the cosmos in an accessible manner.",
-    "genre": "science",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780590353403",
+  "description": "The enchanting tale of a young wizard, Harry Potter, as he begins his journey at Hogwarts School of Witchcraft and Wizardry.",
+  "genre": "children",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5254478c967fa3124d5c8"
   },
-  {
-    "_id": {
-      "$oid": "64c5255478c967fa3124d5e6"
-    },
-    "title": "Cosmos",
-    "authors": [
-      {
-        "name": "Carl Sagan",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5255478c967fa3124d5e7"
-        }
+  "title": "Becoming",
+  "authors": [
+    {
+      "name": "Michelle Obama",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5254478c967fa3124d5c9"
       }
-    ],
-    "publicationDate": {
-      "$date": "1980-10-12T00:00:00.000Z"
-    },
-    "isbn": "9780345539434",
-    "description": "A journey through space and time, exploring the vastness of the universe and humanity's place within it.",
-    "genre": "science",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "2018-11-13T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c5255478c967fa3124d5e8"
-    },
-    "title": "The Selfish Gene",
-    "authors": [
-      {
-        "name": "Richard Dawkins",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5255478c967fa3124d5e9"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": "1976-06-02T00:00:00.000Z"
-    },
-    "isbn": "9780192860927",
-    "description": "This influential book presents the gene-centered view of evolution, exploring the role of genes in shaping life's diversity.",
-    "genre": "science",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9781524763138",
+  "description": "An intimate memoir of the former First Lady of the United States, chronicling her life, her journey, and her commitment to empowering others.",
+  "genre": "nonFiction",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5255478c967fa3124d5e6"
   },
-  {
-    "_id": {
-      "$oid": "64c5255478c967fa3124d5ea"
-    },
-    "title": "A Short History of Nearly Everything",
-    "authors": [
-      {
-        "name": "Bill Bryson",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5255478c967fa3124d5eb"
-        }
+  "title": "Cosmos",
+  "authors": [
+    {
+      "name": "Carl Sagan",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5255478c967fa3124d5e7"
       }
-    ],
-    "publicationDate": {
-      "$date": "2003-05-06T00:00:00.000Z"
-    },
-    "isbn": "9780767908184",
-    "description": "An entertaining and informative exploration of various scientific disciplines, explaining complex concepts in an engaging manner.",
-    "genre": "science",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "1980-10-12T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c5255478c967fa3124d5ec"
-    },
-    "title": "The Immortal Life of Henrietta Lacks",
-    "authors": [
-      {
-        "name": "Rebecca Skloot",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c5255478c967fa3124d5ed"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": "2010-02-02T00:00:00.000Z"
-    },
-    "isbn": "9781400052172",
-    "description": "Investigating the story of Henrietta Lacks, whose cells were unknowingly used for scientific research, changing medicine forever.",
-    "genre": "science",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780345539434",
+  "description": "A journey through space and time, exploring the vastness of the universe and humanity's place within it.",
+  "genre": "scientific",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5255478c967fa3124d5ea"
   },
-  {
-    "_id": {
-      "$oid": "64c52578be89949bdccfe913"
-    },
-    "title": "Harry Potter and the Sorcerer's Stone",
-    "authors": [
-      {
-        "name": "J.K. Rowling",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52578be89949bdccfe914"
-        }
+  "title": "A Short History of Nearly Everything",
+  "authors": [
+    {
+      "name": "Bill Bryson",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5255478c967fa3124d5eb"
       }
-    ],
-    "publicationDate": {
-      "$date": "1998-09-01T00:00:00.000Z"
-    },
-    "isbn": "9780590353403",
-    "description": "The enchanting tale of a young wizard, Harry Potter, as he begins his journey at Hogwarts School of Witchcraft and Wizardry.",
-    "genre": "children",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "2003-05-06T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c52578be89949bdccfe915"
-    },
-    "title": "The Very Hungry Caterpillar",
-    "authors": [
-      {
-        "name": "Eric Carle",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52578be89949bdccfe916"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-18316800000"
-      }
-    },
-    "isbn": "9780241003008",
-    "description": "A beloved picture book following the journey of a hungry caterpillar as it transforms into a beautiful butterfly.",
-    "genre": "children",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780767908184",
+  "description": "An entertaining and informative exploration of various scientific disciplines, explaining complex concepts in an engaging manner.",
+  "genre": "scientific",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c52582be89949bdccfe934"
   },
-  {
-    "_id": {
-      "$oid": "64c52578be89949bdccfe917"
-    },
-    "title": "Where the Wild Things Are",
-    "authors": [
-      {
-        "name": "Maurice Sendak",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52578be89949bdccfe918"
-        }
+  "title": "Milk and Honey",
+  "authors": [
+    {
+      "name": "Rupi Kaur",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52582be89949bdccfe935"
       }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-211075200000"
-      }
-    },
-    "isbn": "9780060254926",
-    "description": "This imaginative story follows Max, a mischievous boy who sails to a mysterious island inhabited by wild creatures.",
-    "genre": "children",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "2014-11-04T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c52578be89949bdccfe919"
-    },
-    "title": "Goodnight Moon",
-    "authors": [
-      {
-        "name": "Margaret Wise Brown",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52578be89949bdccfe91a"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-704678400000"
-      }
-    },
-    "isbn": "9780060775858",
-    "description": "A soothing bedtime story featuring a young bunny saying goodnight to everything in its room.",
-    "genre": "children",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9781449474256",
+  "description": "A powerful and emotional collection of poetry and prose addressing themes of love, loss, healing, and femininity.",
+  "genre": "poetry",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c52582be89949bdccfe92c"
   },
-  {
-    "_id": {
-      "$oid": "64c52578be89949bdccfe91f"
-    },
-    "title": "Harry Potter and the Sorcerer's Stone",
-    "authors": [
-      {
-        "name": "J.K. Rowling",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52578be89949bdccfe920"
-        }
+  "title": "Leaves of Grass",
+  "authors": [
+    {
+      "name": "Walt Whitman",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52582be89949bdccfe92d"
       }
-    ],
-    "publicationDate": {
-      "$date": "1998-09-01T00:00:00.000Z"
-    },
-    "isbn": "9780590353403",
-    "description": "The enchanting tale of a young wizard, Harry Potter, as he begins his journey at Hogwarts School of Witchcraft and Wizardry.",
-    "genre": "children",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-3613161600000"
+    }
   },
-  {
-    "_id": {
-      "$oid": "64c52578be89949bdccfe921"
-    },
-    "title": "The Cat in the Hat",
-    "authors": [
-      {
-        "name": "Dr. Seuss",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52578be89949bdccfe922"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-404179200000"
-      }
-    },
-    "isbn": "9780394800011",
-    "description": "An entertaining and whimsical story about a mischievous cat that brings fun and chaos to two children's rainy day.",
-    "genre": "children",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780143039273",
+  "description": "A groundbreaking collection of poems celebrating the beauty of nature and the human spirit, leaving a lasting impact on American literature.",
+  "genre": "poetry",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c52578be89949bdccfe91b"
   },
-  {
-    "_id": {
-      "$oid": "64c52578be89949bdccfe91b"
-    },
-    "title": "Matilda",
-    "authors": [
-      {
-        "name": "Roald Dahl",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52578be89949bdccfe91c"
-        }
+  "title": "Matilda",
+  "authors": [
+    {
+      "name": "Roald Dahl",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52578be89949bdccfe91c"
       }
-    ],
-    "publicationDate": {
-      "$date": "1988-10-01T00:00:00.000Z"
-    },
-    "isbn": "9780142410370",
-    "description": "The magical tale of a brilliant and telekinetic young girl named Matilda who overcomes challenges in her life.",
-    "genre": "children",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "1988-10-01T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c52578be89949bdccfe91d"
-    },
-    "title": "Charlotte's Web",
-    "authors": [
-      {
-        "name": "E.B. White",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52578be89949bdccfe91e"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-543196800000"
-      }
-    },
-    "isbn": "9780061124952",
-    "description": "A heartwarming story of friendship between a young girl, a clever spider, and a wise pig named Wilbur.",
-    "genre": "children",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780142410370",
+  "description": "The magical tale of a brilliant and telekinetic young girl named Matilda who overcomes challenges in her life.",
+  "genre": "children",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5254478c967fa3124d5ca"
   },
-  {
-    "_id": {
-      "$oid": "64c52582be89949bdccfe92c"
-    },
-    "title": "Leaves of Grass",
-    "authors": [
-      {
-        "name": "Walt Whitman",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52582be89949bdccfe92d"
-        }
+  "title": "Educated",
+  "authors": [
+    {
+      "name": "Tara Westover",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5254478c967fa3124d5cb"
       }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-3613161600000"
-      }
-    },
-    "isbn": "9780143039273",
-    "description": "A groundbreaking collection of poems celebrating the beauty of nature and the human spirit, leaving a lasting impact on American literature.",
-    "genre": "poetry",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "2018-02-20T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c52582be89949bdccfe92e"
-    },
-    "title": "The Waste Land and Other Poems",
-    "authors": [
-      {
-        "name": "T.S. Eliot",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52582be89949bdccfe92f"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-1491091200000"
-      }
-    },
-    "isbn": "9780156948775",
-    "description": "A modernist masterpiece that explores the fragmented and disillusioned post-World War I world through a series of poetic vignettes.",
-    "genre": "poetry",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780399590504",
+  "description": "This memoir recounts the author's escape from a strict, isolated upbringing and her pursuit of education and self-discovery.",
+  "genre": "nonFiction",
+  "currentStatus": "borrowed",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c5255478c967fa3124d5e0"
   },
-  {
-    "_id": {
-      "$oid": "64c52582be89949bdccfe930"
-    },
-    "title": "Selected Poems",
-    "authors": [
-      {
-        "name": "Emily Dickinson",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52582be89949bdccfe931"
-        }
+  "title": "A Brief History of Time",
+  "authors": [
+    {
+      "name": "Stephen Hawking",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5255478c967fa3124d5e1"
       }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-2497046400000"
-      }
-    },
-    "isbn": "9780679724856",
-    "description": "A collection of poems showcasing the enigmatic and deeply introspective works of Emily Dickinson, a pioneer of American poetry.",
-    "genre": "poetry",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": "1988-09-01T00:00:00.000Z"
   },
-  {
-    "_id": {
-      "$oid": "64c52582be89949bdccfe932"
-    },
-    "title": "The Prophet",
-    "authors": [
-      {
-        "name": "Kahlil Gibran",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52582be89949bdccfe933"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-1462233600000"
-      }
-    },
-    "isbn": "9780394404288",
-    "description": "A timeless and philosophical poetic work that delves into life's profound questions, offering spiritual insights and wisdom.",
-    "genre": "poetry",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780553380163",
+  "description": "This best-selling book offers a fascinating journey into the mysteries of the universe, discussing cosmology, black holes, and the nature of time.",
+  "genre": "scientific",
+  "currentStatus": "borrowed",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c52582be89949bdccfe930"
   },
-  {
-    "_id": {
-      "$oid": "64c52582be89949bdccfe934"
-    },
-    "title": "Milk and Honey",
-    "authors": [
-      {
-        "name": "Rupi Kaur",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52582be89949bdccfe935"
-        }
+  "title": "Selected Poems",
+  "authors": [
+    {
+      "name": "Emily Dickinson",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52582be89949bdccfe931"
       }
-    ],
-    "publicationDate": {
-      "$date": "2014-11-04T00:00:00.000Z"
-    },
-    "isbn": "9781449474256",
-    "description": "A powerful and emotional collection of poetry and prose addressing themes of love, loss, healing, and femininity.",
-    "genre": "poetry",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-2497046400000"
+    }
   },
-  {
-    "_id": {
-      "$oid": "64c52582be89949bdccfe936"
-    },
-    "title": "The Sun and Her Flowers",
-    "authors": [
-      {
-        "name": "Rupi Kaur",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52582be89949bdccfe937"
-        }
-      }
-    ],
-    "publicationDate": {
-      "$date": "2017-10-03T00:00:00.000Z"
-    },
-    "isbn": "9781449486792",
-    "description": "Continuing the poetic journey of Rupi Kaur, this book explores growth, resilience, and the beauty of blooming amidst adversity.",
-    "genre": "poetry",
-    "currentStatus": "available",
-    "__v": 0
+  "isbn": "9780679724856",
+  "description": "A collection of poems showcasing the enigmatic and deeply introspective works of Emily Dickinson, a pioneer of American poetry.",
+  "genre": "poetry",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5253578c967fa3124d5bb"
   },
-  {
-    "_id": {
-      "$oid": "64c52582be89949bdccfe938"
-    },
-    "title": "The Collected Poems of Langston Hughes",
-    "authors": [
-      {
-        "name": "Langston Hughes",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52582be89949bdccfe939"
-        }
+  "title": "Brave New World",
+  "authors": [
+    {
+      "name": "Aldous Huxley",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5253578c967fa3124d5bc"
       }
-    ],
-    "publicationDate": {
-      "$date": "1995-02-14T00:00:00.000Z"
-    },
-    "isbn": "9780679728182",
-    "description": "A comprehensive collection of poems from Langston Hughes, a prominent figure of the Harlem Renaissance and a voice for African Americans.",
-    "genre": "poetry",
-    "currentStatus": "available",
-    "__v": 0
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-1199232000000"
+    }
   },
-  {
-    "_id": {
-      "$oid": "64c52582be89949bdccfe93a"
-    },
-    "title": "The Raven and Other Poems",
-    "authors": [
-      {
-        "name": "Edgar Allan Poe",
-        "photoPath": "photos/defaultAuthor.jpg",
-        "_id": {
-          "$oid": "64c52582be89949bdccfe93b"
-        }
+  "isbn": "9780060850524",
+  "description": "This thought-provoking novel portrays a futuristic society where pleasure and conformity are valued above all else, challenging the concept of individuality.",
+  "genre": "fiction",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5253578c967fa3124d5b1"
+  },
+  "title": "The Great Gatsby",
+  "authors": [
+    {
+      "name": "F. Scott Fitzgerald",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5253578c967fa3124d5b2"
       }
-    ],
-    "publicationDate": {
-      "$date": {
-        "$numberLong": "-3942172800000"
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-1411516800000"
+    }
+  },
+  "isbn": "9780743273565",
+  "description": "Set in the roaring 1920s, this timeless tale explores themes of wealth, love, and the American Dream through the enigmatic millionaire Jay Gatsby.",
+  "genre": "fiction",
+  "currentStatus": "borrowed",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c52578be89949bdccfe913"
+  },
+  "title": "Harry Potter and the Sorcerer's Stone",
+  "authors": [
+    {
+      "name": "J.K. Rowling",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52578be89949bdccfe914"
       }
-    },
-    "isbn": "9780486270579",
-    "description": "A dark and haunting collection of poems, including the iconic narrative poem 'The Raven,' showcasing Edgar Allan Poe's mastery of the macabre.",
-    "genre": "poetry",
-    "currentStatus": "available",
-    "__v": 0
-  }
-]
+    }
+  ],
+  "publicationDate": {
+    "$date": "1998-09-01T00:00:00.000Z"
+  },
+  "isbn": "9780590353403",
+  "description": "The enchanting tale of a young wizard, Harry Potter, as he begins his journey at Hogwarts School of Witchcraft and Wizardry.",
+  "genre": "children",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5253578c967fa3124d5ad"
+  },
+  "title": "The Nightingale",
+  "authors": [
+    {
+      "name": "Kristin Hannah",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5253578c967fa3124d5ae"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": "2015-02-03T00:00:00.000Z"
+  },
+  "isbn": "9781234567890",
+  "description": "Set in France during World War II, this gripping novel follows the lives of two sisters as they navigate love, loss, and the resistance against the Nazi occupation.",
+  "genre": "fiction",
+  "currentStatus": "borrowed",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c52578be89949bdccfe921"
+  },
+  "title": "The Cat in the Hat",
+  "authors": [
+    {
+      "name": "Dr. Seuss",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52578be89949bdccfe922"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-404179200000"
+    }
+  },
+  "isbn": "9780394800011",
+  "description": "An entertaining and whimsical story about a mischievous cat that brings fun and chaos to two children's rainy day.",
+  "genre": "children",
+  "currentStatus": "borrowed",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c52582be89949bdccfe938"
+  },
+  "title": "The Collected Poems of Langston Hughes",
+  "authors": [
+    {
+      "name": "Langston Hughes",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52582be89949bdccfe939"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": "1995-02-14T00:00:00.000Z"
+  },
+  "isbn": "9780679728182",
+  "description": "A comprehensive collection of poems from Langston Hughes, a prominent figure of the Harlem Renaissance and a voice for African Americans.",
+  "genre": "poetry",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5254478c967fa3124d5d4"
+  },
+  "title": "The Selfish Gene",
+  "authors": [
+    {
+      "name": "Richard Dawkins",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5254478c967fa3124d5d5"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": "1976-06-02T00:00:00.000Z"
+  },
+  "isbn": "9780192860927",
+  "description": "This influential book presents the gene-centered view of evolution, exploring the role of genes in shaping life's diversity.",
+  "genre": "nonFiction",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c52582be89949bdccfe92e"
+  },
+  "title": "The Waste Land and Other Poems",
+  "authors": [
+    {
+      "name": "T.S. Eliot",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52582be89949bdccfe92f"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-1491091200000"
+    }
+  },
+  "isbn": "9780156948775",
+  "description": "A modernist masterpiece that explores the fragmented and disillusioned post-World War I world through a series of poetic vignettes.",
+  "genre": "poetry",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5253578c967fa3124d5af"
+  },
+  "title": "1984",
+  "authors": [
+    {
+      "name": "George Orwell",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64f0ad65b881cda68bef1121"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-662688000000"
+    }
+  },
+  "isbn": "9780451524935",
+  "description": "A classic dystopian novel depicting a totalitarian society where Big Brother watches over citizens' every move, and one man's struggle against the oppressive regime.",
+  "genre": "fiction",
+  "currentStatus": "available",
+  "__v": 0,
+  "bookCoverPhoto": "cover-64c5253578c967fa3124d5af.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c5253578c967fa3124d5b5"
+  },
+  "title": "Pride and Prejudice",
+  "authors": [
+    {
+      "name": "Jane Austen",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5253578c967fa3124d5b6"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-4952102400000"
+    }
+  },
+  "isbn": "9780486284736",
+  "description": "A classic romance novel that follows the spirited Elizabeth Bennet as she navigates societal expectations and her complicated relationship with Mr. Darcy.",
+  "genre": "fiction",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5254478c967fa3124d5d0"
+  },
+  "title": "The Gene: An Intimate History",
+  "authors": [
+    {
+      "name": "Siddhartha Mukherjee",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5254478c967fa3124d5d1"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": "2016-05-17T00:00:00.000Z"
+  },
+  "isbn": "9781476733500",
+  "description": "Exploring the history and impact of genetics, this book reveals the complex and captivating story of the human genome.",
+  "genre": "nonFiction",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5255478c967fa3124d5ec"
+  },
+  "title": "The Immortal Life of Henrietta Lacks",
+  "authors": [
+    {
+      "name": "Rebecca Skloot",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5255478c967fa3124d5ed"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": "2010-02-02T00:00:00.000Z"
+  },
+  "isbn": "9781400052172",
+  "description": "Investigating the story of Henrietta Lacks, whose cells were unknowingly used for scientific research, changing medicine forever.",
+  "genre": "scientific",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5253578c967fa3124d5b7"
+  },
+  "title": "The Handmaid's Tale",
+  "authors": [
+    {
+      "name": "Margaret Atwood",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5253578c967fa3124d5b8"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": "1985-02-17T00:00:00.000Z"
+  },
+  "isbn": "9780385490818",
+  "description": "In a dystopian society, fertile women are enslaved as 'handmaids' to bear children for the ruling class, exploring themes of gender and power.",
+  "genre": "fiction",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5253578c967fa3124d5b9"
+  },
+  "title": "The Kite Runner",
+  "authors": [
+    {
+      "name": "Khaled Hosseini",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5253578c967fa3124d5ba"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": "2003-05-29T00:00:00.000Z"
+  },
+  "isbn": "9781594631931",
+  "description": "A powerful story of friendship, betrayal, and redemption set against the backdrop of Afghanistan's turbulent history.",
+  "genre": "fiction",
+  "currentStatus": "available",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c52578be89949bdccfe917"
+  },
+  "title": "Where the Wild Things Are",
+  "authors": [
+    {
+      "name": "Maurice Sendak",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52578be89949bdccfe918"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-211075200000"
+    }
+  },
+  "isbn": "9780060254926",
+  "description": "This imaginative story follows Max, a mischievous boy who sails to a mysterious island inhabited by wild creatures.",
+  "genre": "children",
+  "currentStatus": "available",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c52582be89949bdccfe93a"
+  },
+  "title": "The Raven and Other Poems",
+  "authors": [
+    {
+      "name": "Edgar Allan Poe",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52582be89949bdccfe93b"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-3942172800000"
+    }
+  },
+  "isbn": "9780486270579",
+  "description": "A dark and haunting collection of poems, including the iconic narrative poem 'The Raven,' showcasing Edgar Allan Poe's mastery of the macabre.",
+  "genre": "poetry",
+  "currentStatus": "borrowed",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c5255478c967fa3124d5e4"
+  },
+  "title": "Astrophysics for People in a Hurry",
+  "authors": [
+    {
+      "name": "Neil deGrasse Tyson",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5255478c967fa3124d5e5"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": "2017-05-02T00:00:00.000Z"
+  },
+  "isbn": "9780393609394",
+  "description": "An engaging and concise introduction to astrophysics, revealing the wonders of the cosmos in an accessible manner.",
+  "genre": "scientific",
+  "currentStatus": "borrowed",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c52582be89949bdccfe932"
+  },
+  "title": "The Prophet",
+  "authors": [
+    {
+      "name": "Kahlil Gibran",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52582be89949bdccfe933"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-1462233600000"
+    }
+  },
+  "isbn": "9780394404288",
+  "description": "A timeless and philosophical poetic work that delves into life's profound questions, offering spiritual insights and wisdom.",
+  "genre": "poetry",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5254478c967fa3124d5c6"
+  },
+  "title": "Sapiens: A Brief History of Humankind",
+  "authors": [
+    {
+      "name": "Yuval Noah Harari",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5254478c967fa3124d5c7"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": "2014-02-10T00:00:00.000Z"
+  },
+  "isbn": "9780062316110",
+  "description": "A sweeping journey through the history of humankind, exploring the cognitive, agricultural, and scientific revolutions that shaped our species.",
+  "genre": "nonFiction",
+  "currentStatus": "available",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5254478c967fa3124d5ce"
+  },
+  "title": "The Immortal Life of Henrietta Lacks",
+  "authors": [
+    {
+      "name": "Rebecca Skloot",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c5254478c967fa3124d5cf"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": "2010-02-02T00:00:00.000Z"
+  },
+  "isbn": "9781400052172",
+  "description": "Investigating the story of Henrietta Lacks, whose cells were unknowingly used for scientific research, changing medicine forever.",
+  "genre": "nonFiction",
+  "currentStatus": "borrowed",
+  "__v": 0,
+  "bookCoverPhoto": "default.jpeg"
+},
+{
+  "_id": {
+    "$oid": "64c52578be89949bdccfe91d"
+  },
+  "title": "Charlotte's Web",
+  "authors": [
+    {
+      "name": "E.B. White",
+      "photoPath": "photos/defaultAuthor.jpg",
+      "_id": {
+        "$oid": "64c52578be89949bdccfe91e"
+      }
+    }
+  ],
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-543196800000"
+    }
+  },
+  "isbn": "9780061124952",
+  "description": "A heartwarming story of friendship between a young girl, a clever spider, and a wise pig named Wilbur.",
+  "genre": "children",
+  "currentStatus": "available",
+  "__v": 0
+}]

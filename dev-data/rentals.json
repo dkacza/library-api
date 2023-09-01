@@ -1,0 +1,297 @@
+[{
+  "_id": {
+    "$oid": "64f0cd4698c0f3ccc2a3954e"
+  },
+  "book": {
+    "$oid": "64c5253578c967fa3124d5b9"
+  },
+  "user": {
+    "$oid": "64f098e97cc1b6442904c55e"
+  },
+  "startDate": {
+    "$date": "2023-08-31T17:25:35.619Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-20T17:25:35.619Z"
+  },
+  "currentStatus": "returned",
+  "__v": 0,
+  "returnDate": {
+    "$date": "2023-08-31T17:48:41.640Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64f0cd4798c0f3ccc2a39572"
+  },
+  "book": {
+    "$oid": "64c5254478c967fa3124d5d0"
+  },
+  "user": {
+    "$oid": "64f098e97cc1b6442904c55e"
+  },
+  "startDate": {
+    "$date": "2023-08-31T17:25:35.619Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-20T17:25:35.619Z"
+  },
+  "currentStatus": "active",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f0cfab5b02873fc922eaeb"
+  },
+  "book": {
+    "$oid": "64c5253578c967fa3124d5ad"
+  },
+  "user": {
+    "$oid": "64f098e07cc1b6442904c55a"
+  },
+  "startDate": {
+    "$date": "2023-08-31T17:36:08.458Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-20T17:36:08.458Z"
+  },
+  "currentStatus": "active",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f0cfbe5b02873fc922eb23"
+  },
+  "book": {
+    "$oid": "64c5253578c967fa3124d5b1"
+  },
+  "user": {
+    "$oid": "64f098e97cc1b6442904c55e"
+  },
+  "startDate": {
+    "$date": "2023-08-31T17:36:08.458Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-20T17:36:08.458Z"
+  },
+  "currentStatus": "active",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f1b35723e081260008a256"
+  },
+  "book": {
+    "$oid": "64c5255478c967fa3124d5e2"
+  },
+  "user": {
+    "$oid": "64f098e57cc1b6442904c55c"
+  },
+  "startDate": {
+    "$date": "2023-09-01T09:46:57.285Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-21T09:46:57.285Z"
+  },
+  "currentStatus": "active",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f1b83e614d4ac35863e9dc"
+  },
+  "book": {
+    "$oid": "64c5254478c967fa3124d5cc"
+  },
+  "user": {
+    "$oid": "64f098ed7cc1b6442904c560"
+  },
+  "startDate": {
+    "$date": "2023-09-01T10:05:32.387Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-21T10:05:32.387Z"
+  },
+  "currentStatus": "returned",
+  "__v": 0,
+  "returnDate": {
+    "$date": "2023-09-01T10:09:21.006Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64f1b83f614d4ac35863e9e8"
+  },
+  "book": {
+    "$oid": "64c52578be89949bdccfe915"
+  },
+  "user": {
+    "$oid": "64f098ed7cc1b6442904c560"
+  },
+  "startDate": {
+    "$date": "2023-09-01T10:05:32.387Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-21T10:05:32.387Z"
+  },
+  "currentStatus": "active",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f1b83f614d4ac35863e9f9"
+  },
+  "book": {
+    "$oid": "64c5254478c967fa3124d5d2"
+  },
+  "user": {
+    "$oid": "64f098ed7cc1b6442904c560"
+  },
+  "startDate": {
+    "$date": "2023-09-01T10:05:32.387Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-21T10:05:32.387Z"
+  },
+  "currentStatus": "returned",
+  "__v": 0,
+  "returnDate": {
+    "$date": "2023-09-01T10:09:22.752Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64f1b865614d4ac35863eabf"
+  },
+  "book": {
+    "$oid": "64c5255478c967fa3124d5e0"
+  },
+  "user": {
+    "$oid": "64f098f27cc1b6442904c562"
+  },
+  "startDate": {
+    "$date": "2023-09-01T10:05:32.387Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-21T10:05:32.387Z"
+  },
+  "currentStatus": "active",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f1b866614d4ac35863eaf0"
+  },
+  "book": {
+    "$oid": "64c5254478c967fa3124d5ca"
+  },
+  "user": {
+    "$oid": "64f098f27cc1b6442904c562"
+  },
+  "startDate": {
+    "$date": "2023-09-01T10:05:32.387Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-21T10:05:32.387Z"
+  },
+  "currentStatus": "active",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f1b867614d4ac35863eb24"
+  },
+  "book": {
+    "$oid": "64c52578be89949bdccfe921"
+  },
+  "user": {
+    "$oid": "64f098f27cc1b6442904c562"
+  },
+  "startDate": {
+    "$date": "2023-09-01T10:05:32.387Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-21T10:05:32.387Z"
+  },
+  "currentStatus": "active",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f1b8b5614d4ac35863eb7c"
+  },
+  "book": {
+    "$oid": "64c5255478c967fa3124d5e4"
+  },
+  "user": {
+    "$oid": "64f098f67cc1b6442904c564"
+  },
+  "startDate": {
+    "$date": "2023-09-01T10:05:32.387Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-21T10:05:32.387Z"
+  },
+  "currentStatus": "active",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f1b8b5614d4ac35863eb8d"
+  },
+  "book": {
+    "$oid": "64c52582be89949bdccfe93a"
+  },
+  "user": {
+    "$oid": "64f098f67cc1b6442904c564"
+  },
+  "startDate": {
+    "$date": "2023-09-01T10:05:32.387Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-21T10:05:32.387Z"
+  },
+  "currentStatus": "active",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f1b8b6614d4ac35863ebd7"
+  },
+  "book": {
+    "$oid": "64c52578be89949bdccfe917"
+  },
+  "user": {
+    "$oid": "64f098f67cc1b6442904c564"
+  },
+  "startDate": {
+    "$date": "2023-09-01T10:05:32.387Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-21T10:05:32.387Z"
+  },
+  "currentStatus": "returned",
+  "__v": 0,
+  "returnDate": {
+    "$date": "2023-09-01T10:11:07.210Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64f1b8c9614d4ac35863ec28"
+  },
+  "book": {
+    "$oid": "64c5254478c967fa3124d5ce"
+  },
+  "user": {
+    "$oid": "64f098f67cc1b6442904c564"
+  },
+  "startDate": {
+    "$date": "2023-09-01T10:05:32.387Z"
+  },
+  "expirationDate": {
+    "$date": "2023-10-21T10:05:32.387Z"
+  },
+  "currentStatus": "active",
+  "__v": 0
+}]

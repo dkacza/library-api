@@ -25,7 +25,7 @@ process.on('uncaughtException', err => {
 dotenv.config({path: './config.env'});
 
 // Establishing DB connection:
-let dbConnectionString = process.env.DB_CONNECTION_STRING;
+let dbConnectionString = process.env.DB_LOCAL_CONNECTION_STRING || process.env.DB_CONNECTION_STRING;
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
 dbConnectionString = dbConnectionString.replace('<USERNAME>', username).replace('<PASSWORD>', password);
